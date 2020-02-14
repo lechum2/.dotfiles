@@ -1,0 +1,203 @@
+{
+
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 16,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.DS_Store": true
+    },
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "cSpell.userWords": [
+        "Backend",
+        "Batchable",
+        "Callout",
+        "Callouts",
+        "Combobox",
+        "Datepicker",
+        "Mediabank",
+        "Pricebook",
+        "QUICKPAY",
+        "Queueable",
+        "SBQQ",
+        "SUBQUERY",
+        "Schedulable",
+        "Timepicker",
+        "URLFOR",
+        "Undelete",
+        "cldbilling",
+        "cldss",
+        "cloudity",
+        "config",
+        "deploy",
+        "deserialize",
+        "dev",
+        "gitgraph",
+        "guid",
+        "picklist",
+        "sfdc",
+        "slds",
+        "sobject",
+        "stateful",
+        "stylesheet",
+        "upsert",
+        "upserting"
+    ],
+    "cSpell.language": "en,en-GB,en-US,pl,pl-PL",
+    "cSpell.enabledLanguageIds": [
+        "apex",
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pub",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "visualforce",
+        "xml",
+        "yml"
+    ],
+    "breadcrumbs.enabled": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "window.zoomLevel": 0,
+    "workbench.editor.highlightModifiedTabs": true,
+	"sync.gist": "f0a9bff3e1f2adef8bbd2059a05b3f3d",
+	"explorer.confirmDelete": false,
+	"gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "force.allowAnonymousUsageTracking": true,
+    "window.titleBarStyle": "custom",
+    "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "text.html.markdown.journal.task.open.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.marker",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.text",
+                "settings": {}
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.marker",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.text",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.scope",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            }
+        ]
+    },
+    "salesforcedx-vscode-core.orgBrowser.enabled": true,
+    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
+    "yaml.schemas": {
+        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.4.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "atlascode.jira.jqlList": [
+        {
+            "id": "2244d12c-13b1-411e-a330-421901bae40d",
+            "enabled": true,
+            "name": "My cloudity1 Issues",
+            "query": "assignee = currentUser() ORDER BY lastViewed DESC ",
+            "siteId": "64086457-ca56-4612-874d-aeab21e1913f",
+            "monitor": true
+        }
+    ]
+}
