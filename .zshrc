@@ -50,7 +50,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode npm node ant battery gitignore sudo ubuntu zsh-autosuggestions sfdx nvm zsh-completions)
+plugins=(git vscode npm node battery gitignore sudo ubuntu zsh-autosuggestions sfdx nvm zsh-completions)
 
 # User configuration
 
