@@ -50,7 +50,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode npm node battery gitignore sudo ubuntu zsh-autosuggestions sfdx nvm zsh-completions)
+plugins=(git vscode npm node gitignore sudo ubuntu zsh-autosuggestions sfdx nvm zsh-completions fzf)
 
 # User configuration
 
@@ -90,3 +90,5 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # compsys initialization
 autoload -U compinit
 compinit
+
+export FZF_BASE=/home/lechu/.fzf/bin
