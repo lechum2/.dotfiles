@@ -90,5 +90,3 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # compsys initialization
 autoload -U compinit
 compinit
-
-export FZF_BASE=/home/lechu/.fzf/bin
