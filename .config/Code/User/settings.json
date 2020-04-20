@@ -22,6 +22,7 @@
     "cSpell.userWords": [
         "Backend",
         "Batchable",
+        "Cacheable",
         "Callout",
         "Callouts",
         "Combobox",
@@ -45,6 +46,7 @@
         "dev",
         "gitgraph",
         "guid",
+        "intcode",
         "picklist",
         "sfdc",
         "slds",
@@ -97,7 +99,7 @@
     "gitlens.views.lineHistory.enabled": true,
     "force.allowAnonymousUsageTracking": true,
     "window.titleBarStyle": "custom",
-    "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
     "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -188,16 +190,26 @@
     "salesforcedx-vscode-core.orgBrowser.enabled": true,
     "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
     "yaml.schemas": {
-        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.4.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.5.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
-        {
-            "id": "2244d12c-13b1-411e-a330-421901bae40d",
-            "enabled": true,
-            "name": "My cloudity1 Issues",
-            "query": "assignee = currentUser() ORDER BY lastViewed DESC ",
-            "siteId": "64086457-ca56-4612-874d-aeab21e1913f",
-            "monitor": true
-        }
-    ]
+		{
+			"id": "2244d12c-13b1-411e-a330-421901bae40d",
+			"enabled": true,
+			"name": "My cloudity1 Issues",
+			"query": "assignee = currentUser() ORDER BY lastViewed DESC ",
+			"siteId": "64086457-ca56-4612-874d-aeab21e1913f",
+			"monitor": true
+		}
+	],
+    "atlascode.bitbucket.issues.monitorEnabled": false,
+    "atlascode.jira.explorer.monitorEnabled": false,
+    "atlascode.bitbucket.pipelines.monitorEnabled": false,
+    "atlascode.bitbucket.explorer.notifications.pullRequestCreated": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
