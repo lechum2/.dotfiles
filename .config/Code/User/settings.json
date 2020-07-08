@@ -8,9 +8,9 @@
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.DS_Store": true
+        "**/.DS_Store": true,
+        "**/.git": false,
+        "**/.svn": true
     },
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": true,
@@ -191,7 +191,7 @@
     "salesforcedx-vscode-core.orgBrowser.enabled": true,
     "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
     "yaml.schemas": {
-        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.6.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.6.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
@@ -217,5 +217,16 @@
         "git-commit"
     ],
     "salesforcedx-vscode-core.detectConflictsAtSync": true,
-    "salesforcedx-vscode-core.experimental.deployRetrieve": true
+    "liveshare.featureSet": "insiders",
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "atlascode.jira.enabled": true,
+    "atlascode.jira.lastCreateSiteAndProject": {
+        "siteId": "64086457-ca56-4612-874d-aeab21e1913f",
+        "projectKey": "SQRP"
+    },
+    "search.exclude": {
+        "**/.git": true
+    }
 }
