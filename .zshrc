@@ -87,6 +87,8 @@ export VISUAL='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+alias pip=pip3
+
 # compsys initialization
 autoload -U compinit
 compinit
