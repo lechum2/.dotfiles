@@ -18,7 +18,6 @@
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
-    "gitlens.historyExplorer.enabled": true,
     "cSpell.userWords": [
         "Backend",
         "Batchable",
@@ -94,20 +93,12 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "window.zoomLevel": 0,
     "workbench.editor.highlightModifiedTabs": true,
-	"sync.gist": "f0a9bff3e1f2adef8bbd2059a05b3f3d",
 	"explorer.confirmDelete": false,
 	"gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
-    "force.allowAnonymousUsageTracking": true,
     "window.titleBarStyle": "custom",
     "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
     "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -188,10 +179,9 @@
             }
         ]
     },
-    "salesforcedx-vscode-core.orgBrowser.enabled": true,
     "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
     "yaml.schemas": {
-        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.6.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.7.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
@@ -208,8 +198,6 @@
     "atlascode.bitbucket.pipelines.monitorEnabled": false,
     "atlascode.bitbucket.explorer.notifications.pullRequestCreated": false,
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "java.configuration.checkProjectSettingsExclusions": false,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -227,6 +215,10 @@
         "projectKey": "SQRP"
     },
     "search.exclude": {
-        "**/.git": true
+        "**/.git": true,
+        "**/.sfdx": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
