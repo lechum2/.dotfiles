@@ -50,7 +50,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode npm node gitignore sudo ubuntu zsh-autosuggestions sfdx nvm zsh-completions fzf)
+plugins=(git vscode npm node gitignore sudo ubuntu zsh-autosuggestions sfdx nvm zsh-completions fzf zsh-syntax-highlighting)
 
 # User configuration
 
@@ -92,3 +92,6 @@ alias pip=pip3
 # compsys initialization
 autoload -U compinit
 compinit
+
+# Add pip installation folder to path
+export PATH=/home/lechu/.local/bin:$PATH
