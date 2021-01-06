@@ -179,9 +179,8 @@
             }
         ]
     },
-    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
     "yaml.schemas": {
-        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.7.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.8.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
@@ -190,6 +189,14 @@
             "name": "My cloudity1 Issues",
             "query": "assignee = currentUser() ORDER BY lastViewed DESC ",
             "siteId": "64086457-ca56-4612-874d-aeab21e1913f",
+            "monitor": true
+        },
+        {
+            "id": "54a7a8a2-82c7-457f-9f53-c783b22149c6",
+            "enabled": true,
+            "name": "My cloudity-ms Issues",
+            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+            "siteId": "9549f9d1-a251-4c7a-a52c-e6e9982b8f3b",
             "monitor": true
         }
     ],
@@ -220,5 +227,21 @@
     },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "explorer.confirmDragAndDrop": false,
+    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
+    "python.languageServer": "Microsoft",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.formatting.provider": "black"
 }
