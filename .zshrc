@@ -46,16 +46,11 @@ HYPHEN_INSENSITIVE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Choose between one [code, code-insiders or codium]
-# The following line will make the plugin to open VS Code Insiders
-# Invalid entries will be ignored, no aliases will be added
-VSCODE=code-insiders
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode npm node gitignore sudo ubuntu zsh-autosuggestions sfdx nvm zsh-completions fzf zsh-syntax-highlighting vi-mode)
+plugins=(git npm node gitignore sudo ubuntu zsh-autosuggestions sfdx nvm zsh-completions fzf zsh-syntax-highlighting vi-mode)
 
 # User configuration
 
@@ -93,6 +88,8 @@ export VISUAL='vim'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias pip=pip3
+
+alias vsc='code --enable-features=UseOzonePlatform --ozone-platform=wayland .'
 
 # compsys initialization
 autoload -U compinit

@@ -91,13 +91,12 @@
     "breadcrumbs.enabled": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "window.zoomLevel": 0,
     "workbench.editor.highlightModifiedTabs": true,
 	"explorer.confirmDelete": false,
 	"gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
     "window.titleBarStyle": "custom",
-    "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+    "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-11-openjdk",
     "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -180,7 +179,7 @@
         ]
     },
     "yaml.schemas": {
-        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.8.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
@@ -211,7 +210,6 @@
     "cSpell.enableFiletypes": [
         "git-commit"
     ],
-    "salesforcedx-vscode-core.detectConflictsAtSync": true,
     "liveshare.featureSet": "insiders",
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -229,19 +227,24 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "explorer.confirmDragAndDrop": false,
-    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
     "python.languageServer": "Microsoft",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "salesforcedx-vscode-core.experimental.useApexLibrary": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "redhat.telemetry.enabled": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
+    "workbench.colorTheme": "Dark+ Material",
+    "window.zoomLevel": 1
 }
