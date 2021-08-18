@@ -1,0 +1,8 @@
+# Lines starting with # are comments
+
+# Save all videos under Movies directory in your home directory
+-o ~/Videos/%(title)s.%(ext)s --restrict-filenames
+
+# Download best format available but no better than 720p
+-f 'bestvideo[height<=720,ext=mp4]+bestaudio[ext=mp4]/best[height<=720,ext=mp4]/best[height<=720]'
+
