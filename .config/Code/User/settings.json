@@ -20,41 +20,50 @@
     },
     "cSpell.userWords": [
         "Backend",
+        "batch",
         "Batchable",
         "Cacheable",
         "Callout",
         "Callouts",
-        "Combobox",
-        "Datepicker",
-        "Datetime",
-        "Mediabank",
-        "Pricebook",
-        "QUICKPAY",
-        "Queueable",
-        "SBQQ",
-        "SUBQUERY",
-        "Schedulable",
-        "Timepicker",
-        "URLFOR",
-        "Undelete",
         "cldbilling",
         "cldss",
         "cloudity",
+        "Combobox",
         "config",
+        "Datepicker",
+        "Datetime",
         "deploy",
+        "depublish",
         "deserialize",
         "dev",
+        "execute",
         "gitgraph",
         "guid",
         "intcode",
+        "integration",
+        "listings",
+        "Mediabank",
+        "new",
+        "null",
+        "our",
         "picklist",
+        "Picklists",
+        "Pricebook",
+        "Queueable",
+        "QUICKPAY",
+        "SBQQ",
+        "Schedulable",
         "sfdc",
         "slds",
         "sobject",
         "stateful",
         "stylesheet",
+        "SUBQUERY",
+        "Timepicker",
+        "Undelete",
         "upsert",
-        "upserting"
+        "upserting",
+        "URLFOR"
     ],
     "cSpell.language": "en,en-GB,en-US,pl,pl-PL",
     "cSpell.enabledLanguageIds": [
@@ -179,7 +188,7 @@
         ]
     },
     "yaml.schemas": {
-        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.10.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
@@ -227,7 +236,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "explorer.confirmDragAndDrop": false,
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
@@ -246,5 +255,10 @@
     },
     "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
     "workbench.colorTheme": "Dark+ Material",
-    "window.zoomLevel": 1
+    "diffEditor.ignoreTrimWhitespace": false,
+    "window.zoomLevel": 1,
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 120,
+    "yaml.format.printWidth": 120,
+    "editor.largeFileOptimizations": false
 }
