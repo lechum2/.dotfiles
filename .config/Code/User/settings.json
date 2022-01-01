@@ -188,7 +188,7 @@
         ]
     },
     "yaml.schemas": {
-        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.10.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.10.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
