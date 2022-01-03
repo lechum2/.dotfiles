@@ -62,6 +62,11 @@ input type:touchpad {
 		natural_scroll enabled
 }
 
+input 1:1:AT_Translated_Set_2_keyboard {
+		xkb_layout "pl"
+		xkb_options caps:escape
+}
+
 ### Key bindings
 #
 # Basics:
@@ -211,6 +216,9 @@ bar {
     # The default just shows the current date and time.
     #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 		status_command i3status
+		#display only on main display (but that hides workspaces on second monitor	
+		#output eDP-1 
+
     colors {
         statusline #ffffff
         background #323232
