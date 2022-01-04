@@ -111,6 +111,9 @@
 #cpu.critical {
     color: red;
 }
+#idle_inhibitor {
+		font-size: 22px;
+}
 
 #memory {
     animation-timing-function: linear;
@@ -144,10 +147,6 @@
 }
 
 #pulseaudio {
-    /* No styles */
-}
-
-#pulseaudio.muted {
     /* No styles */
 }
 
