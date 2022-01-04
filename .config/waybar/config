@@ -3,6 +3,7 @@
     // Global configuration
 
     "layer": "top",
+	"output": ["eDP-1"],
     "position": "top",
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,

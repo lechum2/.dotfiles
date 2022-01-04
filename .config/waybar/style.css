@@ -174,8 +174,6 @@
     border-top: 2px solid transparent;
     /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
-    padding-left: 2px;
-    padding-right: 2px;
     color: #888888;
 }
 
