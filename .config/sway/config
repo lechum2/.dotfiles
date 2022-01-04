@@ -24,7 +24,8 @@ set $menu 'wofi --allow-images --show drun,run'
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/lechu/Pictures/Wallpapers/7a0401b.jpg fill
 #
 # Example configuration:
 #
@@ -50,6 +51,7 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 		 before-sleep 'playerctl pause' \
+		 before-sleep 'clockify-cli out' \
          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -93,7 +95,7 @@ bindsym Ctrl+Alt+s exec $clockifyStop
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+q kill
+    bindsym $mod+Shift+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu

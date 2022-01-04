@@ -54,7 +54,7 @@
     "clock#date": {
       "interval": 10,
       "format": "{:%Y-%m-%e %A}",
-	  "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>" 
+	  "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>" 
     },
     "network": {
         "interval": 5,
