@@ -39,6 +39,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+		 before-sleep 'playerctl pause' \
          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -68,6 +69,12 @@ input 1:1:AT_Translated_Set_2_keyboard {
 		xkb_options caps:escape
 }
 
+# Clockify
+set $clockifyWork 'clockify-cli clone last'
+set $clockifyStop 'clockify-cli out'
+bindsym Ctrl+Alt+w exec $clockifyWork
+bindsym Ctrl+Alt+s exec $clockifyStop
+
 ### Key bindings
 #
 # Basics:
@@ -76,7 +83,7 @@ input 1:1:AT_Translated_Set_2_keyboard {
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -93,6 +100,9 @@ input 1:1:AT_Translated_Set_2_keyboard {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    # Pause music and lock screen
+	bindsym $mod+z exec 'playerctl pause'; exec $clockifyStop; exec 'swaylock -f -c 000000'
 #
 # Moving around:
 #
