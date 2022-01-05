@@ -251,4 +251,6 @@ default_border pixel 1
 default_floating_border normal
 smart_borders on
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 include /etc/sway/config.d/*
