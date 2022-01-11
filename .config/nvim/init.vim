@@ -8,9 +8,9 @@ set smartindent
 set nohlsearch
 set scrolloff=8
 set signcolumn=yes
-set colorcolumn=120
+set colorcolumn=100
 set hidden
 
 set termguicolors
 set background=dark
-colorscheme PaperColor 
+colorscheme PaperColor
