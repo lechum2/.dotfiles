@@ -10,5 +10,6 @@ set scrolloff=8
 set signcolumn=yes
 set colorcolumn=120
 
-let g:material_theme_style = 'darker'
-colorscheme material
+set termguicolors
+set background=dark
+colorscheme PaperColor 
