@@ -25,7 +25,8 @@ set $menu 'wofi --allow-images --show drun,run'
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/lechu/Pictures/Wallpapers/7a0401b.jpg fill
+#output * bg #000000 solid_color
+output * bg /home/lechu/Pictures/yin-yang-small.png center #000000
 #
 # Example configuration:
 #
