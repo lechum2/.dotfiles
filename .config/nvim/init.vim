@@ -11,6 +11,12 @@ set signcolumn=yes
 set colorcolumn=100
 set hidden
 
+let mapleader = " "
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 set termguicolors
 set background=dark
 colorscheme PaperColor

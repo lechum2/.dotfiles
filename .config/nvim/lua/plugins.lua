@@ -1,5 +1,19 @@
 return require('packer').startup(function()
-	use 'wbthomason/packer.nvim'
-	use 'NLKNguyen/papercolor-theme'
-	use 'Shatur/neovim-ayu'
+		use 'wbthomason/packer.nvim'
+	
+		use {
+				'nvim-treesitter/nvim-treesitter',
+				run = ':TSUpdate'
+		}
+
+		--telescope
+		use 'kyazdani42/nvim-web-devicons'
+		use 'nvim-lua/popup.nvim'
+		use 'nvim-lua/plenary.nvim'
+		use 'nvim-telescope/telescope.nvim'
+		use 'nvim-telescope/telescope-fzy-native.nvim'
+
+		--Themes
+		use 'NLKNguyen/papercolor-theme'
+		use 'Shatur/neovim-ayu'
 end)
