@@ -1,0 +1,7 @@
+action = copy
+files = all
+skin-tone = neutral
+selector = rofi
+clipboarder = wl-copy
+typer = wtype
+
