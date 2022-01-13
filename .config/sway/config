@@ -246,6 +246,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec $menu
 
+# Mako notifications
+bindsym $mod+o exec makoctl dismiss
+bindsym $mod+p exec makoctl dismiss --all
+
 #
 # Status Bar:
 #
@@ -259,7 +263,7 @@ default_floating_border normal
 smart_borders on
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-
-exec gammastep-indicator &
+exec mako
+exec gammastep-indicator
 
 include /etc/sway/config.d/*
