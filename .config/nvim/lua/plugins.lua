@@ -6,6 +6,8 @@ return require('packer').startup(function()
 				run = ':TSUpdate'
 		}
 
+		use 'tpope/vim-fugitive'
+
 		--telescope
 		use 'kyazdani42/nvim-web-devicons'
 		use 'nvim-lua/popup.nvim'

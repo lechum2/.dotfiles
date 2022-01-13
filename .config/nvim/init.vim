@@ -17,6 +17,12 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
+"vim-fugitive
+nmap <leader>gs :G<cr>
+nmap <leader>gj :diffget //3<cr>
+nmap <leader>gf :diffget //2<cr>
+
+"theme
 set termguicolors
 set background=dark
 colorscheme PaperColor
