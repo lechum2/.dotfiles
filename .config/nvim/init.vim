@@ -22,10 +22,6 @@ nnoremap <leader>gs :G<cr>
 nnoremap <leader>gj :diffget //3<cr>
 nnoremap <leader>gf :diffget //2<cr>
 
-nnoremap <leader>un :undo<cr>
-nnoremap <leader>re :redo<cr>
-nnoremap <leader>rc :source $MYVIMRC<cr>
-
 "theme
 set termguicolors
 set background=dark
