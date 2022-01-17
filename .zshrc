@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/lechu/.oh-my-zsh
+export ZSH=/home/lechu/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -97,3 +97,7 @@ compinit
 
 # Add pip installation folder to path
 export PATH=/home/lechu/.local/bin:/home/lechu/go/bin:$PATH
+
+# Custom key binds
+bindkey '^p' history-beginning-search-backward
+bindkey '^n' history-beginning-search-forward
