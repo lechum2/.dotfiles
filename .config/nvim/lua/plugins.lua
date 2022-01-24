@@ -27,6 +27,8 @@ return require("packer").startup(function()
 
 	use("sbdchd/neoformat")
 
+	use("gpanders/editorconfig.nvim")
+
 	use("mbbill/undotree")
 
 	--Themes

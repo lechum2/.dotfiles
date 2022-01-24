@@ -1,6 +1,7 @@
 set number
 set relativenumber
 set tabstop=4
+set shiftwidth=4
 set smartindent
 set nohlsearch
 set scrolloff=8
@@ -10,3 +11,5 @@ set hidden
 set nowrap
 set termguicolors
 set background=dark
+set splitright
+set splitbelow
