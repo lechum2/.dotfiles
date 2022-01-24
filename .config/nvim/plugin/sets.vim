@@ -13,3 +13,4 @@ set termguicolors
 set background=dark
 set splitright
 set splitbelow
+set listchars=space:·,tab:↳⎽,eol:↲
