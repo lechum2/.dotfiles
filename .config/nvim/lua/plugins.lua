@@ -31,6 +31,8 @@ return require("packer").startup(function()
 
 	use("mbbill/undotree")
 
+	use("tpope/vim-surround")
+
 	--Themes
 	use("NLKNguyen/papercolor-theme")
 	use("Shatur/neovim-ayu")
