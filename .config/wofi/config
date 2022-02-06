@@ -1,0 +1,5 @@
+image_size=24
+key_forward=Control_L-n
+key_backward=Control_L-p
+key_expand=Control_L-l
+monitor=eDP-1
