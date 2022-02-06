@@ -19,8 +19,7 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-#set $menu 'wofi --allow-images --show drun,run'
-set $menu 'rofi -show'
+set $menu 'wofi --allow-images --show drun'
 
 ### Output configuration
 #
