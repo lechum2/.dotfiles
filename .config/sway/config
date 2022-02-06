@@ -249,6 +249,9 @@ bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec $menu
 
+# Screenshot
+bindsym Print exec 'grim -g "$(slurp)" - | swappy -f -'
+
 # Mako notifications
 bindsym $mod+o exec makoctl dismiss
 bindsym $mod+p exec makoctl dismiss --all
