@@ -51,7 +51,7 @@ workspace 6 output eDP-1
 workspace 7 output eDP-1
 workspace 8 output DP-2 DP-5 DP-6
 workspace 9 output eDP-1
-workspace 0 output eDP-1
+workspace 10 output eDP-1
 
 ### Idle configuration
 #
