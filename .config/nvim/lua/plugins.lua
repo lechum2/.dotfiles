@@ -35,5 +35,4 @@ return require("packer").startup(function()
 
 	--Themes
 	use("NLKNguyen/papercolor-theme")
-	use("Shatur/neovim-ayu")
 end)
