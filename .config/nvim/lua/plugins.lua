@@ -33,6 +33,8 @@ return require("packer").startup(function()
 
 	use("tpope/vim-surround")
 
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
 	--Themes
 	use("NLKNguyen/papercolor-theme")
 end)
