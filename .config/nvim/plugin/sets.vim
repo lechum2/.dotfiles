@@ -5,6 +5,7 @@ set colorcolumn=100
 set hidden
 set listchars=space:·,tab:↳⎽,eol:↲
 set nohlsearch
+set noswapfile
 set nowrap
 set number
 set relativenumber
