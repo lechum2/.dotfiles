@@ -1,7 +1,6 @@
 set termguicolors
 set background=dark
 
-set colorcolumn=100
 set hidden
 set listchars=space:·,tab:↳⎽,eol:↲
 set nohlsearch
