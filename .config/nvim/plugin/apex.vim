@@ -8,3 +8,6 @@ augroup FileTypeGroup
 	au BufRead,BufNewFile *.cls,*.trigger,*.apex set filetype=apex | set syntax=java
 	au BufRead,BufNewFile *.soql set filetype=apex | set syntax=sql
 augroup END
+
+nnoremap <leader>sd <cmd>lua require('sfdx').deploy()<cr>
+nnoremap <leader>sr <cmd>lua require('plenary.reload').reload_module'sfdx'<cr>
