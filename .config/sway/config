@@ -34,6 +34,7 @@ output * bg ~/Pictures/yin-yang-small.png center #000000
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-2 position 0,0
+output DP-3 position 0,0
 output DP-5 position 0,0
 output DP-6 position 0,0
 
@@ -46,11 +47,11 @@ exec swaymsg focus output eDP-1
 workspace 1 output eDP-1
 workspace 2 output eDP-1
 workspace 3 output eDP-1
-workspace 4 output DP-2 DP-5 DP-6
+workspace 4 output DP-2 DP-3 DP-5 DP-6
 workspace 5 output eDP-1
 workspace 6 output eDP-1
 workspace 7 output eDP-1
-workspace 8 output DP-2 DP-5 DP-6
+workspace 8 output DP-2 DP-3 DP-5 DP-6
 workspace 9 output eDP-1
 workspace 10 output eDP-1
 
