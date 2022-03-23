@@ -9,5 +9,6 @@ augroup FileTypeGroup
 	au BufRead,BufNewFile *.soql set filetype=apex | set syntax=sql
 augroup END
 
-nnoremap <leader>sd <cmd>lua require('sfdx').deploy()<cr>
+nnoremap <leader>sd <cmd>lua require('sfdx').deployCurrentFile()<cr>
+nnoremap <leader>stf <cmd>lua require('sfdx').runTestsFromCurrentFile()<cr>
 nnoremap <leader>sr <cmd>lua require('plenary.reload').reload_module'sfdx'<cr>
