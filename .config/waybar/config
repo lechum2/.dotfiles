@@ -73,7 +73,7 @@
         "max-length": 120
     },
     "sway/workspaces": {
-        "all-outputs": false,
+        "all-outputs": true,
         "disable-scroll": true,
         "format": "{name}"
     },
