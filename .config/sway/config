@@ -19,7 +19,8 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu 'wofi --allow-images --show drun'
+#set $menu 'wofi --allow-images --show drun'
+set $menu 'fuzzel --show-actions --background-color=000000ff --selection-color=93c47dff --output=eDP-1'
 
 ### Output configuration
 #
@@ -47,11 +48,11 @@ exec swaymsg focus output eDP-1
 workspace 1 output eDP-1
 workspace 2 output eDP-1
 workspace 3 output eDP-1
-workspace 4 output DP-2 DP-3 DP-5 DP-6
+workspace 4 output DP-1 DP-2 DP-3 DP-4 DP-5 DP-6
 workspace 5 output eDP-1
 workspace 6 output eDP-1
 workspace 7 output eDP-1
-workspace 8 output DP-2 DP-3 DP-5 DP-6
+workspace 8 output DP-1 DP-2 DP-3 DP-4 DP-5 DP-6
 workspace 9 output eDP-1
 workspace 10 output eDP-1
 
