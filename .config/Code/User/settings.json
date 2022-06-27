@@ -20,50 +20,41 @@
     },
     "cSpell.userWords": [
         "Backend",
-        "batch",
         "Batchable",
         "Cacheable",
         "Callout",
         "Callouts",
+        "Combobox",
+        "Datepicker",
+        "Datetime",
+        "Mediabank",
+        "Pricebook",
+        "QUICKPAY",
+        "Queueable",
+        "SBQQ",
+        "SUBQUERY",
+        "Schedulable",
+        "Timepicker",
+        "URLFOR",
+        "Undelete",
         "cldbilling",
         "cldss",
         "cloudity",
-        "Combobox",
         "config",
-        "Datepicker",
-        "Datetime",
         "deploy",
-        "depublish",
         "deserialize",
         "dev",
-        "execute",
         "gitgraph",
         "guid",
         "intcode",
-        "integration",
-        "listings",
-        "Mediabank",
-        "new",
-        "null",
-        "our",
         "picklist",
-        "Picklists",
-        "Pricebook",
-        "Queueable",
-        "QUICKPAY",
-        "SBQQ",
-        "Schedulable",
         "sfdc",
         "slds",
         "sobject",
         "stateful",
         "stylesheet",
-        "SUBQUERY",
-        "Timepicker",
-        "Undelete",
         "upsert",
-        "upserting",
-        "URLFOR"
+        "upserting"
     ],
     "cSpell.language": "en,en-GB,en-US,pl,pl-PL",
     "cSpell.enabledLanguageIds": [
@@ -188,7 +179,7 @@
         ]
     },
     "yaml.schemas": {
-        "file:///home/lechu/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/lechu/.vscode-insiders/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
@@ -219,6 +210,7 @@
     "cSpell.enableFiletypes": [
         "git-commit"
     ],
+    "salesforcedx-vscode-core.detectConflictsAtSync": true,
     "liveshare.featureSet": "insiders",
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -237,9 +229,6 @@
     },
     "explorer.confirmDragAndDrop": false,
     "python.languageServer": "Default",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
@@ -247,18 +236,10 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "python.formatting.provider": "black",
-    "salesforcedx-vscode-core.experimental.useApexLibrary": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "redhat.telemetry.enabled": false,
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
+    "salesforcedx-vscode-core.experimental.useApexLibrary": false,
     "workbench.colorTheme": "Dark+ Material",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.iconTheme": "material-icon-theme",
     "window.zoomLevel": 1,
-    "prettier.tabWidth": 4,
-    "prettier.printWidth": 120,
-    "yaml.format.printWidth": 120,
-    "editor.largeFileOptimizations": false
+    "redhat.telemetry.enabled": false
 }
