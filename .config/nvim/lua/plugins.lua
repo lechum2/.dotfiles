@@ -25,7 +25,20 @@ return require("packer").startup(function()
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 
-	use("sbdchd/neoformat")
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	})
+
+	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		config = function()
+			require("null-ls").setup()
+		end,
+		requires = { "nvim-lua/plenary.nvim" },
+	})
 
 	use("gpanders/editorconfig.nvim")
 
@@ -33,7 +46,14 @@ return require("packer").startup(function()
 
 	use("tpope/vim-surround")
 
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && yarn",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
 
 	use("~/workspace/sfdx.nvim")
 
