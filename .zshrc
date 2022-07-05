@@ -89,7 +89,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias pip=pip3
 
-alias vsc='code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland .'
+alias vsc='code --enable-features=UseOzonePlatform --ozone-platform=wayland .'
 
 # compsys initialization
 autoload -U compinit
