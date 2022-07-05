@@ -5,6 +5,5 @@ require("null-ls").setup({
 		require("null-ls").builtins.formatting.prettier,
 		require("null-ls").builtins.diagnostics.eslint,
 		require("null-ls").builtins.diagnostics.cspell,
-		require("null-ls").builtins.completion.spell,
 	},
 })
