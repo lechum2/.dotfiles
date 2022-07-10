@@ -2,6 +2,7 @@ ignore-timeout=1
 max-visible=-1
 output=eDP-1
 background-color=#292929
+icon-path=/usr/share/icons/Papirus-Dark/
 
 [mode=do-not-disturb]
 invisible=1
