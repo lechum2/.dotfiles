@@ -2,7 +2,7 @@ local lspconfig = require("lspconfig")
 local configs = require("lspconfig.configs")
 
 local apexCmd = {
-	"/usr/bin/java",
+	"/usr/lib/jvm/java-17-openjdk/bin/java",
 	"-cp",
 	"/opt/languageServers/apex-jorje-lsp.jar",
 	"-Ddebug.internal.errors=true",
