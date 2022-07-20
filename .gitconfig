@@ -1,0 +1,18 @@
+[user]
+	name = Sebastian Lech
+	email = lechum2@gmail.com
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[alias]
+	chekcout = checkout
+[pull]
+	rebase = true
+[merge]
+	tool = fugitive
+[mergetool "fugitive"]
+	cmd = nvim -c \"Gvdiffsplit!\" \"$MERGED\"
+[mergetool]
+	keepBackup = false
