@@ -2,7 +2,6 @@ set termguicolors
 set background=dark
 
 set hidden
-set listchars=space:·,tab:↳⎽,eol:↲
 set nohlsearch
 set noswapfile
 set nowrap
