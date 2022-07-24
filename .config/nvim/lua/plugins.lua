@@ -61,4 +61,5 @@ return require("packer").startup(function()
 
 	--Themes
 	use("NLKNguyen/papercolor-theme")
+	use("marko-cerovac/material.nvim")
 end)
