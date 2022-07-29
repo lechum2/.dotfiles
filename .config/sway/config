@@ -189,9 +189,9 @@ bindsym Ctrl+Alt+s exec $clockifyStop
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    #bindsym $mod+s layout stacking
+    #bindsym $mod+w layout tabbed
+    #bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -264,7 +264,7 @@ bindsym $mod+p exec makoctl dismiss --all
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-		swaybar_command waybar
+	swaybar_command waybar
 }
 
 default_border pixel 1
@@ -284,5 +284,6 @@ exec_always {
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec mako
 exec gammastep-indicator
+exec autotiling
 
 include /etc/sway/config.d/*
