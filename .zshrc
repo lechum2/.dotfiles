@@ -96,7 +96,7 @@ autoload -U compinit
 compinit
 
 # Add pip installation folder to path
-export PATH=/home/lechu/.local/bin:/home/lechu/go/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
 
 # Set npm folder for global packages
 export npm_config_prefix="$HOME/.local"
