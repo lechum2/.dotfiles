@@ -26,6 +26,9 @@ return require("packer").startup(function()
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 
+ 	--rust
+	use("simrat39/rust-tools.nvim")
+
 	use({
 		"lewis6991/gitsigns.nvim",
 		config = function()
