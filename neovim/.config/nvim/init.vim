@@ -4,7 +4,7 @@ syntax on
 
 let mapleader = " "
 
-lua require('materialTheme')
+lua require('material')
 let g:material_style = "darker"
 colorscheme material
 "colorscheme PaperColor
