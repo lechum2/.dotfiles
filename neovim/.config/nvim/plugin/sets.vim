@@ -2,6 +2,7 @@ set termguicolors
 set background=dark
 
 set hidden
+set mouse=
 set nohlsearch
 set noswapfile
 set nowrap
