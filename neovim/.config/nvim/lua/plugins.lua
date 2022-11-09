@@ -61,6 +61,8 @@ return require("packer").startup(function()
 
 	use("lukas-reineke/indent-blankline.nvim")
 
+    use("ThePrimeagen/vim-be-good")
+
 	use("~/workspace/sfdx.nvim")
 
 	--Themes
