@@ -44,17 +44,19 @@
             "", // Icon: battery-quarter
             ""  // Icon: battery-empty
         ],
-        "tooltip": true
+        "tooltip": true,
+        "on-click": ""
     },
     "clock#time": {
         "interval": 1,
         "format": "{:%H:%M}",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": ""
     },
     "clock#date": {
       "interval": 10,
       "format": "{:%F %a}",
-	  "tooltip-format": "<big>{:%e %B %Y}</big>\n<tt><big>{calendar}</big></tt>" 
+	  "tooltip-format": "<big>{:%e %B %Y}</big>\n<tt><big>{calendar}</big></tt>"
     },
     "network": {
         "interval": 5,
