@@ -94,12 +94,6 @@ alias vsc='code --enable-features=UseOzonePlatform --ozone-platform=wayland .'
 autoload -U compinit
 compinit
 
-# Add pip installation folder to path
-export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
-
-# Set npm folder for global packages
-export npm_config_prefix="$HOME/.local"
-
 # Custom key binds
 bindkey '^p' history-beginning-search-backward
 bindkey '^n' history-beginning-search-forward
