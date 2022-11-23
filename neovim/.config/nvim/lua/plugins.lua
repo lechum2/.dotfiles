@@ -5,7 +5,7 @@ return require("packer").startup(function()
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-    use("nvim-treesitter/playground")
+	use("nvim-treesitter/playground")
 
 	use("tpope/vim-fugitive")
 
@@ -26,7 +26,7 @@ return require("packer").startup(function()
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 
- 	--rust
+	--rust
 	use("simrat39/rust-tools.nvim")
 
 	use({
@@ -46,6 +46,13 @@ return require("packer").startup(function()
 
 	use("gpanders/editorconfig.nvim")
 
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+
 	use("mbbill/undotree")
 
 	use("tpope/vim-surround")
@@ -61,11 +68,12 @@ return require("packer").startup(function()
 
 	use("lukas-reineke/indent-blankline.nvim")
 
-    use("ThePrimeagen/vim-be-good")
+	use("ThePrimeagen/vim-be-good")
 
 	use("~/workspace/sfdx.nvim")
 
 	--Themes
 	use("NLKNguyen/papercolor-theme")
 	use("marko-cerovac/material.nvim")
+	use("Shatur/neovim-ayu")
 end)
