@@ -15,8 +15,15 @@ return require('packer').startup(function(use)
 
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 	use('nvim-treesitter/playground')
+
 	use('mbbill/undotree')
+
 	use('tpope/vim-fugitive')
+	use('lewis6991/gitsigns.nvim')
+
+	use("gpanders/editorconfig.nvim")
+
+	use("numToStr/Comment.nvim")
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -39,6 +46,21 @@ return require('packer').startup(function(use)
 			{ 'rafamadriz/friendly-snippets' },
 		}
 	}
+
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && yarn",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
+
+	use("lukas-reineke/indent-blankline.nvim")
+
+	use("ThePrimeagen/vim-be-good")
+
+	use("~/workspace/sfdx.nvim")
 
 	--Themes
 	use("marko-cerovac/material.nvim")
