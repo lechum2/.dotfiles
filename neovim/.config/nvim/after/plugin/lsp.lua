@@ -6,7 +6,7 @@ lsp.ensure_installed({
     'apex_ls',
     'eslint',
     'rust_analyzer',
-    'sumneko_lua',
+    'lua_ls',
     'tsserver',
 })
 
