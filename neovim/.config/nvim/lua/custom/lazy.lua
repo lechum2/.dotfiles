@@ -1,19 +1,20 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
     {
-        'nvim-telescope/telescope.nvim', version = '0.1.x',
+        'nvim-telescope/telescope.nvim',
+        version = '0.1.x',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
 
@@ -31,6 +32,7 @@ return require('lazy').setup({
 
     {
         'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
         dependencies = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
@@ -69,4 +71,5 @@ return require('lazy').setup({
     --Themes
     "marko-cerovac/material.nvim",
     "Shatur/neovim-ayu",
+    "arturgoms/moonbow.nvim",
 })
