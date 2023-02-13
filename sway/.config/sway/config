@@ -63,7 +63,7 @@ workspace 10 output eDP-1
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 330 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-		 before-sleep 'playerctl pause' \
+		 before-sleep 'playerctl stop' \
 		 before-sleep 'clockify-cli out' \
          before-sleep 'swaylock -f -c 000000'
 #
@@ -127,7 +127,7 @@ bindsym Ctrl+Alt+s exec $clockifyStop
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     # Pause music and lock screen
-	bindsym $mod+z exec 'playerctl pause'; exec $clockifyStop; exec 'swaylock -f -c 000000'
+	bindsym $mod+z exec 'playerctl stop'; exec $clockifyStop; exec 'swaylock -f -c 000000'
 #
 # Moving around:
 #
