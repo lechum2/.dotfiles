@@ -12,6 +12,7 @@ require 'nvim-treesitter.configs'.setup {
         "markdown",
         "rust",
         "typescript",
+        "apex",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
