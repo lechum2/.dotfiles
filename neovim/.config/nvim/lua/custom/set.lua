@@ -7,7 +7,7 @@ vim.opt.incsearch = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.neovim/undodir"
+vim.opt.undodir = "c:/Users/Y2DX/.neovim"
 vim.opt.undofile = true
 
 vim.opt.wrap = false

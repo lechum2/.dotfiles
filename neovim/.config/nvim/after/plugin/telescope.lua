@@ -14,7 +14,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 local search_dotfiles = function()
 	builtin.find_files({
 		prompt_title = "< neovim config >",
-		cwd = "~/.config/nvim/",
+		cwd = "~/AppData/Local/nvim/",
 		hidden = true,
 	})
 end
