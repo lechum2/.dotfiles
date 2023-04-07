@@ -26,8 +26,6 @@ return require('lazy').setup({
     'tpope/vim-fugitive',
     'lewis6991/gitsigns.nvim',
 
-    "gpanders/editorconfig.nvim",
-
     "numToStr/Comment.nvim",
 
     {
