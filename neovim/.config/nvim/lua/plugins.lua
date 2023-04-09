@@ -19,8 +19,6 @@ return {
         end,
         ft = { "markdown" },
     },
-
-
-    "ThePrimeagen/vim-be-good",
+    { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
     { dir = "~/workspace/sfdx.nvim" },
 }
