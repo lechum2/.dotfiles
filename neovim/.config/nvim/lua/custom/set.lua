@@ -21,3 +21,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.tabstop = 4
+
+vim.opt.spelllang = 'en_us,en_gb,pl'
+vim.opt.spell = true
