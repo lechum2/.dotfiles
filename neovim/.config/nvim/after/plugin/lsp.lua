@@ -4,9 +4,10 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'apex_ls',
+    'bashls',
     'eslint',
-    'rust_analyzer',
     'lua_ls',
+    'rust_analyzer',
     'tsserver',
 })
 

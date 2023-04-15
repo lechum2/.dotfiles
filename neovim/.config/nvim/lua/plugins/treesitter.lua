@@ -5,18 +5,19 @@ return {
     opts = {
         -- A list of parser names, or "all"
         ensure_installed = {
+            "apex",
+            "bash",
             "c",
             "c_sharp",
             "help",
+            "html",
             "java",
             "javascript",
             "json",
-            "html",
             "lua",
             "markdown",
             "rust",
             "typescript",
-            "apex",
         },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
