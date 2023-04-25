@@ -20,6 +20,7 @@ return {
         end,
         ft = { "markdown" },
     },
-    { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
+    { "ThePrimeagen/vim-be-good",   cmd = "VimBeGood" },
     { dir = "~/workspace/sfdx.nvim" },
+    'gpanders/editorconfig.nvim',
 }
