@@ -28,12 +28,12 @@ config.keys = {
     {
         key = 'h',
         mods = 'CTRL|SHIFT',
-        action = act.MoveTabRelative(-1),
+        action = act.ActivateTabRelative(-1),
     },
     {
         key = 'l',
         mods = 'CTRL|SHIFT',
-        action = act.MoveTabRelative(1),
+        action = act.ActivateTabRelative(1),
     },
     {
         key = 'n',
