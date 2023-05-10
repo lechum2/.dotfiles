@@ -17,7 +17,7 @@ config.color_scheme = 'Ayu Dark (Gogh)'
 config.font = wezterm.font(
     'VictorMono Nerd Font Mono',
     {
-        weight = 'Medium',
+        weight = 'Bold',
     })
 config.font_size = 11
 
