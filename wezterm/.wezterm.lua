@@ -13,7 +13,7 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Ayu Dark (Gogh)'
+--config.color_scheme = 'Ayu Dark (Gogh)'
 config.font = wezterm.font(
     'VictorMono Nerd Font Mono',
     {
@@ -51,6 +51,14 @@ config.keys = {
         action = act.SpawnCommandInNewTab {
             args = { 'nvim' },
             domain = 'CurrentPaneDomain',
+        },
+    },
+    {
+        key = 'g',
+        mods = 'CTRL|SHIFT',
+        action = act.SpawnCommandInNewTab {
+            args = { 'C:\\Program Files\\Git\\bin\\bash.exe' },
+            domain = 'DefaultDomain',
         },
     },
 }
