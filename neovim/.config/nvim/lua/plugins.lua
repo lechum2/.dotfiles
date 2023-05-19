@@ -11,7 +11,6 @@ return {
         }
     },
     'lewis6991/gitsigns.nvim',
-    "numToStr/Comment.nvim",
     {
         "iamcco/markdown-preview.nvim",
         build = "cd app && yarn",
