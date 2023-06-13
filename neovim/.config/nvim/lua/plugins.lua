@@ -19,6 +19,10 @@ return {
         end,
         ft = { "markdown" },
     },
-    { "ThePrimeagen/vim-be-good",   cmd = "VimBeGood" },
+    {
+        "mechatroner/rainbow_csv",
+        ft = { "csv" },
+    },
+    { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
     { dir = "~/workspace/sfdx.nvim" },
 }
