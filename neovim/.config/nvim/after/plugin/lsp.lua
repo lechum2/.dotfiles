@@ -38,8 +38,17 @@ cmp.setup({
         { name = "path" },
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
-        { name = "buffer", keyword_length = 3 },
+        { name = "buffer",  keyword_length = 3 },
         { name = "luasnip", keyword_length = 2 },
+        {
+            name = 'spell',
+            option = {
+                keep_all_entries = false,
+                enable_in_context = function()
+                    return true
+                end,
+            },
+        },
     },
     mapping = {
         ["<C-Space>"] = cmp.mapping.complete(),
