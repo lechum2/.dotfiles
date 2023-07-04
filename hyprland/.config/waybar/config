@@ -1,0 +1,110 @@
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+{
+    // Global configuration
+
+    "layer": "top",
+    "output": ["eDP-1"],
+    "position": "top",
+    // If height property would be not present, it'd be calculated dynamically
+    "height": 30,
+    "modules-left": [
+        "sway/workspaces",
+        "hyprland/submap"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "idle_inhibitor",
+        "network",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "clock#date",
+        "clock#time"
+    ],
+
+    // Modules
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        // Connected to AC
+        "format": " {capacity}%", // Icon: bolt
+        // Not connected to AC
+        "format-discharging": "{icon}  {capacity}%",
+        "format-icons": [
+            "", // Icon: battery-full
+            "", // Icon: battery-three-quarters
+            "", // Icon: battery-half
+            "", // Icon: battery-quarter
+            ""  // Icon: battery-empty
+        ],
+        "tooltip": true,
+        "on-click": ""
+    },
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%H:%M}",
+        "tooltip": false,
+        "on-click": ""
+    },
+    "clock#date": {
+      "interval": 10,
+      "format": "{:%F %a}",
+        "tooltip-format": "<big>{:%e %B %Y}</big>\n<tt><big>{calendar}</big></tt>"
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "⚠  Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "wofi-wifi-menu"
+    },
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "tooltip": false
+    },
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "sway/workspaces": {
+        "all-outputs": true,
+        "disable-scroll": true,
+        "format": "{name}"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""]
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "🗙 {icon} {format_source}",
+        "format-muted": "🗙 {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["🕨","🕩","🕪"]
+        },
+        "on-click": "pavucontrol"
+    }
+}
