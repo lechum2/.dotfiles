@@ -1,18 +1,18 @@
 // Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
 {
     // Global configuration
-
     "layer": "top",
     "output": ["eDP-1"],
     "position": "top",
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
     "modules-left": [
-        "sway/workspaces",
+        "wlr/workspaces",
         "hyprland/submap"
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/window",
+        "cava"
     ],
     "modules-right": [
         "tray",
@@ -26,7 +26,6 @@
     ],
 
     // Modules
-
     "battery": {
         "interval": 10,
         "states": {
@@ -36,7 +35,7 @@
         // Connected to AC
         "format": " {capacity}%", // Icon: bolt
         // Not connected to AC
-        "format-discharging": "{icon}  {capacity}%",
+        "format-discharging": "{icon}   {capacity}%",
         "format-icons": [
             "", // Icon: battery-full
             "", // Icon: battery-three-quarters
@@ -44,18 +43,16 @@
             "", // Icon: battery-quarter
             ""  // Icon: battery-empty
         ],
-        "tooltip": true,
-        "on-click": ""
+        "tooltip": true
     },
     "clock#time": {
         "interval": 1,
         "format": "{:%H:%M}",
-        "tooltip": false,
-        "on-click": ""
+        "tooltip": false
     },
     "clock#date": {
-      "interval": 10,
-      "format": "{:%F %a}",
+        "interval": 10,
+        "format": "{:%F %a}",
         "tooltip-format": "<big>{:%e %B %Y}</big>\n<tt><big>{calendar}</big></tt>"
     },
     "network": {
@@ -67,16 +64,16 @@
         "on-click": "wofi-wifi-menu"
     },
     "hyprland/submap": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt,
         "tooltip": false
     },
     "hyprland/window": {
         "format": "{}"
     },
-    "sway/workspaces": {
-        "all-outputs": true,
-        "disable-scroll": true,
-        "format": "{name}"
+    "wlr/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true
     },
     "tray": {
         "icon-size": 21,
@@ -91,7 +88,7 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{icon} {percent}%",
+        "format": "{icon}  {percent}%",
         "format-icons": ["", ""]
     },
     "pulseaudio": {
@@ -106,5 +103,27 @@
             "default": ["🕨","🕩","🕪"]
         },
         "on-click": "pavucontrol"
+    },
+    "cava": {
+        //"cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+            "on-click-right": "mode"
+        }
     }
 }
