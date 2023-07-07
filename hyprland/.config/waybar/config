@@ -73,7 +73,8 @@
     "wlr/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        "sort-by-number": true
+        "sort-by-number": true,
+        "all-outputs": true
     },
     "tray": {
         "icon-size": 21,

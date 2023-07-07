@@ -174,7 +174,9 @@
     border-top: 2px solid transparent;
     /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
-    color: #888888;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #workspaces button.focused {
@@ -183,7 +185,7 @@
     background-color: #285577;
 }
 
-#workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+#workspaces button.active{
+    border-color: #a7d129;
+    color: #a7d129;
 }
