@@ -265,7 +265,7 @@ bindsym $mod+p exec makoctl dismiss --all
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-	swaybar_command waybar
+    swaybar_command waybar
 }
 
 default_border pixel 1
