@@ -2,6 +2,7 @@
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:./node_modules/.bin"
 export npm_config_prefix="$HOME/.local"
 

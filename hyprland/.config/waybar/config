@@ -11,17 +11,17 @@
         "hyprland/submap"
     ],
     "modules-center": [
-        "hyprland/window",
-        "cava"
     ],
     "modules-right": [
         "tray",
         "idle_inhibitor",
         "network",
+        "cava",
         "pulseaudio",
         "backlight",
         "battery",
         "clock#date",
+        "custom/weather",
         "clock#time"
     ],
 
@@ -126,5 +126,12 @@
         "actions": {
             "on-click-right": "mode"
         }
+    },
+    "custom/weather": {
+        "exec": "$XDG_CONFIG_HOME/waybar/scripts/get_weather.sh Warsaw+Poland",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600
     }
 }
