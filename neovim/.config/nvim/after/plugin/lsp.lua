@@ -27,6 +27,9 @@ end)
 
 -- Fix Undefined global 'vim'
 require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+require("lspconfig").apex_ls.setup {
+    apex_jar_path = vim.fn.stdpath("data") .. '/mason/packages/apex-language-server/extension/dist/apex-jorje-lsp.jar'
+}
 
 lsp.setup()
 
