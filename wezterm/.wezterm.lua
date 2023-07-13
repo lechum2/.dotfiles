@@ -72,7 +72,7 @@ config.keys = {
         action = act.ActivateCommandPalette,
     },
     {
-        key = 'h',
+        key = 'u',
         mods = 'CTRL|SHIFT',
         action = act.Search 'CurrentSelectionOrEmptyString',
     },
