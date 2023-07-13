@@ -61,6 +61,21 @@ config.keys = {
             domain = 'DefaultDomain',
         },
     },
+    {
+        key = 'p',
+        mods = 'CTRL|SHIFT',
+        action = act.ActivateCopyMode,
+    },
+    {
+        key = 'd',
+        mods = 'CTRL|SHIFT',
+        action = act.ActivateCommandPalette,
+    },
+    {
+        key = 'h',
+        mods = 'CTRL|SHIFT',
+        action = act.Search 'CurrentSelectionOrEmptyString',
+    },
 }
 -- and finally, return the configuration to wezterm
 return config
