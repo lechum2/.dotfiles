@@ -11,6 +11,7 @@ return {
                 "bash",
                 "c",
                 "c_sharp",
+                "groovy",
                 "help",
                 "html",
                 "java",
