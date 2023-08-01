@@ -8,8 +8,10 @@ return {
         -- Utilities for creating configurations
         local util = require("formatter.util")
 
-        local npm_config_prefix = io.popen("npm config get prefix"):read()
-        local prettier_global_plugin_path = npm_config_prefix .. "/lib"
+        local prettier_global_plugin_path = io.popen("npm config get prefix"):read()
+        if vim.loop.os_uname().sysname == "Linux" then
+            prettier_global_plugin_path = prettier_global_plugin_path .. "/lib"
+        end
 
         -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
         require("formatter").setup({
