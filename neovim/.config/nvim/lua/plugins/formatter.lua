@@ -16,8 +16,8 @@ return {
             log_level = vim.log.levels.WARN,
             -- All formatter configurations are opt-in
             filetype = {
-                html = { require("formatter.filetypes.html").prettier },
                 css = { require("formatter.filetypes.css").prettier },
+                html = { require("formatter.filetypes.html").prettier },
                 javascript = { require("formatter.filetypes.javascript").prettier },
                 json = { require("formatter.filetypes.json").prettier },
                 lua = { require("formatter.filetypes.lua").stylua },
@@ -31,10 +31,10 @@ return {
                         return {
                             exe = "prettier",
                             args = {
-                                "--write",
                                 util.escape_path(util.get_current_buffer_file_path()),
                                 "--plugin=prettier-plugin-apex",
                             },
+                            cwd = "/home/lechu/.local/lib",
                             stdin = true,
                         }
                     end,
@@ -43,7 +43,7 @@ return {
                 -- Use the special "*" filetype for defining formatter configurations on
                 -- any filetype
                 ["*"] = {
-                    vim.lsp.buf.format,
+                    -- vim.lsp.buf.format,
                 },
             },
         })
