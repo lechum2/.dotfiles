@@ -26,9 +26,9 @@ return {
                 lua = { require("formatter.filetypes.lua").stylua },
                 markdown = { require("formatter.filetypes.markdown").prettier },
                 rust = { require("formatter.filetypes.rust").rustfmt },
+                sh = { require("formatter.filetypes.sh").shfmt },
                 typescript = { require("formatter.filetypes.typescript").prettier },
                 yaml = { require("formatter.filetypes.yaml").prettier },
-                sh = { require("formatter.filetypes.sh").shfmt },
 
                 apexcode = {
                     function()
@@ -55,6 +55,19 @@ return {
                             stdin = true,
                         }
                     end,
+                },
+                groovy = {
+                    function()
+                        return {
+                            exe = "npm-groovy-lint",
+                            args = {
+                                "--format",
+                                util.escape_path(util.get_current_buffer_file_path()),
+                                "--failon none",
+                            },
+                            stdin = false,
+                        }
+                    end
                 },
             },
         })
