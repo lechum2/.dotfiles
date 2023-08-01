@@ -8,6 +8,9 @@ return {
         -- Utilities for creating configurations
         local util = require("formatter.util")
 
+        local npm_config_prefix = io.popen("npm config get prefix"):read()
+        local prettier_global_plugin_path = npm_config_prefix .. "/lib"
+
         -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
         require("formatter").setup({
             -- Enable or disable logging
@@ -25,6 +28,7 @@ return {
                 rust = { require("formatter.filetypes.rust").rustfmt },
                 typescript = { require("formatter.filetypes.typescript").prettier },
                 yaml = { require("formatter.filetypes.yaml").prettier },
+                sh = { require("formatter.filetypes.sh").shfmt },
 
                 apexcode = {
                     function()
@@ -34,16 +38,23 @@ return {
                                 util.escape_path(util.get_current_buffer_file_path()),
                                 "--plugin=prettier-plugin-apex",
                             },
-                            cwd = "/home/lechu/.local/lib",
+                            cwd = prettier_global_plugin_path,
                             stdin = true,
                         }
                     end,
                 },
-
-                -- Use the special "*" filetype for defining formatter configurations on
-                -- any filetype
-                ["*"] = {
-                    -- vim.lsp.buf.format,
+                xml = {
+                    function()
+                        return {
+                            exe = "prettier",
+                            args = {
+                                util.escape_path(util.get_current_buffer_file_path()),
+                                "--plugin=@prettier/plugin-xml",
+                            },
+                            cwd = prettier_global_plugin_path,
+                            stdin = true,
+                        }
+                    end,
                 },
             },
         })
