@@ -127,7 +127,7 @@
         }
     },
     "custom/weather": {
-        "exec": "$XDG_CONFIG_HOME/waybar/scripts/get_weather.sh Warsaw+Poland",
+        "exec": "$XDG_CONFIG_HOME/waybar/scripts/get_weather.sh",
         "return-type": "json",
         "format": "{}",
         "tooltip": true,
