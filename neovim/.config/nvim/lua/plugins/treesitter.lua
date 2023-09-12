@@ -12,7 +12,6 @@ return {
                 "c",
                 "c_sharp",
                 "groovy",
-                "help",
                 "html",
                 "java",
                 "javascript",
@@ -21,6 +20,7 @@ return {
                 "markdown",
                 "rust",
                 "typescript",
+                "vimdoc",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
