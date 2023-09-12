@@ -7,7 +7,7 @@
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
     "modules-left": [
-        "wlr/workspaces",
+        "hyprland/workspaces",
         "hyprland/submap"
     ],
     "modules-center": [
@@ -70,7 +70,7 @@
     "hyprland/window": {
         "format": "{}"
     },
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
         "sort-by-number": true,
