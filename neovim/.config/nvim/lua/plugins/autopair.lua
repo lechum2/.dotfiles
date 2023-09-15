@@ -100,8 +100,8 @@ return {
         },
         close = { -- *ultimate-autopair-map-close-config*
             enable = true,
-            map = "<A-)>", --string or table
-            cmap = "<A-)>", --string or table
+            map = "<A-]>", --string or table
+            cmap = "<A-]>", --string or table
             conf = {},
             --contains extension config
             multi = false,
@@ -111,14 +111,14 @@ return {
             --then a `)` will not be inserted
         },
         tabout = { -- *ultimate-autopair-map-tabout-config*
-            enable = false,
-            map = "<A-tab>", --string or table
-            cmap = "<A-tab>", --string or table
+            enable = true,
+            map = "<A-l>", --string or table
+            cmap = "<A-l>", --string or table
             conf = {},
             --contains extension config
             multi = false,
             --use multiple configs (|ultimate-autopair-map-multi-config|)
-            hopout = false,
+            hopout = true,
             -- (|) > tabout > ()|
             do_nothing_if_fail = true,
             --add a module so that if close fails
