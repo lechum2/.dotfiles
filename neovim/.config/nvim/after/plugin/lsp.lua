@@ -1,15 +1,6 @@
-local lsp = require("lsp-zero").preset({})
+local lsp_zero = require("lsp-zero")
 
-lsp.ensure_installed({
-    "apex_ls",
-    "bashls",
-    "eslint",
-    "lua_ls",
-    "rust_analyzer",
-    "tsserver",
-})
-
-lsp.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -24,14 +15,31 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
 
--- Fix Undefined global 'vim'
-require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
-require("lspconfig").apex_ls.setup({
-    apex_jar_path = vim.fn.stdpath("data") .. "/mason/packages/apex-language-server/extension/dist/apex-jorje-lsp.jar",
-    filetypes = { "apex" },
+require("mason").setup({})
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "apex_ls",
+        "bashls",
+        "eslint",
+        "lua_ls",
+        "rust_analyzer",
+        "tsserver",
+    },
+    handlers = {
+        lsp_zero.default_setup,
+        lua_ls = function()
+            local lua_opts = lsp_zero.nvim_lua_ls()
+            require("lspconfig").lua_ls.setup(lua_opts)
+        end,
+        apex_ls = function()
+            require("lspconfig").apex_ls.setup({
+                apex_jar_path = vim.fn.stdpath("data")
+                    .. "/mason/packages/apex-language-server/extension/dist/apex-jorje-lsp.jar",
+                filetypes = { "apex" },
+            })
+        end,
+    },
 })
-
-lsp.setup()
 
 local cmp = require("cmp")
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -55,6 +63,9 @@ cmp.setup({
     },
     mapping = {
         ["<C-Space>"] = cmp.mapping.complete(),
+        -- scroll up and down the documentation window
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
     },
 })
 
