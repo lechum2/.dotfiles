@@ -1,16 +1,6 @@
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.apex = {
-    install_info = {
-        -- url = "https://github.com/aheber/tree-sitter-sfapex",
-        url = "~/workspace/tree-sitter-sfapex/apex",
-        files = {"src/parser.c"},
-    },
-    filetype = "apexcode",
-}
-
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "*.cls", "*.trigger", "*.apex" },
-    command = "set filetype=apexcode"
+    command = "set filetype=apex"
 })
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "*.soql" },

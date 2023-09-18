@@ -1,12 +1,12 @@
 local lsp = require("lsp-zero").preset({})
 
 lsp.ensure_installed({
-    'apex_ls',
-    'bashls',
-    'eslint',
-    'lua_ls',
-    'rust_analyzer',
-    'tsserver',
+    "apex_ls",
+    "bashls",
+    "eslint",
+    "lua_ls",
+    "rust_analyzer",
+    "tsserver",
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -26,9 +26,10 @@ end)
 
 -- Fix Undefined global 'vim'
 require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
-require("lspconfig").apex_ls.setup {
-    apex_jar_path = vim.fn.stdpath("data") .. '/mason/packages/apex-language-server/extension/dist/apex-jorje-lsp.jar'
-}
+require("lspconfig").apex_ls.setup({
+    apex_jar_path = vim.fn.stdpath("data") .. "/mason/packages/apex-language-server/extension/dist/apex-jorje-lsp.jar",
+    filetypes = { "apex" },
+})
 
 lsp.setup()
 
@@ -40,10 +41,10 @@ cmp.setup({
         { name = "path" },
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
-        { name = "buffer",  keyword_length = 3 },
+        { name = "buffer", keyword_length = 3 },
         { name = "luasnip", keyword_length = 2 },
         {
-            name = 'spell',
+            name = "spell",
             option = {
                 keep_all_entries = false,
                 enable_in_context = function()
@@ -54,7 +55,7 @@ cmp.setup({
     },
     mapping = {
         ["<C-Space>"] = cmp.mapping.complete(),
-    }
+    },
 })
 
 vim.diagnostic.config({
