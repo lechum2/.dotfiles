@@ -38,7 +38,9 @@ config.keys = {
     {
         key = 'n',
         mods = 'CTRL|SHIFT',
-        action = act.SpawnTab('DefaultDomain'),
+        action = act.SpawnCommandInNewTab {
+            cwd = '~',
+        },
     },
     {
         key = '<',
@@ -58,7 +60,6 @@ config.keys = {
         mods = 'CTRL|SHIFT',
         action = act.SpawnCommandInNewTab {
             args = { 'C:\\Program Files\\Git\\bin\\bash.exe' },
-            domain = 'DefaultDomain',
         },
     },
     {
