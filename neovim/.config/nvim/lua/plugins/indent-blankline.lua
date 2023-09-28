@@ -1,9 +1,8 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
+    main = "ibl",
     opts = {
-        show_end_of_line = true,
-        space_char_blankline = " ",
     },
     init = function()
         vim.opt.list = true
