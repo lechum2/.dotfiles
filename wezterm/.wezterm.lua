@@ -77,6 +77,13 @@ config.keys = {
         mods = 'CTRL|SHIFT',
         action = act.Search 'CurrentSelectionOrEmptyString',
     },
+    {
+        key = 'w',
+        mods = 'CTRL|SHIFT',
+        action = act.SpawnCommandInNewTab {
+            args = { 'C:\\WINDOWS\\system32\\wsl.exe' },
+        },
+    },
 }
 -- and finally, return the configuration to wezterm
 return config
