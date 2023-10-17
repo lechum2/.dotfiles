@@ -78,7 +78,7 @@ config.keys = {
         action = act.Search 'CurrentSelectionOrEmptyString',
     },
     {
-        key = 'w',
+        key = 'b',
         mods = 'CTRL|SHIFT',
         action = act.SpawnCommandInNewTab {
             args = { 'C:\\WINDOWS\\system32\\wsl.exe' },
