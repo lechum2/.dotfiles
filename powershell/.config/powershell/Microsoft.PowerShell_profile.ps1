@@ -17,3 +17,4 @@ function Invoke-Starship-PreCommand {
     }
     $host.ui.Write($prompt)
 }
+. C:\Users\Y2DX\AppData\Local\sf\autocomplete\functions\powershell\sf.ps1
