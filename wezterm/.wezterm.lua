@@ -36,6 +36,16 @@ config.keys = {
         action = act.ActivateTabRelative(1),
     },
     {
+        key = 'h',
+        mods = 'ALT|SHIFT',
+        action = act.MoveTabRelative(-1),
+    },
+    {
+        key = 'l',
+        mods = 'ALT|SHIFT',
+        action = act.MoveTabRelative(1),
+    },
+    {
         key = 'n',
         mods = 'CTRL|SHIFT',
         action = act.SpawnCommandInNewTab {
