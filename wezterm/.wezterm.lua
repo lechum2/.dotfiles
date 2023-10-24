@@ -91,7 +91,11 @@ config.keys = {
         key = 'b',
         mods = 'CTRL|SHIFT',
         action = act.SpawnCommandInNewTab {
-            args = { 'C:\\WINDOWS\\system32\\wsl.exe' },
+            args = {
+                'C:\\WINDOWS\\system32\\wsl.exe',
+                '--cd',
+                '~',
+            },
         },
     },
 }
