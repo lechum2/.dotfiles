@@ -131,6 +131,7 @@
         "return-type": "json",
         "format": "{}",
         "tooltip": true,
-        "interval": 3600
+        "interval": 3600,
+        "on-click": "$XDG_CONFIG_HOME/waybar/scripts/get_weather.sh"
     }
 }
