@@ -1,10 +1,12 @@
+background-color=#323232
+border-color=#616f39
+border-size=1
+height=200
+icon-path=/usr/share/icons/Papirus-Dark/
 ignore-timeout=1
 max-visible=-1
 output=eDP-1
-background-color=#323232
-border-size=1
-border-color=#616f39
-icon-path=/usr/share/icons/Papirus-Dark/
+width=400
 
 [mode=do-not-disturb]
 invisible=1
