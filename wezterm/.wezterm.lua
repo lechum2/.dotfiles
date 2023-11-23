@@ -16,8 +16,8 @@ end
 --config.color_scheme = 'Ayu Dark (Gogh)'
 config.font = wezterm.font 'JetBrains Mono'
 config.font_size = 11
-config.font_locator = 'ConfigDirsOnly'
-config.font_dirs = { 'scoop\\apps\\VictorMono-NF-Mono\\current' }
+--config.font_locator = 'ConfigDirsOnly'
+--config.font_dirs = { 'scoop\\apps\\VictorMono-NF-Mono\\current' }
 
 config.default_prog = { 'C:\\Program Files\\PowerShell\\7\\pwsh.exe' }
 
