@@ -24,3 +24,7 @@ vim.opt.tabstop = 4
 
 vim.opt.spelllang = 'en_us,en_gb,pl'
 vim.opt.spell = true
+
+vim.diagnostic.config({
+    virtual_text = true,
+})
