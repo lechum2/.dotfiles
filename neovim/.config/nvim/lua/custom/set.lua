@@ -28,3 +28,12 @@ vim.opt.spell = true
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "*.cls", "*.trigger", "*.apex" },
+    command = "set filetype=apex"
+})
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "*.soql" },
+    command = "set filetype=soql"
+})
