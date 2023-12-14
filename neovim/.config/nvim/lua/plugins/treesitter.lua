@@ -9,7 +9,7 @@ return {
                 "apex",
                 "bash",
                 "c",
-                "c_sharp",
+                "gitcommit",
                 "groovy",
                 "html",
                 "java",
