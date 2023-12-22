@@ -11,7 +11,7 @@ return {
         require("telescope").load_extension("git_worktree")
     end,
     keys = {
-        { "<leader>fw", function () require('telescope').extensions.git_worktree.git_worktrees() end },
-        { "<leader>fb", function () require('telescope').extensions.git_worktree.create_git_worktree() end  },
+        { "<leader>ww", function () require('telescope').extensions.git_worktree.git_worktrees() end },
+        { "<leader>wc", function () require('telescope').extensions.git_worktree.create_git_worktree() end  },
     },
 }
