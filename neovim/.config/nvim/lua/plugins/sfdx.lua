@@ -1,12 +1,22 @@
 return {
     dir = "~/workspace/sfdx.nvim",
     ft = { "apex" },
-    init = function()
-        local sfdx = require("sfdx")
-        vim.keymap.set("n", "<leader>sd", sfdx.deployCurrentFile, {})
-        vim.keymap.set("n", "<leader>stf", sfdx.runTestsFromCurrentFile, {})
-
+    config = function()
         local ft = require("Comment.ft")
         ft.set("apex", { "//%s", "/*%s*/" })
     end,
+    keys = {
+        {
+            "<leader>sd",
+            function()
+                require("sfdx").deployCurrentFile()
+            end,
+        },
+        {
+            "<leader>stf",
+            function()
+                require("sfdx").runTestsFromCurrentFile()
+            end,
+        },
+    },
 }
