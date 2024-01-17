@@ -10,7 +10,6 @@ return {
             { "<leader>u", vim.cmd.UndotreeToggle }
         }
     },
-    'lewis6991/gitsigns.nvim',
     {
         "iamcco/markdown-preview.nvim",
         build = "cd app && yarn",
