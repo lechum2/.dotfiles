@@ -1,3 +1,11 @@
+local function salesforce()
+    local org_manager = require('salesforce.org_manager');
+    local alias = org_manager:get_default_alias()
+    if alias == nil then
+        return ""
+    end
+    return alias
+end
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
@@ -23,7 +31,7 @@ return {
         sections = {
             lualine_a = { 'mode' },
             lualine_b = { 'branch', 'diff', 'diagnostics' },
-            lualine_c = { 'filename' },
+            lualine_c = { 'filename', { salesforce, icon = "󰢎" } },
             lualine_x = { 'encoding', 'fileformat', 'filetype' },
             lualine_y = { 'progress' },
             lualine_z = { 'location' }
