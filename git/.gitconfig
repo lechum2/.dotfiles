@@ -8,6 +8,7 @@
 	smudge = git-lfs smudge -- %f
 [alias]
 	chekcout = checkout
+ 	config-fetch = config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 [pull]
 	rebase = true
 [merge]
