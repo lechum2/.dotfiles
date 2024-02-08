@@ -87,8 +87,8 @@ export VISUAL='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias pip=pip3
-
 alias vsc='code --enable-features=UseOzonePlatform --ozone-platform=wayland .'
+alias H=Hyprland
 
 # compsys initialization
 autoload -U compinit
