@@ -16,6 +16,9 @@ return {
         config = true,
         build = ":MasonUpdate",
     },
+    {
+        "b0o/schemastore.nvim",
+    },
     -- Autocompletion
     {
         "hrsh7th/nvim-cmp",
@@ -105,9 +108,11 @@ return {
                     "apex_ls",
                     "bashls",
                     "eslint",
+                    "jsonls",
                     "lua_ls",
                     "rust_analyzer",
                     "tsserver",
+                    "yamlls",
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -120,6 +125,42 @@ return {
                             apex_jar_path = vim.fn.stdpath("data")
                                 .. "/mason/packages/apex-language-server/extension/dist/apex-jorje-lsp.jar",
                             filetypes = { "apex" },
+                        })
+                    end,
+                    yamlls = function()
+                        require("lspconfig").yamlls.setup({
+                            settings = {
+                                yaml = {
+                                    schemaStore = {
+                                        -- You must disable built-in schemaStore support if you want to use
+                                        -- this plugin and its advanced options like `ignore`.
+                                        enable = false,
+                                        -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+                                        url = "",
+                                    },
+                                    schemas = require("schemastore").yaml.schemas({
+                                        select = {
+                                            "GitHub Workflow",
+                                        },
+                                    }),
+                                    validate = { enable = true },
+                                    completion = { enable = true },
+                                },
+                            },
+                        })
+                    end,
+                    jsonls = function()
+                        require("lspconfig").jsonls.setup({
+                            settings = {
+                                json = {
+                                    schemas = require("schemastore").json.schemas({
+                                        select = {
+                                            "package.json",
+                                        },
+                                    }),
+                                    validate = { enable = true },
+                                },
+                            },
                         })
                     end,
                 },
