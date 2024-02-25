@@ -14,7 +14,7 @@ function fish_prompt
         (set_color blue) $PWD (set_color normal) (fish_git_prompt) $stat
 end
 
-function fish_right_prompt -d "Write out the right prompt"
+function fish_right_prompt
     date '+%m/%d/%y'
 end
 
@@ -26,7 +26,13 @@ function fish_user_key_bindings
     # Without --no-erase fish_vi_key_bindings will default to
     # resetting all bindings.
     # The argument specifies the initial mode (insert, "default" or visual).
-    fish_vi_key_bindings --no-erase insert
+    fish_vi_key_bindings #--no-erase insert
+
+    # Just clear the commandline on control-c
+    bind \cc 'commandline -r ""'
+
+    bind -M insert \cP history-prefix-search-backward
+    bind -M insert \cN history-prefix-search-forward
 end
 
 # Emulates vim's cursor shape behavior
@@ -44,8 +50,3 @@ set fish_cursor_external line
 # visual mode, but due to fish_cursor_default, is redundant here
 set fish_cursor_visual block
 
-# Just clear the commandline on control-c
-bind \cc 'commandline -r ""'
-
-bind \cP 'history-token-search-backward'
-bind \cN 'history-token-search-forward'
