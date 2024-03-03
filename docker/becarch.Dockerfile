@@ -11,3 +11,9 @@ RUN useradd --create-home --shell /bin/zsh --groups wheel --password '$y$j9T$iVf
 RUN sed -i -- 's/root/lechu/g' /etc/sudoers
 USER lechu
 WORKDIR /home/lechu
+RUN git clone https://github.com/lechum2/.dotfiles.git
+WORKDIR /home/lechu/.dotfiles
+RUN stow neovim
+RUN stow zsh
+RUN stow git
+RUN stow ranger
