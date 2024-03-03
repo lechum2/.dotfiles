@@ -18,6 +18,10 @@ source /usr/share/fzf/completion.zsh
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 alias pip=pip3
 alias vsc='code --enable-features=UseOzonePlatform --ozone-platform=wayland .'
 alias H=Hyprland
