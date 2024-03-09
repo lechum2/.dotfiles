@@ -28,6 +28,6 @@ RUN stow ranger
 WORKDIR /home/lechu
 RUN npm config set strict-ssl false
 RUN npm set prefix="$HOME/.local"
-RUN npm install --global yarn neovim
+RUN npm install --global yarn neovim eslint prettier prettier-plugin-apex @prettier/plugin-xml npm-groovy-lint typescript
 RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
 RUN nvim --headless +q
