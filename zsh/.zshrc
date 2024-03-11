@@ -36,7 +36,7 @@ bindkey -M vicmd v edit-command-line
 alias pip=pip3
 alias vsc='code --enable-features=UseOzonePlatform --ozone-platform=wayland .'
 alias H=Hyprland
-alias up='yay --noconfirm && npm upgrade -g && sf update && rustup update'
+alias up='yay --noconfirm && npm upgrade -g && rustup update && sf update'
 
 # compsys initialization
 autoload -Uz compinit
