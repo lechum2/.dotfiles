@@ -9,7 +9,7 @@ RUN for cert in cert.*; do trust anchor "$cert"; done
 RUN pacman -Syu --noconfirm
 RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-iron npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi zoxide
 RUN pacman --noconfirm -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions jdk17-openjdk tar unzip python-pip lynx
-RUN pacman --noconfirm -S gnome-keyring man
+RUN pacman --noconfirm -S gnome-keyring man-db man-pages
 
 RUN wget https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-linux-x64.tar.xz
 RUN mkdir -p /opt/sf
