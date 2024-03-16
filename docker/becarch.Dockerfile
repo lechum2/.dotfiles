@@ -9,7 +9,7 @@ RUN for cert in cert.*; do trust anchor "$cert"; done
 RUN pacman -Syu --noconfirm
 RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-iron npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi zoxide
 RUN pacman --noconfirm -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions jdk17-openjdk tar unzip python-pip lynx
-RUN pacman --noconfirm -S gnome-keyring man-db man-pages
+RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus
 
 RUN wget https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-linux-x64.tar.xz
 RUN mkdir -p /opt/sf
@@ -36,8 +36,9 @@ RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
 
 ENV SF_CONTAINER_MODE true
 ENV SFDX_CONTAINER_MODE true
-ENV DEBIAN_FRONTEND=dialog
-ENV DEBIAN_FRONTEND=noninteractive
+ENV SF_USE_GENERIC_UNIX_KEYCHAIN false
+ENV SF_DISABLE_TELEMETRY true
+ENV NODE_TLS_REJECT_UNAUTHORIZED 0
 
 RUN sf autocomplete
 
