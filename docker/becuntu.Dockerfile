@@ -5,7 +5,7 @@ FROM ubuntu:rolling
 RUN echo -e '--insecure' >> .curlrc
 RUN apt-get update && apt-get --assume-yes upgrade
 RUN apt-get install --assume-yes curl fzf git jq zsh ripgrep sl stow tree-sitter-cli wget zoxide ranger python3-neovim
-RUN apt-get install --assume-yes ruby
+RUN apt-get install --assume-yes ruby sudo
 
 ENV DEBIAN_FRONTEND=noninteractive
 
