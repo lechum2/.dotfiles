@@ -18,7 +18,7 @@ ENV PATH=/usr/local/lib/nodejs/bin:$PATH
 
 RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 RUN tar -C /opt -xzf nvim-linux64.tar.gz
-ENV PATH="$PATH:/opt/nvim-linux64/bin"
+ENV PATH=/opt/nvim-linux64/bin:$PATH
 
 RUN apt-get autoremove --assume-yes \
   && apt-get clean --assume-yes \
@@ -44,7 +44,7 @@ RUN npm config set strict-ssl false
 RUN npm set prefix="$HOME/.local"
 RUN npm install --global yarn neovim eslint prettier prettier-plugin-apex @prettier/plugin-xml npm-groovy-lint typescript @salesforce/cli
 RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
-ENV PATH="$PATH:/home/lechu/.local/bin"
+ENV PATH=/home/lechu/.local/bin:$PATH
 
 RUN sf autocomplete
 
