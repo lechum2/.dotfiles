@@ -27,7 +27,7 @@ ENV SF_CONTAINER_MODE true
 ENV SFDX_CONTAINER_MODE true
 ENV DEBIAN_FRONTEND=dialog
 
-RUN useradd --create-home --shell /bin/zsh --password '$y$j9T$iVfF8t.mgu3Q4TRULkxnl1$6Uk/fsUyI1MeZCLqKvjRYidfnlxv8dzpasox422ulY2' lechu
+RUN useradd --create-home --shell /bin/zsh --groups sudo --password '$y$j9T$iVfF8t.mgu3Q4TRULkxnl1$6Uk/fsUyI1MeZCLqKvjRYidfnlxv8dzpasox422ulY2' lechu
 
 ENV SHELL /bin/zsh
 USER lechu
@@ -48,3 +48,5 @@ ENV PATH="$PATH:/home/lechu/.local/bin"
 RUN sf autocomplete
 
 RUN nvim --headless +q
+
+ENV SHELL /bin/zsh

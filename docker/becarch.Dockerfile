@@ -43,3 +43,5 @@ ENV NODE_TLS_REJECT_UNAUTHORIZED 0
 RUN sf autocomplete
 
 RUN nvim --headless +q
+
+ENV SHELL /bin/zsh
