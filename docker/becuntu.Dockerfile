@@ -5,21 +5,33 @@ ENV HTTPS_PROXY=http://becpx-forti.res.bec.dk:80
 ENV NO_PROXY=.bec.dk
 RUN echo -e '--insecure' >> .curlrc
 RUN apt-get update && apt-get --assume-yes upgrade
+RUN yes | unminimize
 RUN apt-get install --assume-yes curl fzf git jq zsh ripgrep sl stow tree-sitter-cli wget zoxide ranger python3-neovim
-RUN apt-get install --assume-yes ruby sudo iputils-ping sed grep
+RUN apt-get install --assume-yes ruby sudo iputils-ping sed grep man-db manpages manpages-dev manpages-posix manpages-posix-dev
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Nodejs lts
 RUN curl --insecure -o nodejs.tar.gz https://nodejs.org/dist/v20.11.1/node-v20.11.1-linux-x64.tar.gz
 RUN mkdir /usr/local/lib/nodejs \
   && tar xf nodejs.tar.gz -C /usr/local/lib/nodejs/ --strip-components 1 \
   && rm nodejs.tar.gz
 ENV PATH=/usr/local/lib/nodejs/bin:$PATH
 
+# Neovim
 RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 RUN tar -C /opt -xzf nvim-linux64.tar.gz
 ENV PATH=/opt/nvim-linux64/bin:$PATH
+RUN curl 'https://ftp.nluug.nl/pub/vim/runtime/spell/pl.utf-8.spl' --create-dirs -o '/opt/nvim-linux64/share/nvim/runtime/spell/pl.utf-8.spl'
 
+# Powershell
+RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.1/powershell_7.4.1-1.deb_amd64.deb
+RUN dpkg -i powershell_7.4.1-1.deb_amd64.deb
+RUN apt-get install -f
+RUN rm powershell_7.4.1-1.deb_amd64.deb
+#pwsh-lts
+
+# Cleanup
 RUN apt-get autoremove --assume-yes \
   && apt-get clean --assume-yes \
   && rm -rf /var/lib/apt/lists/*
@@ -33,6 +45,7 @@ RUN useradd --create-home --shell /bin/zsh --groups sudo --password '$y$j9T$iVfF
 ENV SHELL /bin/zsh
 USER lechu
 WORKDIR /home/lechu
+RUN echo -e '--insecure' >> .curlrc
 RUN git clone https://github.com/lechum2/.dotfiles.git
 WORKDIR /home/lechu/.dotfiles
 RUN stow neovim
