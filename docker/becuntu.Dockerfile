@@ -24,13 +24,6 @@ RUN tar -C /opt -xzf nvim-linux64.tar.gz
 ENV PATH=/opt/nvim-linux64/bin:$PATH
 RUN curl 'https://ftp.nluug.nl/pub/vim/runtime/spell/pl.utf-8.spl' --create-dirs -o '/opt/nvim-linux64/share/nvim/runtime/spell/pl.utf-8.spl'
 
-# Powershell
-RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.1/powershell_7.4.1-1.deb_amd64.deb
-RUN dpkg -i powershell_7.4.1-1.deb_amd64.deb
-RUN apt-get install -f
-RUN rm powershell_7.4.1-1.deb_amd64.deb
-#pwsh-lts
-
 # Cleanup
 RUN apt-get autoremove --assume-yes \
   && apt-get clean --assume-yes \
