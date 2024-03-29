@@ -20,5 +20,5 @@ if (!fs.existsSync(authFilesDir)) {
 }
 
 allOrgs.forEach(org => {
-    execSync(`sf org display --verbose --target-org ${org.alias} --json > ${authFilesDir}\\${org.alias}`);
+    execSync(`sf org display --verbose --target-org ${org.alias} --json > ${authFilesDir}\\${org.alias}.json`);
 });

@@ -22,7 +22,7 @@ ENV PATH=/usr/local/lib/nodejs/bin:$PATH
 RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 RUN tar -C /opt -xzf nvim-linux64.tar.gz
 ENV PATH=/opt/nvim-linux64/bin:$PATH
-RUN curl 'https://ftp.nluug.nl/pub/vim/runtime/spell/pl.utf-8.spl' --create-dirs -o '/opt/nvim-linux64/share/nvim/runtime/spell/pl.utf-8.spl'
+RUN curl --insecure 'https://ftp.nluug.nl/pub/vim/runtime/spell/pl.utf-8.spl' --create-dirs -o '/opt/nvim-linux64/share/nvim/runtime/spell/pl.utf-8.spl'
 
 # Cleanup
 RUN apt-get autoremove --assume-yes \

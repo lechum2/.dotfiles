@@ -1,7 +1,6 @@
 #!/bin/bash
 for file in /home/lechu/sfAuthFiles/*; do
-    filename=$(basename -- "$file")
-    sf org login sfdx-url --sfdx-url-file "$file" --alias "$filename"
+    sf org login sfdx-url --sfdx-url-file "$file"
 done
 
 rm -rf /home/lechu/sfAuthFiles
