@@ -39,7 +39,7 @@ ENV SHELL /bin/zsh
 USER lechu
 WORKDIR /home/lechu
 RUN echo -e '--insecure' >> .curlrc
-RUN git clone https://github.com/lechum2/.dotfiles.git
+ADD --keep-git-dir=true --chown=lechu:lechu https://github.com/lechum2/.dotfiles.git /home/lechu/.dotfiles
 WORKDIR /home/lechu/.dotfiles
 RUN stow neovim
 RUN stow zsh
@@ -53,12 +53,13 @@ RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
 ENV PATH=/home/lechu/.local/bin:$PATH
 
 RUN sf autocomplete
-COPY sfAuthFiles/* /home/lechu/sfAuthFiles/
+COPY --chown=lechu:lechu sfAuthFiles/* /home/lechu/sfAuthFiles/
 RUN ./.dotfiles/docker/sfRestoreOrgs.sh
 
-COPY ./.ssh/* /home/lechu/.ssh/
+COPY --chown=lechu:lechu --chmod=600 ./.ssh/id_rsa /home/lechu/.ssh/id_rsa
+COPY --chown=lechu:lechu --chmod=644 ./.ssh/id_rsa.pub /home/lechu/.ssh/id_rsa.pub
 RUN mkdir /home/lechu/workspace
-COPY ./workspace/* /home/lechu/workspace/
+COPY --chown=lechu:lechu ./workspace/ /home/lechu/workspace/
 
 RUN nvim --headless +q
 
