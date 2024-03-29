@@ -53,6 +53,12 @@ RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
 ENV PATH=/home/lechu/.local/bin:$PATH
 
 RUN sf autocomplete
+COPY sfAuthFiles/* /home/lechu/sfAuthFiles/
+RUN ./.dotfiles/docker/sfRestoreOrgs.sh
+
+COPY ./.ssh/* /home/lechu/.ssh/
+RUN mkdir /home/lechu/workspace
+COPY ./workspace/* /home/lechu/workspace/
 
 RUN nvim --headless +q
 
