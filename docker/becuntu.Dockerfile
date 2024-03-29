@@ -33,6 +33,12 @@ ENV SF_CONTAINER_MODE true
 ENV SFDX_CONTAINER_MODE true
 ENV DEBIAN_FRONTEND=dialog
 
+ADD https://github.com/zsh-users/zsh-autosuggestions.git /usr/share/zsh/plugins/zsh-autosuggestions
+ADD https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/plugins/zsh-syntax-highlighting
+RUN mkdir -p /usr/share/fzf
+RUN cp /usr/share/doc/fzf/examples/key-bindings.zsh /usr/share/fzf/key-bindings.zsh
+RUN cp /usr/share/doc/fzf/examples/completion.zsh /usr/share/fzf/completion.zsh
+
 RUN useradd --create-home --shell /bin/zsh --groups sudo --password '$y$j9T$iVfF8t.mgu3Q4TRULkxnl1$6Uk/fsUyI1MeZCLqKvjRYidfnlxv8dzpasox422ulY2' lechu
 
 ENV SHELL /bin/zsh
