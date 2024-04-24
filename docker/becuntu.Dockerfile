@@ -3,8 +3,9 @@ FROM ubuntu:rolling
 ENV HTTP_PROXY=http://becpx-forti.res.bec.dk:80
 ENV HTTPS_PROXY=http://becpx-forti.res.bec.dk:80
 ENV NO_PROXY=.bec.dk
-RUN echo -e '--insecure' >> .curlrc
+RUN echo '--insecure' >> .curlrc
 RUN apt-get update && apt-get --assume-yes upgrade
+
 RUN yes | unminimize
 RUN apt-get install --assume-yes curl fzf git jq zsh ripgrep sl stow tree-sitter-cli wget zoxide ranger python3-neovim
 RUN apt-get install --assume-yes ruby sudo iputils-ping sed grep man-db manpages manpages-dev manpages-posix manpages-posix-dev
