@@ -13,7 +13,7 @@ RUN apt-get install --assume-yes ruby sudo iputils-ping sed grep man-db manpages
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Nodejs lts
-RUN curl --insecure -o nodejs.tar.gz https://nodejs.org/dist/v20.11.1/node-v20.11.1-linux-x64.tar.gz
+RUN curl --insecure -o nodejs.tar.gz https://nodejs.org/dist/v20.13.1/node-v20.13.1-linux-x64.tar.gz
 RUN mkdir /usr/local/lib/nodejs \
   && tar xf nodejs.tar.gz -C /usr/local/lib/nodejs/ --strip-components 1 \
   && rm nodejs.tar.gz
