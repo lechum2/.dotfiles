@@ -65,6 +65,7 @@ RUN ./.dotfiles/docker/sfRestoreOrgs.sh
 
 COPY --chown=lechu:lechu --chmod=600 ./.ssh/id_rsa /home/lechu/.ssh/id_rsa
 COPY --chown=lechu:lechu --chmod=644 ./.ssh/id_rsa.pub /home/lechu/.ssh/id_rsa.pub
+COPY --chown=lechu:lechu --chmod=644 ./.ssh/known_hosts /home/lechu/.ssh/known_hosts
 RUN mkdir /home/lechu/workspace
 COPY --chown=lechu:lechu ./workspace/ /home/lechu/workspace/
 
