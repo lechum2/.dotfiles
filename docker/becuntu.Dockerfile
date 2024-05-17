@@ -51,6 +51,7 @@ WORKDIR /home/lechu/.dotfiles
 RUN stow neovim
 RUN stow zsh
 RUN stow git
+RUN git config --global user.email "x9t@bec.dk"
 RUN stow ranger
 WORKDIR /home/lechu
 RUN npm config set strict-ssl false
