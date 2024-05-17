@@ -50,9 +50,12 @@ ADD --keep-git-dir=true --chown=lechu:lechu https://github.com/lechum2/.dotfiles
 WORKDIR /home/lechu/.dotfiles
 RUN stow neovim
 RUN stow zsh
-RUN stow git
-RUN git config --global user.email "x9t@bec.dk"
 RUN stow ranger
+
+RUN git config --global user.name "Sebastian Lech"
+RUN git config --global user.email "x9t@bec.dk"
+
+# npm
 WORKDIR /home/lechu
 RUN npm config set strict-ssl false
 RUN npm set prefix="$HOME/.local"
