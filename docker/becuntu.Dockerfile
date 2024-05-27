@@ -49,6 +49,7 @@ RUN echo -e '--insecure' >> .curlrc
 ADD --keep-git-dir=true --chown=lechu:lechu https://github.com/lechum2/.dotfiles.git /home/lechu/.dotfiles
 WORKDIR /home/lechu/.dotfiles
 RUN stow neovim
+RUN stow editorconfig
 RUN stow zsh
 RUN stow ranger
 
