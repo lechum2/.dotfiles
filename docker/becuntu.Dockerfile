@@ -76,4 +76,4 @@ COPY --chown=lechu:lechu ./workspace/ /home/lechu/workspace/
 
 RUN nvim --headless +q
 
-ENV SHELL /bin/zsh
+ENTRYPOINT [ "zsh" ]
