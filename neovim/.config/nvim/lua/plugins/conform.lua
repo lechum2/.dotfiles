@@ -53,7 +53,8 @@ return {
                 args = {
                     "--format",
                     "$FILENAME",
-                    "--failon none",
+                    "--failon",
+                    "none",
                 },
                 stdin = false,
             },
