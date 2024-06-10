@@ -19,7 +19,8 @@ setopt share_history          # share command history data
 share_folder='/usr/share/'
 if command -v termux-setup-storage
 then
-     share_folder='../usr/share/'
+    share_folder='../usr/share/'
+    export XDG_RUNTIME_DIR="$PREFIX/tmp/"
 fi
 
 source "$share_folder"zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
