@@ -4,8 +4,9 @@ return {
         "nvim-lua/plenary.nvim",
         "hrsh7th/nvim-cmp",
     },
-    config = function()
-        require("codeium").setup({
-        })
-    end
+    opts = {
+        tools = {
+            language_server = "/data/data/com.termux/files/home/codeium_lsp_proot.sh"
+        }
+    }
 }
