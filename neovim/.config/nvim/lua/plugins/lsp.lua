@@ -104,23 +104,21 @@ return {
                 vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
             end)
 
+            local lua_opts = lsp_zero.nvim_lua_ls()
+            require("lspconfig").lua_ls.setup(lua_opts)
+            require("lspconfig").rust_analyzer.setup{}
+
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "apex_ls",
                     "bashls",
                     "eslint",
                     "jsonls",
-                    "lua_ls",
-                    "rust_analyzer",
                     "tsserver",
                     "yamlls",
                 },
                 handlers = {
                     lsp_zero.default_setup,
-                    lua_ls = function()
-                        local lua_opts = lsp_zero.nvim_lua_ls()
-                        require("lspconfig").lua_ls.setup(lua_opts)
-                    end,
                     apex_ls = function()
                         require("lspconfig").apex_ls.setup({
                             apex_jar_path = vim.fn.stdpath("data")
