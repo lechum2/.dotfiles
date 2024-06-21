@@ -5,12 +5,14 @@ return {
         "hrsh7th/nvim-cmp",
     },
     config = function()
+        local opts = {};
         if vim.uv.os_uname().release:match("android") then
-            require("codeium").setup({
+            opts = {
                 tools = {
                     language_server = "/data/data/com.termux/files/home/codeium_lsp_proot.sh"
                 }
-            })
+            }
         end
+        require("codeium").setup(opts);
     end
 }
