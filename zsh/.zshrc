@@ -55,6 +55,6 @@ bindkey '^n' history-beginning-search-forward
 
 # Salesforce cli autocomplete
 eval
-SF_AC_ZSH_SETUP_PATH=/home/lechu/.cache/sf/autocomplete/zsh_setup && test -f $SF_AC_ZSH_SETUP_PATH && source $SF_AC_ZSH_SETUP_PATH; # sf autocomplete setup
+SF_AC_ZSH_SETUP_PATH=~/.cache/sf/autocomplete/zsh_setup && test -f $SF_AC_ZSH_SETUP_PATH && source $SF_AC_ZSH_SETUP_PATH; # sf autocomplete setup
 
 eval "$(zoxide init zsh)"
