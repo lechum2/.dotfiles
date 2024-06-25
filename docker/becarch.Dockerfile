@@ -6,22 +6,11 @@ ENV NO_PROXY=.bec.dk
 RUN echo -e '--insecure' >> .curlrc
 RUN openssl s_client -servername archlinux.org -connect archlinux.org:443 -showcerts | awk '/-----BEGIN/{f="cert."(n++)} f{print>f} /-----END/{f=""}'
 RUN for cert in cert.*; do trust anchor "$cert"; done
+
 RUN pacman -Syu --noconfirm
 RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-iron npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi zoxide
 RUN pacman --noconfirm -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions jdk17-openjdk tar unzip python-pip lynx
-RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus
-
-
-# RUN echo "#%PAM-1.0" > '/etc/pam.d/login'
-# RUN echo -en '\n' >> '/etc/pam.d/login'
-# RUN echo 'auth       requisite    pam_nologin.so' >> '/etc/pam.d/login'
-# RUN echo 'auth       include      system-local-login' >> '/etc/pam.d/login'
-# RUN echo 'auth       optional     pam_gnome_keyring.so' >> '/etc/pam.d/login'
-# RUN echo 'account    include      system-local-login' >> '/etc/pam.d/login'
-# RUN echo 'session    include      system-local-login' >> '/etc/pam.d/login'
-# RUN echo 'session    optional     pam_gnome_keyring.so auto_start' >> '/etc/pam.d/login'
-# RUN echo 'password   include      system-local-login' >> '/etc/pam.d/login'
-# RUN echo -en '\n' >> '/etc/pam.d/login'
+RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus lua-language-server rust-analyzer rustup
 
 # salesforce cli
 RUN wget https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-linux-x64.tar.xz
@@ -35,28 +24,42 @@ RUN sed -i -- 's/root/lechu/g' /etc/sudoers
 ENV SHELL /bin/zsh
 USER lechu
 WORKDIR /home/lechu
-RUN git clone https://github.com/lechum2/.dotfiles.git
+RUN echo -e '--insecure' >> .curlrc
+RUN curl --insecure 'https://ftp.nluug.nl/pub/vim/runtime/spell/pl.utf-8.spl' --create-dirs -o '/home/lechu/.local/share/nvim/site/spell/pl.utf-8.spl'
+ADD --keep-git-dir=true --chown=lechu:lechu https://github.com/lechum2/.dotfiles.git /home/lechu/.dotfiles
 WORKDIR /home/lechu/.dotfiles
 RUN stow neovim
+RUN stow editorconfig
 RUN stow zsh
-RUN stow git
 RUN stow ranger
+
+RUN git config --global user.name "Sebastian Lech"
+RUN git config --global user.email "x9t@bec.dk"
+
+# npm
 WORKDIR /home/lechu
 RUN npm config set strict-ssl false
 RUN npm set prefix="$HOME/.local"
 RUN npm install --global yarn neovim eslint prettier prettier-plugin-apex @prettier/plugin-xml npm-groovy-lint typescript
 RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
+ENV PATH=/home/lechu/.local/bin:$PATH
 
 ENV SF_CONTAINER_MODE true
 ENV SFDX_CONTAINER_MODE true
-ENV SF_USE_GENERIC_UNIX_KEYCHAIN false
+ENV SF_USE_GENERIC_UNIX_KEYCHAIN true
 ENV SF_DISABLE_TELEMETRY true
 ENV NODE_TLS_REJECT_UNAUTHORIZED 0
 
 RUN sf autocomplete
 COPY --chown=lechu:lechu sfAuthFiles/* /home/lechu/sfAuthFiles/
-# RUN ./.dotfiles/docker/sfRestoreOrgs.sh
+RUN ./.dotfiles/docker/sfRestoreOrgs.sh
+
+COPY --chown=lechu:lechu --chmod=600 ./.ssh/id_rsa /home/lechu/.ssh/id_rsa
+COPY --chown=lechu:lechu --chmod=644 ./.ssh/id_rsa.pub /home/lechu/.ssh/id_rsa.pub
+COPY --chown=lechu:lechu --chmod=644 ./.ssh/known_hosts /home/lechu/.ssh/known_hosts
+RUN mkdir /home/lechu/workspace
+COPY --chown=lechu:lechu ./workspace/ /home/lechu/workspace/
 
 RUN nvim --headless +q
 
-ENV SHELL /bin/zsh
+ENTRYPOINT [ "zsh" ]
