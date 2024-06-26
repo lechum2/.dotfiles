@@ -13,8 +13,3 @@ export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
-# sf flags
-export SF_CONTAINER_MODE=true
-export SFDX_CONTAINER_MODE=true
-export SF_USE_GENERIC_UNIX_KEYCHAIN=true
-export SF_DISABLE_TELEMETRY=true
