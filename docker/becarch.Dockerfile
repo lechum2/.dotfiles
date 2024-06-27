@@ -40,7 +40,7 @@ RUN git config --global user.email "x9t@bec.dk"
 WORKDIR /home/lechu
 RUN npm config set strict-ssl false
 RUN npm set prefix="$HOME/.local"
-RUN npm install --global yarn neovim eslint prettier prettier-plugin-apex @prettier/plugin-xml npm-groovy-lint typescript typescript-language-server
+RUN ./dotfiles/npm/install-my-globals.sh
 RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
 ENV PATH=/home/lechu/.local/bin:$PATH
 
