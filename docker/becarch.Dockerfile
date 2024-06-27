@@ -35,6 +35,7 @@ RUN stow ranger
 
 RUN git config --global user.name "Sebastian Lech"
 RUN git config --global user.email "x9t@bec.dk"
+RUN git config --global credential.helper store
 
 # npm
 WORKDIR /home/lechu
