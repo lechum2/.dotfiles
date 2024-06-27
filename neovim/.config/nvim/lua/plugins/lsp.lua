@@ -106,16 +106,46 @@ return {
 
             local lua_opts = lsp_zero.nvim_lua_ls()
             require("lspconfig").lua_ls.setup(lua_opts)
-            require("lspconfig").rust_analyzer.setup{}
+            require("lspconfig").rust_analyzer.setup({})
+            require("lspconfig").bashls.setup({})
+            require("lspconfig").eslint.setup({})
+            require("lspconfig").jsonls.setup({
+                settings = {
+                    json = {
+                        schemas = require("schemastore").json.schemas({
+                            select = {
+                                "package.json",
+                            },
+                        }),
+                        validate = { enable = true },
+                    },
+                },
+            })
+            require("lspconfig").tsserver.setup({})
+            require("lspconfig").yamlls.setup({
+                settings = {
+                    yaml = {
+                        schemaStore = {
+                            -- You must disable built-in schemaStore support if you want to use
+                            -- this plugin and its advanced options like `ignore`.
+                            enable = false,
+                            -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+                            url = "",
+                        },
+                        schemas = require("schemastore").yaml.schemas({
+                            select = {
+                                "GitHub Workflow",
+                            },
+                        }),
+                        validate = { enable = true },
+                        completion = { enable = true },
+                    },
+                },
+            })
 
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "apex_ls",
-                    "bashls",
-                    "eslint",
-                    "jsonls",
-                    "tsserver",
-                    "yamlls",
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -124,42 +154,6 @@ return {
                             apex_jar_path = vim.fn.stdpath("data")
                                 .. "/mason/packages/apex-language-server/extension/dist/apex-jorje-lsp.jar",
                             filetypes = { "apex" },
-                        })
-                    end,
-                    yamlls = function()
-                        require("lspconfig").yamlls.setup({
-                            settings = {
-                                yaml = {
-                                    schemaStore = {
-                                        -- You must disable built-in schemaStore support if you want to use
-                                        -- this plugin and its advanced options like `ignore`.
-                                        enable = false,
-                                        -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
-                                        url = "",
-                                    },
-                                    schemas = require("schemastore").yaml.schemas({
-                                        select = {
-                                            "GitHub Workflow",
-                                        },
-                                    }),
-                                    validate = { enable = true },
-                                    completion = { enable = true },
-                                },
-                            },
-                        })
-                    end,
-                    jsonls = function()
-                        require("lspconfig").jsonls.setup({
-                            settings = {
-                                json = {
-                                    schemas = require("schemastore").json.schemas({
-                                        select = {
-                                            "package.json",
-                                        },
-                                    }),
-                                    validate = { enable = true },
-                                },
-                            },
                         })
                     end,
                 },
