@@ -5,10 +5,7 @@ return {
         "nvim-lua/plenary.nvim",
         "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
-        local ft = require("Comment.ft")
-        ft.set("apex", { "//%s", "/*%s*/" })
-    end,
+        -- ft.set("apex", { "//%s", "/*%s*/" })
     opts = {
         debug = {
             to_file = false,
