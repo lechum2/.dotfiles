@@ -41,7 +41,7 @@ RUN git config --global credential.helper store
 WORKDIR /home/lechu
 RUN npm config set strict-ssl false
 RUN npm set prefix="$HOME/.local"
-RUN ./dotfiles/npm/install-my-globals.sh
+RUN ./.dotfiles/npm/install-my-globals.sh
 RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
 ENV PATH=/home/lechu/.local/bin:$PATH
 
