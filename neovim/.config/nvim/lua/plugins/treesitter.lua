@@ -18,6 +18,7 @@ return {
                 "lua",
                 "markdown",
                 "rust",
+                "soql",
                 "typescript",
                 "vimdoc",
             },

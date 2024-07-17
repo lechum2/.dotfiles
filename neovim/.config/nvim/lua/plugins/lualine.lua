@@ -1,6 +1,5 @@
 local function salesforce()
-    local org_manager = require("salesforce.org_manager")
-    local alias = org_manager:get_default_alias()
+    local alias = require("sf").get_target_org()
     if alias == nil then
         return ""
     end
