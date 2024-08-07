@@ -8,7 +8,7 @@ RUN openssl s_client -servername archlinux.org -connect archlinux.org:443 -showc
 RUN for cert in cert.*; do trust anchor "$cert"; done
 
 RUN pacman -Syu --noconfirm
-RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-iron npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi zoxide
+RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-iron npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi chafa p7zip imagemagick zoxide
 RUN pacman --noconfirm -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions jdk17-openjdk tar unzip python-pip lynx
 RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus lua-language-server rust-analyzer rustup
 
