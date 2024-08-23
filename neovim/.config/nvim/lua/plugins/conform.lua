@@ -29,7 +29,7 @@ return {
             yaml = { "prettier" },
             apex = { "prettierapex" },
             xml = { "prettierxml" },
-            groovy = { "npmgroovylint" },
+            groovy = { "prettiergroovy" },
         },
         formatters = {
             prettierapex = {
@@ -47,23 +47,27 @@ return {
                     return prettier_global_plugin_path
                 end,
             },
-            npmgroovylint = {
-                inherit = false,
-                command = "npm-groovy-lint",
-                args = {
-                    "--format",
-                    "$FILENAME",
-                    "--failon",
-                    "none",
-                },
-                stdin = false,
-            },
             prettierxml = {
                 inherit = false,
                 command = "prettier",
                 args = {
                     "$FILENAME",
                     "--plugin=@prettier/plugin-xml",
+                },
+                cwd = function()
+                    local prettier_global_plugin_path = io.popen("npm config get prefix"):read()
+                    if vim.loop.os_uname().sysname == "Linux" then
+                        prettier_global_plugin_path = prettier_global_plugin_path .. "/lib"
+                    end
+                    return prettier_global_plugin_path
+                end,
+            },
+            prettiergroovy = {
+                inherit = false,
+                command = "prettier",
+                args = {
+                    "$FILENAME",
+                    "--plugin=prettier-plugin-groovy",
                 },
                 cwd = function()
                     local prettier_global_plugin_path = io.popen("npm config get prefix"):read()

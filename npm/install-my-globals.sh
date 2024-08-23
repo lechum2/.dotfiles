@@ -4,9 +4,9 @@ npm install --global \
     bash-language-server \
     eslint \
     neovim \
-    npm-groovy-lint \
     prettier \
     prettier-plugin-apex \
+    prettier-plugin-groovy \
     typescript \
     typescript-language-server \
     vscode-langservers-extracted \
