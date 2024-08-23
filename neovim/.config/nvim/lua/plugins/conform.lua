@@ -68,7 +68,10 @@ return {
                 args = {
                     "$FILENAME",
                     "--plugin=prettier-plugin-groovy",
+                    "--write",
                 },
+                stdin = false,
+                tmpfile_format = ".conform.$FILENAME.groovy",
                 cwd = function()
                     local prettier_global_plugin_path = io.popen("npm config get prefix"):read()
                     if vim.loop.os_uname().sysname == "Linux" then
