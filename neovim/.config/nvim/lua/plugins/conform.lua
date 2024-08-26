@@ -1,3 +1,11 @@
+local function get_prettier_global_plugin_path()
+    local prettier_global_plugin_path = io.popen("npm config get prefix"):read()
+    if vim.loop.os_uname().sysname == "Linux" then
+        prettier_global_plugin_path = prettier_global_plugin_path .. "/lib"
+    end
+    return prettier_global_plugin_path
+end
+
 return {
     "stevearc/conform.nvim",
     cmd = { "ConformInfo" },
@@ -39,13 +47,7 @@ return {
                     "$FILENAME",
                     "--plugin=prettier-plugin-apex",
                 },
-                cwd = function()
-                    local prettier_global_plugin_path = io.popen("npm config get prefix"):read()
-                    if vim.loop.os_uname().sysname == "Linux" then
-                        prettier_global_plugin_path = prettier_global_plugin_path .. "/lib"
-                    end
-                    return prettier_global_plugin_path
-                end,
+                cwd = get_prettier_global_plugin_path,
             },
             prettierxml = {
                 inherit = false,
@@ -54,13 +56,7 @@ return {
                     "$FILENAME",
                     "--plugin=@prettier/plugin-xml",
                 },
-                cwd = function()
-                    local prettier_global_plugin_path = io.popen("npm config get prefix"):read()
-                    if vim.loop.os_uname().sysname == "Linux" then
-                        prettier_global_plugin_path = prettier_global_plugin_path .. "/lib"
-                    end
-                    return prettier_global_plugin_path
-                end,
+                cwd = get_prettier_global_plugin_path,
             },
             prettiergroovy = {
                 inherit = false,
@@ -72,13 +68,7 @@ return {
                 },
                 stdin = false,
                 tmpfile_format = ".conform.$FILENAME.groovy",
-                cwd = function()
-                    local prettier_global_plugin_path = io.popen("npm config get prefix"):read()
-                    if vim.loop.os_uname().sysname == "Linux" then
-                        prettier_global_plugin_path = prettier_global_plugin_path .. "/lib"
-                    end
-                    return prettier_global_plugin_path
-                end,
+                cwd = get_prettier_global_plugin_path,
             },
         },
     },
