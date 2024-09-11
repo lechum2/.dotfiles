@@ -55,9 +55,10 @@ return {
                 }),
                 sources = {
                     { name = "path" },
+                    { name = "codeium" },
+                    { name = "copilot" },
                     { name = "nvim_lsp" },
                     { name = "nvim_lua" },
-                    { name = "codeium" },
                     { name = "buffer", keyword_length = 3 },
                     { name = "luasnip", keyword_length = 2 },
                     {
