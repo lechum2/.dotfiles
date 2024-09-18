@@ -5,7 +5,7 @@ return {
         "ibhagwan/fzf-lua", -- no need if you don't use listing metadata feature
     },
     ft = { "apex" },
-    cmd = { "SFFetchOrgList", "SFToggle" },
+    cmd = { "SF" },
     opts = {
         -- Unless you want to customize, no need to copy-paste any of these
         -- They are applied automatically
