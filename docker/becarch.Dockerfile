@@ -10,7 +10,7 @@ RUN for cert in cert.*; do trust anchor "$cert"; done
 RUN pacman -Syu --noconfirm
 RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-iron npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi chafa p7zip imagemagick zoxide
 RUN pacman --noconfirm -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions jdk17-openjdk tar unzip python-pip lynx
-RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus lua-language-server rust-analyzer rustup
+RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus lua-language-server rust-analyzer rustup postgresql
 
 # salesforce cli
 RUN wget https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-linux-x64.tar.xz
@@ -36,6 +36,15 @@ RUN stow ranger
 RUN git config --global user.name "Sebastian Lech"
 RUN git config --global user.email "x9t@bec.dk"
 RUN git config --global credential.helper store
+
+# open shift client
+ADD --chown=lechu:lechu https://aur.archlinux.org/openshift-client-bin.git#master /home/lechu/oc
+WORKDIR /home/lechu/oc
+RUN makepkg
+USER root
+RUN pacman -U openshift*.zst --noconfirm
+USER lechu
+RUN rm -rf /home/lechu/oc
 
 # npm
 WORKDIR /home/lechu
