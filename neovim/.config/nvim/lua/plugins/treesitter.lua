@@ -22,7 +22,7 @@ return {
                 "typescript",
                 "vimdoc",
             },
-            ignore_install = { 'org', 'orgmode' },
+            ignore_install = { 'org', },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
