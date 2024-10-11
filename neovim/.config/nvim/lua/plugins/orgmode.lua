@@ -11,7 +11,6 @@ return {
             LATER = ":foreground gray",
             DONE = ":foreground green",
         },
-        org_startup_folded = "showeverything",
         org_hide_leading_stars = true,
     },
     keys = {
