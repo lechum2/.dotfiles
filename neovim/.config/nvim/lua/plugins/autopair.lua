@@ -1,5 +1,10 @@
 return {
     "altermo/ultimate-autopair.nvim",
+    enabled = function()
+      if vim.bo.filetype == "org" then
+        return false
+      end
+    end,
     event = { "InsertEnter", "CmdlineEnter" },
     opts = {
         profile = "default",

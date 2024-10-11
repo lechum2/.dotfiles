@@ -54,6 +54,7 @@ return {
                     ["<C-b>"] = cmp_action.luasnip_jump_backward(),
                 }),
                 sources = {
+                    { name = "orgmode" },
                     { name = "path" },
                     { name = "nvim_lsp" },
                     { name = "nvim_lua" },
