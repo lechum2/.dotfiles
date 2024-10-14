@@ -12,6 +12,12 @@ return {
             DONE = ":foreground green",
         },
         org_hide_leading_stars = true,
+        mappings = {
+            global = {
+                org_agenda = { "gA", "<Leader>oa" },
+                org_capture = { "gC", "<Leader>oc" },
+            },
+        }
     },
     keys = {
         {
