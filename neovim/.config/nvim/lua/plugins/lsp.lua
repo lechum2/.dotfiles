@@ -54,6 +54,7 @@ return {
                     ["<C-b>"] = cmp_action.luasnip_jump_backward(),
                 }),
                 sources = {
+                    { name = "orgmode" },
                     { name = "path" },
                     { name = "codeium" },
                     { name = "copilot" },
