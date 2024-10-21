@@ -12,7 +12,7 @@ return {
 
         -- This plugin has both hotkeys and user commands supplied
         -- This flag enable/disable hotkeys while user commands are always enabled
-        enable_hotkeys = true,
+        enable_hotkeys = false,
 
         -- Some hotkeys are on "project level" thus always enabled. Examples: "set default org", "fetch org info".
         -- Other hotkeys are enabled when only metadata filetypes are loaded in the current buffer. Example: "push/retrieve current metadata file"
@@ -50,7 +50,7 @@ return {
         default_dir = "/force-app/main/default/",
 
         -- the folder this plugin uses to store intermediate data. It's under the sf project root directory.
-        plugin_folder_name = "/sf_cache/",
+        plugin_folder_name = "sf_cache/",
 
         -- after the test running with code coverage completes, display uncovered line sign automatically.
         -- you can set it to `false`, then manually run toggle_sign command.
@@ -62,4 +62,48 @@ return {
             uncovered = { fg = "#F07178" }, -- set `fg = ""` to disable this sign icon
         },
     },
+    keys = {
+        {
+            "<leader>sf",
+            function()
+                require("sf").fetch_org_list()
+            end,
+        },
+        {
+            "<leader>sd",
+            function()
+                require("sf").save_and_push()
+            end,
+        },
+        {
+            "<leader>sr",
+            function()
+                require("sf").retrieve()
+            end,
+        },
+        {
+            "<leader>st",
+            function()
+                require("sf").toggle_term()
+            end,
+        },
+        {
+            "<leader>stt",
+            function()
+                require("sf").run_current_test_with_coverage()
+            end,
+        },
+        {
+            "<leader>sta",
+            function()
+                require("sf").run_all_tests_in_this_file_with_coverage()
+            end,
+        },
+        {
+            "<leader>scc",
+            function()
+                require("sf").cancel()
+            end,
+        },
+    }
 }
