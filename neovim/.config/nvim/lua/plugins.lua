@@ -1,17 +1,18 @@
 return {
     {
-        'nvim-treesitter/playground',
+        "nvim-treesitter/playground",
         cmd = "TSPlaygroundToggle",
     },
-    'nvim-treesitter/nvim-treesitter-context',
+    "nvim-treesitter/nvim-treesitter-context",
     {
-        'mbbill/undotree',
+        "mbbill/undotree",
         keys = {
-            { "<leader>u", vim.cmd.UndotreeToggle }
-        }
+            { "<leader>u", vim.cmd.UndotreeToggle },
+        },
     },
     {
         "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && yarn",
         init = function()
             vim.g.mkdp_filetypes = { "markdown" }
