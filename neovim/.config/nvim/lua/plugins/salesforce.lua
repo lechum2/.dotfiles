@@ -68,18 +68,21 @@ return {
             function()
                 require("sf").fetch_org_list()
             end,
+            desc = "Fetch org list",
         },
         {
             "<leader>sd",
             function()
                 require("sf").save_and_push()
             end,
+            desc = "Deploy current file"
         },
         {
             "<leader>sr",
             function()
                 require("sf").retrieve()
             end,
+            desc = "Retrieve current file"
         },
         {
             "<leader>st",
@@ -92,18 +95,21 @@ return {
             function()
                 require("sf").run_current_test_with_coverage()
             end,
+            desc = "Run current test"
         },
         {
             "<leader>sta",
             function()
                 require("sf").run_all_tests_in_this_file_with_coverage()
             end,
+            desc = "Run all tests"
         },
         {
             "<leader>scc",
             function()
                 require("sf").cancel()
             end,
+            desc = "Cancel SF operation"
         },
     }
 }

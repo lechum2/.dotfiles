@@ -8,4 +8,13 @@ return {
     },
     config = true,
     cmd = "Neogit",
+    key = {
+        {
+            "<leader>ng",
+            function()
+                require("neogit").open()
+            end,
+            desc = "Open NeoGit",
+        },
+    },
 }
