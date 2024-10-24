@@ -23,9 +23,9 @@ return {
         {
             "<leader>ns",
             function()
-                local neogit = require("neogit")
-                neogit.open({ cwd = "~/notes/" })
+                require("neogit").open({ cwd = "~/notes/" })
             end,
+            desc = "Neogit notes"
         },
     },
 }
