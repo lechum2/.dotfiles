@@ -10,7 +10,7 @@ return {
             {
                 "<leader>u",
                 vim.cmd.UndotreeToggle,
-                desc = "Undotree"
+                desc = "Undotree",
             },
         },
     },
