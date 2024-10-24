@@ -8,7 +8,7 @@ return {
     },
     config = true,
     cmd = "Neogit",
-    key = {
+    keys = {
         {
             "<leader>ng",
             function()
