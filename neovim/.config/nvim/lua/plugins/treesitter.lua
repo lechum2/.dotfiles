@@ -17,6 +17,7 @@ return {
                 "json",
                 "lua",
                 "markdown",
+                "markdown_inline",
                 "rust",
                 "sflog",
                 "soql",
