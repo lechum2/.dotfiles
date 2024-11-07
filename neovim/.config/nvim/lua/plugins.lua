@@ -15,17 +15,11 @@ return {
         },
     },
     {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        build = "cd app && yarn",
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = { "markdown" },
-    },
-    {
         "mechatroner/rainbow_csv",
         ft = { "csv" },
     },
-    { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
+    {
+        "ThePrimeagen/vim-be-good",
+        cmd = "VimBeGood"
+    },
 }
