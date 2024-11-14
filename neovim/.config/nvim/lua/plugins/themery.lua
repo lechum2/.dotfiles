@@ -4,22 +4,13 @@ return {
         lazy = false,
         opts = {
             themes = {
-                "moonbow",
-                "ayu",
+                "ayu-dark",
+                "ayu-light",
                 "midnight",
                 "monoglow",
+                "moonbow",
             },
         },
-    },
-    {
-        "wnkz/monoglow.nvim",
-        lazy = true,
-        priority = 1000,
-    },
-    {
-        "arturgoms/moonbow.nvim",
-        lazy = false,
-        priority = 1000,
     },
     {
         "Shatur/neovim-ayu",
@@ -28,6 +19,16 @@ return {
     },
     {
         "dasupradyumna/midnight.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "wnkz/monoglow.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "arturgoms/moonbow.nvim",
         lazy = false,
         priority = 1000,
     },
