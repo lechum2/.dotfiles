@@ -4,8 +4,14 @@ return {
         lazy = false,
         opts = {
             themes = {
-                "ayu-dark",
                 "ayu-light",
+                {
+                    name = "gruvbox-light",
+                    colorscheme = "gruvbox",
+                    before = [[
+                    vim.opt.background = "light"
+                    ]],
+                },
                 {
                     name = "gruvbox-dark",
                     colorscheme = "gruvbox",
@@ -14,13 +20,7 @@ return {
                     vim.opt.background = "dark"
                     ]],
                 },
-                {
-                    name = "gruvbox-light",
-                    colorscheme = "gruvbox",
-                    before = [[
-                    vim.opt.background = "light"
-                    ]],
-                },
+                "ayu-dark",
                 "midnight",
                 "monoglow",
                 "moonbow",
