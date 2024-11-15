@@ -9,15 +9,14 @@ return {
                     name = "gruvbox-light",
                     colorscheme = "gruvbox",
                     before = [[
-                    vim.opt.background = "light"
+                        vim.opt.background = "light"
                     ]],
                 },
                 {
                     name = "gruvbox-dark",
                     colorscheme = "gruvbox",
                     before = [[
-                    -- All this block will be executed before apply "set colorscheme"
-                    vim.opt.background = "dark"
+                        vim.opt.background = "dark"
                     ]],
                 },
                 "ayu-dark",
