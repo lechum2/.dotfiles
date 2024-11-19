@@ -5,6 +5,7 @@ return {
         opts = {
             themes = {
                 "ayu-light",
+                "dayfox",
                 {
                     name = "gruvbox-light",
                     colorscheme = "gruvbox",
@@ -16,6 +17,7 @@ return {
                     name = "gruvbox-dark",
                     colorscheme = "gruvbox",
                     before = [[
+                        vim.g.gruvbox_contrast_dark = "hard"
                         vim.opt.background = "dark"
                     ]],
                 },
@@ -24,10 +26,6 @@ return {
                 "monoglow",
                 "moonbow",
                 "nightfox",
-                "dayfox",
-                "dawnfox",
-                "duskfox",
-                "nordfox",
                 "terafox",
                 "carbonfox",
             },
