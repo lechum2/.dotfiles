@@ -2,6 +2,7 @@ source ~/.zsh/directories.zsh
 source ~/.zsh/git.zsh
 source ~/.zsh/prompt.zsh
 source ~/.zsh/sudo.plugin.zsh
+source ~/.zsh/alias.zsh
 
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
@@ -39,11 +40,6 @@ export VISUAL='nvim'
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-
-alias pip=pip3
-alias vsc='code --enable-features=UseOzonePlatform --ozone-platform=wayland .'
-alias H=Hyprland
-alias up='yay --noconfirm && flatpak update --noninteractive && npm upgrade -g && rustup update && sf update'
 
 # compsys initialization
 autoload -Uz compinit
