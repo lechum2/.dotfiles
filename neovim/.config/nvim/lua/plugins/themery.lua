@@ -28,6 +28,7 @@ return {
                 "nightfox",
                 "terafox",
                 "carbonfox",
+                "darkbox"
             },
         },
     },
@@ -54,6 +55,11 @@ return {
     },
     {
         "arturgoms/moonbow.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "timmypidashev/darkbox.nvim",
         lazy = false,
         priority = 1000,
     },
