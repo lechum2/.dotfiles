@@ -15,10 +15,6 @@ return {
         },
     },
     {
-        "mechatroner/rainbow_csv",
-        ft = { "csv" },
-    },
-    {
         "ThePrimeagen/vim-be-good",
         cmd = "VimBeGood"
     },
