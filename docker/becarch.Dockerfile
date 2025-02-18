@@ -11,7 +11,7 @@ RUN pacman-key --init
 RUN pacman-key --populate
 RUN pacman -Syu --noconfirm
 RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-jod npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi chafa 7zip imagemagick zoxide
-RUN pacman --noconfirm -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions jdk17-openjdk tar unzip python-pip lynx
+RUN pacman --noconfirm -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions git-zsh-completion jdk17-openjdk tar unzip python-pip lynx
 RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus lua-language-server rust-analyzer rustup postgresql
 
 # salesforce cli
