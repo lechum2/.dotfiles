@@ -11,12 +11,6 @@ return {
         end,
     },
     {
-        "williamboman/mason.nvim",
-        lazy = false,
-        config = true,
-        build = ":MasonUpdate",
-    },
-    {
         "b0o/schemastore.nvim",
         lazy = true,
     },
@@ -81,7 +75,6 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
-            { "williamboman/mason-lspconfig.nvim" },
         },
         config = function()
             -- This is where all the LSP shenanigans will live
@@ -143,21 +136,11 @@ return {
                     },
                 },
             })
-
-            require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "apex_ls",
-                },
-                handlers = {
-                    lsp_zero.default_setup,
-                    apex_ls = function()
-                        require("lspconfig").apex_ls.setup({
-                            apex_jar_path = vim.fn.stdpath("data")
-                                .. "/mason/packages/apex-language-server/extension/dist/apex-jorje-lsp.jar",
-                            filetypes = { "apex" },
-                        })
-                    end,
-                },
+            require("lspconfig").apex_ls.setup({
+                apex_jar_path = vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
+                apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
+                apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
+                filetypes = { "apex" },
             })
         end,
     },
