@@ -26,6 +26,10 @@ return {
             "html",
         },
 
+        -- When Nvim is initiated, the sf org list is automatically fetched and target_org is set (if available) by `:SF org fetchList`
+        -- You can set it to `false` and have a manual control
+        fetch_org_list_at_nvim_start = false,
+
         -- Define what metadata to be listed in `list_md_to_retrieve()` (<leader>ml)
         -- Salesforce has numerous metadata types. We narrow down the scope of `list_md_to_retrieve()`.
         types_to_retrieve = {
