@@ -80,6 +80,7 @@ return {
                     codeium = {
                         name = "codeium",
                         module = "blink.compat.source",
+                        async = true,
                     },
                     spell = {
                         name = "Spell",
