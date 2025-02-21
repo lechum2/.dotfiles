@@ -99,11 +99,12 @@ return {
             end)
 
             local lua_opts = lsp_zero.nvim_lua_ls()
-            require("lspconfig").lua_ls.setup(lua_opts)
-            require("lspconfig").rust_analyzer.setup({})
-            require("lspconfig").bashls.setup({})
-            require("lspconfig").eslint.setup({})
-            require("lspconfig").jsonls.setup({
+            local lspconfig = require("lspconfig")
+            lspconfig.lua_ls.setup(lua_opts)
+            lspconfig.rust_analyzer.setup({})
+            lspconfig.bashls.setup({})
+            lspconfig.eslint.setup({})
+            lspconfig.jsonls.setup({
                 settings = {
                     json = {
                         schemas = require("schemastore").json.schemas({
@@ -115,8 +116,8 @@ return {
                     },
                 },
             })
-            require("lspconfig").ts_ls.setup({})
-            require("lspconfig").yamlls.setup({
+            lspconfig.ts_ls.setup({})
+            lspconfig.yamlls.setup({
                 settings = {
                     yaml = {
                         schemaStore = {
@@ -136,7 +137,7 @@ return {
                     },
                 },
             })
-            require("lspconfig").apex_ls.setup({
+            lspconfig.apex_ls.setup({
                 apex_jar_path = vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
                 apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
                 apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
