@@ -1,16 +1,5 @@
 return {
     {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v3.x",
-        lazy = true,
-        config = false,
-        init = function()
-            -- Disable automatic setup, we are doing it manually
-            vim.g.lsp_zero_extend_cmp = 0
-            vim.g.lsp_zero_extend_lspconfig = 0
-        end,
-    },
-    {
         "b0o/schemastore.nvim",
         lazy = true,
     },
@@ -29,23 +18,14 @@ return {
             { "saadparwaiz1/cmp_luasnip" },
         },
         config = function()
-            -- Here is where you configure the autocompletion settings.
-            local lsp_zero = require("lsp-zero")
-            lsp_zero.extend_cmp()
-
-            -- And you can configure cmp even more, if you want to.
             local cmp = require("cmp")
-            local cmp_action = lsp_zero.cmp_action()
             require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
-                formatting = lsp_zero.cmp_format(),
                 mapping = cmp.mapping.preset.insert({
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-d>"] = cmp.mapping.scroll_docs(4),
-                    ["<C-f>"] = cmp_action.luasnip_jump_forward(),
-                    ["<C-b>"] = cmp_action.luasnip_jump_backward(),
                 }),
                 sources = {
                     { name = "orgmode" },
@@ -65,6 +45,11 @@ return {
                         },
                     },
                 },
+                snippet = {
+                    expand = function(args)
+                        vim.snippet.expand(args.body)
+                    end,
+                },
             })
         end,
     },
@@ -77,30 +62,35 @@ return {
             { "hrsh7th/cmp-nvim-lsp" },
         },
         config = function()
-            -- This is where all the LSP shenanigans will live
-            local lsp_zero = require("lsp-zero")
-            lsp_zero.extend_lspconfig()
+            local lsp_defaults = require("lspconfig").util.default_config
 
-            lsp_zero.on_attach(function(client, bufnr)
-                -- see :help lsp-zero-keybindings
-                -- to learn the available actions
-                lsp_zero.default_keymaps({ buffer = bufnr })
-                local opts = { buffer = bufnr, remap = false }
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-                vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-                vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-                vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-                vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-                vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-                vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-                vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-            end)
+            -- Add cmp_nvim_lsp capabilities settings to lspconfig
+            -- This should be executed before you configure any language server
+            lsp_defaults.capabilities =
+                vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-            local lua_opts = lsp_zero.nvim_lua_ls()
+            -- LspAttach is where you enable features that only work
+            -- if there is a language server active in the file
+            vim.api.nvim_create_autocmd("LspAttach", {
+                desc = "LSP actions",
+                callback = function(event)
+                    local opts = { buffer = event.buf }
+
+                    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+                    vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
+                    vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
+                    vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
+                    vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
+                    vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
+                    vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
+                    vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
+                    vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+                end,
+            })
+
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup(lua_opts)
+            lspconfig.lua_ls.setup({})
             lspconfig.rust_analyzer.setup({})
             lspconfig.bashls.setup({})
             lspconfig.eslint.setup({})
