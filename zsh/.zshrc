@@ -1,6 +1,4 @@
 source ~/.zsh/directories.zsh
-source ~/.zsh/git.zsh
-source ~/.zsh/prompt.zsh
 source ~/.zsh/sudo.plugin.zsh
 source ~/.zsh/alias.zsh
 
@@ -54,3 +52,4 @@ eval
 SF_AC_ZSH_SETUP_PATH=~/.cache/sf/autocomplete/zsh_setup && test -f $SF_AC_ZSH_SETUP_PATH && source $SF_AC_ZSH_SETUP_PATH; # sf autocomplete setup
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
