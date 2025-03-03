@@ -1,8 +1,12 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-right_format = """$time"""
+format = '$all$fill$time$line_break$character'
+
+[fill]
+symbol = ' '
 
 [time]
 disabled = false
 format = '[$time]($style)'
+
