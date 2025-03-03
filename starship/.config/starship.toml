@@ -9,8 +9,14 @@ $battery\
 $status\
 $os\
 $container\
-$shell\
-$character"""
+$shell"""
+
+# ~/.config/starship.toml
+
+[character]
+success_symbol = '[](bold green) '
+error_symbol = '[✗](bold red) '
+vimcmd_symbol = '[V](bold green) '
 
 [fill]
 symbol = ' '
