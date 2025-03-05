@@ -24,7 +24,7 @@ symbol = ' '
 disabled = false
 powershell_indicator = ''
 bash_indicator = '󱆃'
-zsh_indicator = '󱋪'
+zsh_indicator = ''
 
 [time]
 disabled = false
