@@ -35,3 +35,4 @@ set fish_cursor_external line
 set fish_cursor_visual block
 
 starship init fish | source
+zoxide init fish | source
