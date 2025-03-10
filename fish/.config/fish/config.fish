@@ -17,6 +17,7 @@ function fish_user_key_bindings
 
     bind -M insert \cP history-prefix-search-backward
     bind -M insert \cN history-prefix-search-forward
+    bind -M insert \cY accept-autosuggestion
 end
 
 # Emulates vim's cursor shape behavior
