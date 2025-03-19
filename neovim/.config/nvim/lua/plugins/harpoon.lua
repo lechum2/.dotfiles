@@ -25,5 +25,12 @@ return {
             end,
             desc = "Harpoon go to previous"
         },
+        {
+            "<leader>hc",
+            function ()
+                require("harpoon"):list():clear()
+            end,
+            desc = "Harpoon clear list"
+        },
     }
 }
