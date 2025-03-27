@@ -83,6 +83,7 @@ return {
                     codeium = {
                         name = "codeium",
                         module = "blink.compat.source",
+                        score_offset = 10,
                         async = true,
                     },
                     spell = {
