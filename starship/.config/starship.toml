@@ -1,0 +1,33 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$all$fill$time\
+$line_break\
+$jobs\
+$battery\
+$os\
+$container\
+$shell"""
+
+# ~/.config/starship.toml
+
+[character]
+success_symbol = '[](bold green) '
+error_symbol = '[✗](bold red) '
+vimcmd_symbol = '[V](bold green) '
+
+[fill]
+symbol = ' '
+
+[shell]
+disabled = false
+powershell_indicator = ''
+bash_indicator = '󱆃'
+zsh_indicator = ''
+fish_indicator = ''
+
+[time]
+disabled = false
+format = '[$time]($style)'
+
