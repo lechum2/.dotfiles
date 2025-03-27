@@ -17,16 +17,19 @@ return {
         -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
         lazy = true,
         -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-        opts = {},
+        opts = {
+            enable_events = true,
+        },
     },
     {
         "saghen/blink.cmp",
         -- optional: provides snippets for the snippet source
         dependencies = {
+            "Exafunction/codeium.nvim",
             "rafamadriz/friendly-snippets",
             "ribru17/blink-cmp-spell",
         },
-
+        lazy = false,
         -- use a release tag to download pre-built binaries
         version = "*",
         -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -53,7 +56,7 @@ return {
                 -- Sets the fallback highlight groups to nvim-cmp's highlight groups
                 -- Useful for when your theme doesn't support blink.cmp
                 -- Will be removed in a future release
-                use_nvim_cmp_as_default = true,
+                use_nvim_cmp_as_default = false,
                 -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
                 -- Adjusts spacing to ensure icons are aligned
                 nerd_font_variant = "mono",
@@ -63,14 +66,14 @@ return {
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
                 default = {
-                    "lazydev",
                     "orgmode",
-                    "path",
                     "lsp",
-                    "codeium",
-                    "snippets",
+                    "path",
                     "buffer",
+                    "codeium",
+                    "lazydev",
                     "spell",
+                    "snippets",
                 },
                 providers = {
                     orgmode = {
@@ -81,7 +84,6 @@ return {
                         name = "codeium",
                         module = "blink.compat.source",
                         async = true,
-                        timeout_ms = 5000,
                     },
                     spell = {
                         name = "Spell",
@@ -98,10 +100,6 @@ return {
         },
         opts_extend = { "sources.default" },
     },
-    {
-        "b0o/schemastore.nvim",
-        lazy = true,
-    },
     -- LSP
     {
         "neovim/nvim-lspconfig",
@@ -110,6 +108,7 @@ return {
         dependencies = {
             { "saghen/blink.cmp" },
             { "hrsh7th/cmp-nvim-lsp" },
+            { "b0o/schemastore.nvim" },
         },
         config = function()
             local capabilities = require("blink.cmp").get_lsp_capabilities()
