@@ -19,3 +19,5 @@
 	keepBackup = false
 [color]
 	ui = auto
+[safe]
+	directory = /storage/emulated/0/orgzly-git
