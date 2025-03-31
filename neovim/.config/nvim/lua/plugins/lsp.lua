@@ -75,7 +75,13 @@ return {
                     "spell",
                     "snippets",
                 },
-                per_filetype = { oil = { "spell", "buffer", "path" } },
+                per_filetype = {
+                    oil = {
+                        "spell",
+                        "buffer",
+                        "path",
+                    },
+                },
                 providers = {
                     orgmode = {
                         name = "orgmode",
