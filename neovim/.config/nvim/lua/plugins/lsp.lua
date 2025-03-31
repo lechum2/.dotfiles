@@ -96,6 +96,7 @@ return {
                     spell = {
                         name = "Spell",
                         module = "blink-cmp-spell",
+                        min_keyword_length = 3,
                     },
                     lazydev = {
                         name = "LazyDev",
