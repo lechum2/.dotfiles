@@ -66,12 +66,10 @@ return {
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
                 default = {
-                    "orgmode",
                     "lsp",
                     "path",
                     "buffer",
                     "codeium",
-                    "lazydev",
                     "spell",
                     "snippets",
                 },
@@ -80,6 +78,20 @@ return {
                         "spell",
                         "buffer",
                         "path",
+                    },
+                    lua = {
+                        "lsp",
+                        "path",
+                        "buffer",
+                        "codeium",
+                        "lazydev",
+                        "spell",
+                        "snippets",
+                    },
+                    org = {
+                        "orgmode",
+                        "spell",
+                        "buffer",
                     },
                 },
                 providers = {
