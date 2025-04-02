@@ -138,7 +138,6 @@ return {
             lspconfig.lua_ls.setup({ capabilities = capabilities })
             lspconfig.rust_analyzer.setup({})
             lspconfig.bashls.setup({})
-            lspconfig.eslint.setup({})
             lspconfig.jsonls.setup({
                 settings = {
                     json = {
@@ -152,6 +151,7 @@ return {
                 },
             })
             lspconfig.ts_ls.setup({})
+            lspconfig.eslint.setup({})
             lspconfig.yamlls.setup({
                 settings = {
                     yaml = {
