@@ -38,7 +38,7 @@ return {
                 },
                 merge_tool = {
                     -- Config for conflicted files in diff views during a merge or rebase.
-                    layout = "diff3_horizontal",
+                    layout = "diff3_mixed",
                     disable_diagnostics = true, -- Temporarily disable diagnostics for conflict buffers while in the view.
                     winbar_info = true, -- See ':h diffview-config-view.x.winbar_info'
                 },
@@ -49,13 +49,13 @@ return {
                 },
             },
             file_panel = {
-                listing_style = "tree", -- One of 'list' or 'tree'
+                listing_style = "list", -- One of 'list' or 'tree'
                 tree_options = {       -- Only applies when listing_style is 'tree'
                     flatten_dirs = true, -- Flatten dirs that only contain one single dir
                     folder_statuses = "only_folded", -- One of 'never', 'only_folded' or 'always'.
                 },
                 win_config = {         -- See ':h diffview-config-win_config'
-                    position = "left",
+                    position = "top",
                     width = 35,
                     win_opts = {}
                 },
@@ -124,6 +124,8 @@ return {
                 diff2 = {
                     -- Mappings in 2-way diff layouts
                     { "n", "g?", actions.help({ "view", "diff2" }), { desc = "Open the help panel" } },
+                    { { "n", "x" }, "dp", vim.cmd.diffput, { desc = "Put the diff hunk from this to the other" } },
+                    { { "n", "x" }, "dg", vim.cmd.diffget, { desc = "Get the diff hunk from the other to this" } },
                 },
                 diff3 = {
                     -- Mappings in 3-way diff layouts
