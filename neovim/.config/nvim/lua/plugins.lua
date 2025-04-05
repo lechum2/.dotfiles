@@ -1,10 +1,5 @@
 return {
     {
-        "nvim-treesitter/playground",
-        cmd = "TSPlaygroundToggle",
-    },
-    "nvim-treesitter/nvim-treesitter-context",
-    {
         "mbbill/undotree",
         keys = {
             {
@@ -16,6 +11,6 @@ return {
     },
     {
         "ThePrimeagen/vim-be-good",
-        cmd = "VimBeGood"
+        cmd = "VimBeGood",
     },
 }
