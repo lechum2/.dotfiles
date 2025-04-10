@@ -1,21 +1,20 @@
-Invoke-Expression (&starship init powershell)
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
-
-Import-Module posh-git
 
 Set-PSReadLineKeyHandler -Chord Ctrl+n HistorySearchForward
 Set-PSReadLineKeyHandler -Chord Ctrl+p HistorySearchBackward
 
 New-Alias l ls
+New-Alias jq jq-windows-amd64.exe
+New-Alias make mingw32-make.exe
 
-$prompt = ""
-function Invoke-Starship-PreCommand {
-    $current_location = $executionContext.SessionState.Path.CurrentLocation
-    if ($current_location.Provider.Name -eq "FileSystem") {
-        $ansi_escape = [char]27
-        $provider_path = $current_location.ProviderPath -replace "\\", "/"
-        $prompt = "$ansi_escape]7;file://${env:COMPUTERNAME}/${provider_path}$ansi_escape\"
-    }
-    $host.ui.Write($prompt)
+function Update-Apex-Lsp {
+    $location_command = 'nvim --headless +"lua print(vim.fn.stdpath(\"data\"))" +qa'
+    $location = cmd /c $location_command '2>&1'
+    Invoke-WebRequest 'https://github.com/forcedotcom/salesforcedx-vscode/blob/develop/packages/salesforcedx-vscode-apex/out/apex-jorje-lsp.jar?raw=true' -OutFile "$location\apex-jorje-lsp.jar"
 }
-. C:\Users\Y2DX\AppData\Local\sf\autocomplete\functions\powershell\sf.ps1
+
+. C:\Users\X9T\AppData\Local\sf\autocomplete\functions\powershell\sf.ps1
+
+Invoke-Expression (&starship init powershell)
+
+Set-Location C:\Users\X9T\workspace
