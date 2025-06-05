@@ -158,13 +158,14 @@
         "return-type": "json",
         "format": "{icon} {0}",
         "format-icons": {
-            "standby": "STANDBY",
-            "running": "RUNNING",
-            "paused": "PAUSE"
+            "standby": "󰔛",
+            "running": "󰼛",
+            "paused": "󰏤"
         },
-        "on-click": "waybar_timer new 25 'notify-send \"Session finished\"'",
-        "on-click-middle": "waybar_timer cancel",
-        "on-click-right": "waybar_timer togglepause",
+        "on-click": "waybar_timer new 40 'notify-send \"Work block is done!\"'",
+        "on-click-right": "waybar_timer new 10 'notify-send \"Break is over!\"'",
+        "on-double-click": "waybar_timer cancel",
+        "on-click-middle": "waybar_timer togglepause",
         "on-scroll-up": "waybar_timer increase 60 || waybar_timer new 1 'notify-send -u critical \"Timer expired\"'",
         "on-scroll-down": "waybar_timer decrease 60"
     }
