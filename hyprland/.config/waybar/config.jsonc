@@ -2,7 +2,9 @@
 {
     // Global configuration
     "layer": "top",
-    "output": ["eDP-1"],
+    "output": [
+        "eDP-1"
+    ],
     "position": "top",
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
@@ -14,6 +16,7 @@
         "cava"
     ],
     "modules-right": [
+        "custom/timer",
         "tray",
         "idle_inhibitor",
         "network",
@@ -24,7 +27,6 @@
         "custom/weather",
         "clock#time"
     ],
-
     // Modules
     "battery": {
         "interval": 10,
@@ -41,7 +43,7 @@
             "", // Icon: battery-three-quarters
             "", // Icon: battery-half
             "", // Icon: battery-quarter
-            ""  // Icon: battery-empty
+            "" // Icon: battery-empty
         ],
         "tooltip": true
     },
@@ -90,7 +92,10 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{icon}  {percent}%",
-        "format-icons": ["", ""]
+        "format-icons": [
+            "",
+            ""
+        ]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -101,7 +106,11 @@
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
-            "default": ["🕨","🕩","🕪"]
+            "default": [
+                "🕨",
+                "🕩",
+                "🕪"
+            ]
         },
         "on-click": "pavucontrol"
     },
@@ -121,7 +130,16 @@
         "waves": false,
         "noise_reduction": 0.77,
         "input_delay": 2,
-        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
         "actions": {
             "on-click-right": "mode"
         }
@@ -133,5 +151,21 @@
         "tooltip": true,
         "interval": 3600,
         "on-click": "$XDG_CONFIG_HOME/waybar/scripts/get_weather.sh"
+    },
+    "custom/timer": {
+        "exec": "waybar_timer hook",
+        "exec-on-event": false,
+        "return-type": "json",
+        "format": "{icon} {0}",
+        "format-icons": {
+            "standby": "STANDBY",
+            "running": "RUNNING",
+            "paused": "PAUSE"
+        },
+        "on-click": "waybar_timer new 25 'notify-send \"Session finished\"'",
+        "on-click-middle": "waybar_timer cancel",
+        "on-click-right": "waybar_timer togglepause",
+        "on-scroll-up": "waybar_timer increase 60 || waybar_timer new 1 'notify-send -u critical \"Timer expired\"'",
+        "on-scroll-down": "waybar_timer decrease 60"
     }
 }
