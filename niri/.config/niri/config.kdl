@@ -283,6 +283,22 @@ animations {
     // slowdown 3.0
 }
 
+workspace "terminal" {
+    open-on-output "eDP-1"
+}
+workspace "browser" {
+    open-on-output "eDP-1"
+}
+workspace "music" {
+    open-on-output "eDP-1"
+}
+workspace "communication" {
+    open-on-output "eDP-1"
+}
+workspace "monitor" {
+    // open-on-output "eDP-1"
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
@@ -476,11 +492,11 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
+    Mod+1 { focus-workspace "terminal"; }
+    Mod+2 { focus-workspace "browser"; }
+    Mod+3 { focus-workspace "music"; }
+    Mod+4 { focus-workspace "monitor"; }
+    Mod+5 { focus-workspace "communication"; }
     Mod+6 { focus-workspace 6; }
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
