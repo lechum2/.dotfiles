@@ -39,15 +39,9 @@ return {
                     key = "f",
                 },
                 {
-                    desc = " Apps",
-                    group = "DiagnosticHint",
-                    action = "Telescope app",
-                    key = "a",
-                },
-                {
                     desc = " dotfiles",
                     group = "Number",
-                    action = "Telescope dotfiles",
+                    action = "lua require('telescope.builtin').find_files({prompt_title = '< neovim config >',cwd = vim.fn.stdpath('config'),hidden = true,})",
                     key = "d",
                 },
             },
