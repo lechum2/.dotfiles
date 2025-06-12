@@ -101,6 +101,7 @@ output "eDP-1" {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
+    background-color "#000000"
     // Set gaps around windows in logical pixels.
     gaps 0
 
@@ -262,7 +263,7 @@ spawn-at-startup "~/.config/hypr/scripts/quote.sh"
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
