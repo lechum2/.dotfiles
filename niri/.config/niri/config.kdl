@@ -251,7 +251,7 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "waybar_timer" "serve"
-spawn-at-startup "waybar"
+spawn-at-startup "waybar" "--config" "~/.config/waybar/niri.jsonc"
 spawn-at-startup "mako"
 spawn-at-startup "gammastep-indicator"
 spawn-at-startup "swaybg" "--mode" "center" "--image" "~/Pictures/yin-yang-small.png" "--color" "'##000000'"
