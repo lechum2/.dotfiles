@@ -383,6 +383,10 @@ binds {
     XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
     XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
 
+    // Mako notifications
+    Mod+O { spawn "makoctl" "dismiss"; }
+    Mod+I { spawn "makoctl" "dismiss" "--all"; }
+
     Mod+Q { close-window; }
     Mod+Shift+Q { close-window; }
 
