@@ -9,8 +9,8 @@
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/submap"
+        "niri/workspaces",
+        "niri/window"
     ],
     "modules-center": [
         "cava"
@@ -65,18 +65,19 @@
         "tooltip-format": "{ifname}: {ipaddr}",
         "on-click": "wofi-wifi-menu"
     },
-    "hyprland/submap": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt,
-        "tooltip": false
-    },
-    "hyprland/window": {
+    "niri/window": {
         "format": "{}"
     },
-    "hyprland/workspaces": {
-        "format": "{name}",
-        "on-click": "activate",
-        "sort-by-number": true,
-        "all-outputs": true
+    "niri/workspaces": {
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "terminal": "󰣇",
+            "browser": "󰈹",
+            "music": "󰝚",
+            "monitor": "󰍹",
+            "communication": "󰭹"
+        }
     },
     "tray": {
         "icon-size": 21,

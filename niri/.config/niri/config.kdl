@@ -293,11 +293,11 @@ workspace "browser" {
 workspace "music" {
     open-on-output "eDP-1"
 }
-workspace "communication" {
-    open-on-output "eDP-1"
-}
 workspace "monitor" {
     // open-on-output "eDP-1"
+}
+workspace "communication" {
+    open-on-output "eDP-1"
 }
 
 // Window rules let you adjust behavior for individual windows.
