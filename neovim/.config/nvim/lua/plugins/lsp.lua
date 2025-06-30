@@ -28,6 +28,7 @@ return {
             "Exafunction/codeium.nvim",
             "rafamadriz/friendly-snippets",
             "ribru17/blink-cmp-spell",
+            "giuxtaposition/blink-cmp-copilot",
         },
         lazy = false,
         -- use a release tag to download pre-built binaries
@@ -74,6 +75,7 @@ return {
                     "path",
                     "buffer",
                     "codeium",
+                    "copilot",
                     "html-css",
                     "spell",
                     "snippets",
@@ -89,6 +91,7 @@ return {
                         "path",
                         "buffer",
                         "codeium",
+                        "copilot",
                         "lazydev",
                         "spell",
                         "snippets",
@@ -108,6 +111,12 @@ return {
                         name = "codeium",
                         module = "blink.compat.source",
                         score_offset = 10,
+                        async = true,
+                    },
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-cmp-copilot",
+                        score_offset = 100,
                         async = true,
                     },
                     spell = {
