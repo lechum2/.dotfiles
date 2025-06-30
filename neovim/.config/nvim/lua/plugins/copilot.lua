@@ -8,13 +8,6 @@ return {
         panel = { enabled = false },
     }
 },
-{
-    "zbirenbaum/copilot-cmp",
-    config = true,
-    dependencies = {
-        { "zbirenbaum/copilot.lua" }
-    }
-},
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "canary",
