@@ -7,9 +7,11 @@ RUN echo -e '--insecure' >> .curlrc
 RUN openssl s_client -servername archlinux.org -connect archlinux.org:443 -showcerts | awk '/-----BEGIN/{f="cert."(n++)} f{print>f} /-----END/{f=""}'
 RUN for cert in cert.*; do trust anchor "$cert"; done
 
+RUN pacman-key --init
+RUN pacman-key --populate
 RUN pacman -Syu --noconfirm
-RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-iron npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi chafa p7zip imagemagick zoxide
-RUN pacman --noconfirm -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions jdk17-openjdk tar unzip python-pip lynx
+RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-jod npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi chafa 7zip imagemagick zoxide
+RUN pacman --noconfirm -S zsh starship zsh-completions zsh-syntax-highlighting zsh-autosuggestions git-zsh-completion jdk17-openjdk tar unzip python-pip lynx
 RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus lua-language-server rust-analyzer rustup postgresql
 
 # salesforce cli

@@ -17,7 +17,7 @@ return {
                 org_agenda = { "gA", "<Leader>oa" },
                 org_capture = { "gC", "<Leader>oc" },
             },
-        }
+        },
     },
     keys = {
         {

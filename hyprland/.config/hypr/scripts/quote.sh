@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-quoteJson=$(curl https://api.quotable.io/random -s)
-quote=$(echo "$quoteJson" | jq --raw-output ".content")
-author=$(echo "$quoteJson" | jq --raw-output ".author")
+quoteJson=$(curl https://favqs.com/api/qotd -s)
+quote=$(echo "$quoteJson" | jq --raw-output ".quote.body")
+author=$(echo "$quoteJson" | jq --raw-output ".quote.author")
 sleep 2
 notify-send "$author" "$quote"

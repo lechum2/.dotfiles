@@ -1,10 +1,5 @@
 return {
     {
-        "nvim-treesitter/playground",
-        cmd = "TSPlaygroundToggle",
-    },
-    "nvim-treesitter/nvim-treesitter-context",
-    {
         "mbbill/undotree",
         keys = {
             {
@@ -15,17 +10,7 @@ return {
         },
     },
     {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        build = "cd app && yarn",
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = { "markdown" },
+        "ThePrimeagen/vim-be-good",
+        cmd = "VimBeGood",
     },
-    {
-        "mechatroner/rainbow_csv",
-        ft = { "csv" },
-    },
-    { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
 }

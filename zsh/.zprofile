@@ -13,3 +13,5 @@ export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
+# add rust cargo installation folder to path
+export PATH="$PATH:$HOME/.cargo/bin"

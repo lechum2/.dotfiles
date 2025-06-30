@@ -2,22 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-function fish_prompt
-    set -l last_status $status
-    # Prompt status only if it's not 0
-    set -l stat
-    if test $last_status -ne 0
-        set stat (set_color red)"[$last_status]"(set_color normal)
-    end
-
-    printf '%s%s%s@%s%s: %s%s%s%s %s \n> ' (set_color magenta) $USER (set_color normal) (set_color green) $hostname \
-        (set_color blue) $PWD (set_color normal) (fish_git_prompt) $stat
-end
-
-function fish_right_prompt
-    date '+%m/%d/%y'
-end
-
 function fish_user_key_bindings
     # Execute this once per mode that emacs bindings should be used in
     fish_default_key_bindings -M insert
@@ -33,6 +17,7 @@ function fish_user_key_bindings
 
     bind -M insert \cP history-prefix-search-backward
     bind -M insert \cN history-prefix-search-forward
+    bind -M insert \cY accept-autosuggestion
 end
 
 # Emulates vim's cursor shape behavior
@@ -50,3 +35,5 @@ set fish_cursor_external line
 # visual mode, but due to fish_cursor_default, is redundant here
 set fish_cursor_visual block
 
+starship init fish | source
+zoxide init fish | source

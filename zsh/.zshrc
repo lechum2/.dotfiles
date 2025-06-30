@@ -1,7 +1,6 @@
 source ~/.zsh/directories.zsh
-source ~/.zsh/git.zsh
-source ~/.zsh/prompt.zsh
 source ~/.zsh/sudo.plugin.zsh
+source ~/.zsh/alias.zsh
 
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
@@ -40,11 +39,6 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-alias pip=pip3
-alias vsc='code --enable-features=UseOzonePlatform --ozone-platform=wayland .'
-alias H=Hyprland
-alias up='yay --noconfirm && npm upgrade -g && rustup update && sf update'
-
 # compsys initialization
 autoload -Uz compinit
 compinit
@@ -58,3 +52,4 @@ eval
 SF_AC_ZSH_SETUP_PATH=~/.cache/sf/autocomplete/zsh_setup && test -f $SF_AC_ZSH_SETUP_PATH && source $SF_AC_ZSH_SETUP_PATH; # sf autocomplete setup
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
