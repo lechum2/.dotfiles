@@ -367,7 +367,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "kitty"; }
-    Mod+D { spawn "fuzzel" "--show-actions" "--background-color=000000ff" "--selection-color=93c47dff" "--output=eDP-1"; }
+    Mod+D { spawn "fuzzel" "--show-actions" "--background-color=000000ff" "--selection-color=93c47dff"; }
     // Mod+Z { spawn "pidof" "hyprlock" "||" "hyprlock"; }
     Mod+Z { spawn "hyprlock"; }
 
