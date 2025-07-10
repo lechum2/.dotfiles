@@ -18,3 +18,5 @@ function Update-Apex-Lsp {
 Invoke-Expression (&starship init powershell)
 
 Set-Location C:\Users\X9T\workspace
+
+Import-Module posh-git
