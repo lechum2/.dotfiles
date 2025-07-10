@@ -14,5 +14,5 @@ return {
         end
         require("codeium").setup(opts);
     end,
-    enabled = false
+    enabled = true,
 }
