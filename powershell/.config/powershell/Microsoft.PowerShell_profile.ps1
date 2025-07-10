@@ -10,7 +10,7 @@ New-Alias make mingw32-make.exe
 function Update-Apex-Lsp {
     $location_command = 'nvim --headless +"lua print(vim.fn.stdpath(\"data\"))" +qa'
     $location = cmd /c $location_command '2>&1'
-    Invoke-WebRequest 'https://github.com/forcedotcom/salesforcedx-vscode/blob/develop/packages/salesforcedx-vscode-apex/out/apex-jorje-lsp.jar?raw=true' -OutFile "$location\apex-jorje-lsp.jar"
+    Invoke-WebRequest 'https://raw.githubusercontent.com/forcedotcom/salesforcedx-vscode/develop/packages/salesforcedx-vscode-apex/jars/apex-jorje-lsp.jar' -OutFile "$location\apex-jorje-lsp.jar"
 }
 
 . C:\Users\X9T\AppData\Local\sf\autocomplete\functions\powershell\sf.ps1
