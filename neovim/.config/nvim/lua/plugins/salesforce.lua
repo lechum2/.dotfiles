@@ -2,6 +2,7 @@ return {
     "xixiaofinland/sf.nvim",
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
+        "stevearc/overseer.nvim",
         "ibhagwan/fzf-lua", -- no need if you don't use listing metadata feature
     },
     ft = { "apex" },
@@ -39,16 +40,7 @@ return {
             "LightningComponentBundle",
         },
 
-        -- Configuration for the integrated terminal
-        term_config = {
-            blend = 10, -- background transparency: 0 is fully opaque; 100 is fully transparent
-            dimensions = {
-                height = 0.4, -- proportional of the editor height. 0.4 means 40%.
-                width = 0.8, -- proportional of the editor width. 0.8 means 80%.
-                x = 0.5, -- starting position of width. Details in `get_dimension()` in raw_term.lua source code.
-                y = 0.9, -- starting position of height. Details in `get_dimension()` in raw_term.lua source code.
-            },
-        },
+        terminal = "overseer",
 
         -- the sf project metadata folder, update this in case you diverged from the default sf folder structure
         default_dir = "/force-app/main/default/",
