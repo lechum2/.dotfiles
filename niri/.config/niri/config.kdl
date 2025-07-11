@@ -94,7 +94,11 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
+    position x=960 y=2160
+}
+output "LG Electronics LG Ultra HD 0x00043F4B" {
     position x=0 y=0
+    scale 1
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -294,7 +298,7 @@ workspace "music" {
     open-on-output "eDP-1"
 }
 workspace "monitor" {
-    // open-on-output "eDP-1"
+    open-on-output "LG Electronics LG Ultra HD 0x00043F4B"
 }
 workspace "communication" {
     open-on-output "eDP-1"
