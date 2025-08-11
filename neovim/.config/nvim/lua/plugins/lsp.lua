@@ -152,10 +152,11 @@ return {
         config = function()
             local capabilities = require("blink.cmp").get_lsp_capabilities()
             local lspconfig = require("lspconfig")
+            lspconfig.util.default_config.capabilities = capabilities;
+            vim.lsp.enable("lua_ls")
+            vim.lsp.enable("rust_analyzer")
+            vim.lsp.enable("bashls")
 
-            lspconfig.lua_ls.setup({ capabilities = capabilities })
-            lspconfig.rust_analyzer.setup({})
-            lspconfig.bashls.setup({})
             lspconfig.jsonls.setup({
                 settings = {
                     json = {
