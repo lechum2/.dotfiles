@@ -13,6 +13,7 @@ return {
                     "apex",
                     "bash",
                     "c",
+                    "css",
                     "gitcommit",
                     "groovy",
                     "html",

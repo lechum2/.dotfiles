@@ -169,6 +169,7 @@ return {
                 },
             })
             lspconfig.ts_ls.setup({})
+            lspconfig.vue_ls.setup({})
             lspconfig.eslint.setup({})
             lspconfig.yamlls.setup({
                 settings = {
