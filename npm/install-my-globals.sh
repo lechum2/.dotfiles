@@ -1,6 +1,7 @@
 #!/bin/bash
 npm install --global \
     @prettier/plugin-xml \
+    @vue/language-server \
     bash-language-server \
     eslint \
     neovim \
