@@ -156,8 +156,7 @@ return {
             vim.lsp.enable("lua_ls")
             vim.lsp.enable("rust_analyzer")
             vim.lsp.enable("bashls")
-
-            lspconfig.jsonls.setup({
+            vim.lsp.config("jsonls", {
                 settings = {
                     json = {
                         schemas = require("schemastore").json.schemas({
@@ -169,10 +168,11 @@ return {
                     },
                 },
             })
-            lspconfig.ts_ls.setup({})
-            lspconfig.vue_ls.setup({})
-            lspconfig.eslint.setup({})
-            lspconfig.yamlls.setup({
+            vim.lsp.enable("jsonls")
+            vim.lsp.enable("ts_ls")
+            vim.lsp.enable("vue_ls")
+            vim.lsp.enable("eslint")
+            vim.lsp.config("yamlls", {
                 settings = {
                     yaml = {
                         schemaStore = {
@@ -192,12 +192,14 @@ return {
                     },
                 },
             })
-            lspconfig.apex_ls.setup({
+            vim.lsp.enable("yamlls")
+            vim.lsp.config("apex_ls", {
                 apex_jar_path = vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
                 apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
                 apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
                 filetypes = { "apex" },
             })
+            vim.lsp.enable("apex_ls")
         end,
     },
 }
