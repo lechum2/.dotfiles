@@ -74,7 +74,6 @@ return {
                     "lsp",
                     "path",
                     "buffer",
-                    "codeium",
                     "copilot",
                     "html-css",
                     "spell",
@@ -90,7 +89,6 @@ return {
                         "lsp",
                         "path",
                         "buffer",
-                        "codeium",
                         "copilot",
                         "lazydev",
                         "spell",
@@ -106,12 +104,6 @@ return {
                     orgmode = {
                         name = "orgmode",
                         module = "blink.compat.source",
-                    },
-                    codeium = {
-                        name = "codeium",
-                        module = "codeium.blink",
-                        score_offset = 10,
-                        async = true,
                     },
                     copilot = {
                         name = "copilot",
