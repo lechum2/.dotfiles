@@ -25,7 +25,7 @@ return {
         "saghen/blink.cmp",
         -- optional: provides snippets for the snippet source
         dependencies = {
-            "Exafunction/codeium.nvim",
+            "Exafunction/windsurf.nvim",
             "rafamadriz/friendly-snippets",
             "ribru17/blink-cmp-spell",
             "giuxtaposition/blink-cmp-copilot",
@@ -109,7 +109,7 @@ return {
                     },
                     codeium = {
                         name = "codeium",
-                        module = "blink.compat.source",
+                        module = "codeium.blink",
                         score_offset = 10,
                         async = true,
                     },
