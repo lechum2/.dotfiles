@@ -137,7 +137,6 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             { "saghen/blink.cmp" },
-            { "hrsh7th/cmp-nvim-lsp" },
             { "b0o/schemastore.nvim" },
         },
         config = function()
