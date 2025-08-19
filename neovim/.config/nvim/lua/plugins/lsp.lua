@@ -183,13 +183,14 @@ return {
                 },
             })
             vim.lsp.enable("yamlls")
-            vim.lsp.config("apex_ls", {
+
+            -- apex language server does not work when configured in the new way
+            lspconfig.apex_ls.setup {
                 apex_jar_path = vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
                 apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
                 apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
                 filetypes = { "apex" },
-            })
-            vim.lsp.enable("apex_ls")
+            }
         end,
     },
 }
