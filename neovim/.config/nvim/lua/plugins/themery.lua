@@ -28,7 +28,71 @@ return {
                 "nightfox",
                 "terafox",
                 "carbonfox",
-                "darkbox"
+                "darkbox",
+                {
+                    name = "black-metal-bathory",
+                    colorscheme = "bathory",
+                },
+                {
+                    name = "black-metal-burzum",
+                    colorscheme = "burzum",
+                },
+                {
+                    name = "black-metal-dark-funeral",
+                    colorscheme = "dark-funeral",
+                },
+                {
+                    name = "black-metal-darkthrone",
+                    colorscheme = "darkthrone",
+                },
+                {
+                    name = "black-metal-emperor",
+                    colorscheme = "emperor",
+                },
+                {
+                    name = "black-metal-gorgoroth",
+                    colorscheme = "gorgoroth",
+                },
+                {
+                    name = "black-metal-immortal",
+                    colorscheme = "immortal",
+                },
+                {
+                    name = "black-metal-impaled-nazarene",
+                    colorscheme = "impaled-nazarene",
+                },
+                {
+                    name = "black-metal-khold",
+                    colorscheme = "khold",
+                },
+                {
+                    name = "black-metal-marduk",
+                    colorscheme = "marduk",
+                },
+                {
+                    name = "black-metal-mayhem",
+                    colorscheme = "mayhem",
+                },
+                {
+                    name = "black-metal-nile",
+                    colorscheme = "nile",
+                },
+                {
+                    name = "black-metal-taake",
+                    colorscheme = "taake",
+                },
+                {
+                    name = "black-metal-thyrfing",
+                    colorscheme = "thyrfing",
+                },
+                {
+                    name = "black-metal-venom",
+                    colorscheme = "venom",
+                },
+                {
+                    name = "black-metal-windir",
+                    colorscheme = "windir",
+                },
             },
         },
     },
@@ -110,5 +174,16 @@ return {
             specs = {},
             groups = {},
         },
+    },
+    {
+        "metalelf0/black-metal-theme-neovim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("black-metal").setup({
+                -- optional configuration here
+            })
+            require("black-metal").load()
+        end,
     },
 }
