@@ -34,4 +34,16 @@ return {
         "eandrju/cellular-automaton.nvim",
         cmd = "CellularAutomaton",
     },
+    {
+        "wolfwfr/vimatrix.nvim",
+        opts = {
+            window = {
+                general = {
+                    background = "",
+                    blend = 100, -- transparent Vimatrix window background
+                },
+            },
+        },
+        cmd = "VimatrixOpen",
+    },
 }
