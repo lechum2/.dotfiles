@@ -1,6 +1,7 @@
 #!/bin/bash
 npm install --global \
     @prettier/plugin-xml \
+    @salesforce/lwc-language-server \
     @vue/language-server \
     bash-language-server \
     eslint \
