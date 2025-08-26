@@ -183,6 +183,7 @@ return {
                 },
             })
             vim.lsp.enable("yamlls")
+            vim.lsp.enable("lemminx")
 
             -- apex language server does not work when configured in the new way
             lspconfig.apex_ls.setup {
