@@ -6,10 +6,18 @@ local function salesforce()
     return alias
 end
 
+local function left20(str)
+    if vim.api.nvim_strwidth(str) <= 20 then
+        return str
+    else
+        return str:sub(1, 20) .. ".."
+    end
+end
+
 local salesforce_extension = {
     sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_b = { { "branch", fmt = left20, }, "diff", "diagnostics" },
         lualine_c = { "filename", { salesforce, icon = "󰢎" } },
         lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_y = { "progress" },
@@ -42,7 +50,7 @@ return {
         },
         sections = {
             lualine_a = { "mode" },
-            lualine_b = { "branch", "diff", "diagnostics" },
+            lualine_b = { { "branch", fmt = left20, }, "diff", "diagnostics" },
             lualine_c = { "filename" },
             lualine_x = { "encoding", "fileformat", "filetype" },
             lualine_y = { "progress" },
