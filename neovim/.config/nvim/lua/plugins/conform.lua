@@ -38,6 +38,7 @@ return {
             apex = { "prettierapex" },
             xml = { "prettierxml" },
             groovy = { "prettiergroovy" },
+            vue = { "prettiervue" },
         },
         formatters = {
             prettierapex = {
@@ -68,6 +69,15 @@ return {
                 },
                 stdin = false,
                 tmpfile_format = ".conform.$FILENAME.groovy",
+                cwd = get_prettier_global_plugin_path,
+            },
+            prettiervue = {
+                inherit = false,
+                command = "prettier",
+                args = {
+                    "$FILENAME",
+                    "--plugin=prettier-plugin-vue",
+                },
                 cwd = get_prettier_global_plugin_path,
             },
         },
