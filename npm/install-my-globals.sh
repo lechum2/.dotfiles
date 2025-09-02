@@ -9,6 +9,7 @@ npm install --global \
     prettier \
     prettier-plugin-apex \
     prettier-plugin-groovy \
+    prettier-plugin-vue \
     typescript \
     typescript-language-server \
     vscode-langservers-extracted \
