@@ -12,7 +12,7 @@ RUN pacman-key --populate
 RUN pacman -Syu --noconfirm
 RUN pacman --noconfirm -S base-devel fzf git jq make neovim nodejs-lts-jod npm openssh ripgrep rustup ruby sl stow stylua sudo tree-sitter-cli wget which yazi chafa 7zip imagemagick zoxide
 RUN pacman --noconfirm -S zsh starship zsh-completions zsh-syntax-highlighting zsh-autosuggestions git-zsh-completion jdk21-openjdk tar unzip python-pip lynx
-RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus lua-language-server rust-analyzer rustup postgresql
+RUN pacman --noconfirm -S gnome-keyring libsecret man-db man-pages dbus lua-language-server rust-analyzer rustup postgresql marksman
 
 # salesforce cli
 RUN wget https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-linux-x64.tar.xz
