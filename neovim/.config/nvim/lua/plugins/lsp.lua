@@ -160,8 +160,32 @@ return {
                 },
             })
             vim.lsp.enable("jsonls")
+            local vue_language_server_path = io.popen("npm config get prefix"):read()
+            if vim.loop.os_uname().sysname == "Linux" then
+                vue_language_server_path = vue_language_server_path .. "/lib"
+            end
+            vue_language_server_path = vue_language_server_path .. "\\node_modules\\@vue\\laguage-server"
+            local vue_plugin = {
+                name = '@vue/typescript-plugin',
+                location = vue_language_server_path,
+                languages = { 'vue' },
+                configNamespace = 'typescript',
+            }
+            local vtsls_config = {
+                settings = {
+                    vtsls = {
+                        tsserver = {
+                            globalPlugins = {
+                                vue_plugin,
+                            },
+                        },
+                    },
+                },
+                filetypes = {'vue'},
+            }
+            vim.lsp.config("vtsls", vtsls_config)
+            vim.lsp.enable({ "vtsls", "vue_ls" })
             vim.lsp.enable("ts_ls")
-            vim.lsp.enable("vue_ls")
             vim.lsp.enable("eslint")
             vim.lsp.config("yamlls", {
                 settings = {
@@ -190,7 +214,7 @@ return {
             -- apex language server does not work when configured in the new way
             lspconfig.apex_ls.setup {
                 apex_jar_path = vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
-                apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
+                apex_enable_semantic_errors = false,       -- Whether to allow Apex Language Server to surface semantic errors
                 apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
                 filetypes = { "apex" },
             }
