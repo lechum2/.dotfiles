@@ -164,7 +164,7 @@ return {
             if vim.loop.os_uname().sysname == "Linux" then
                 vue_language_server_path = vue_language_server_path .. "/lib"
             end
-            vue_language_server_path = vue_language_server_path .. "\\node_modules\\@vue\\laguage-server"
+            vue_language_server_path = vue_language_server_path .. "/node_modules/@vue/laguage-server"
             local vue_plugin = {
                 name = '@vue/typescript-plugin',
                 location = vue_language_server_path,
