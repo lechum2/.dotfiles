@@ -3,7 +3,7 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
         "stevearc/overseer.nvim",
-        "ibhagwan/fzf-lua", -- no need if you don't use listing metadata feature
+        -- "ibhagwan/fzf-lua", -- no need if you don't use listing metadata feature
     },
     ft = { "apex" },
     cmd = { "SF" },
@@ -71,14 +71,14 @@ return {
             function()
                 require("sf").save_and_push()
             end,
-            desc = "Deploy current file"
+            desc = "Deploy current file",
         },
         {
             "<leader>sr",
             function()
                 require("sf").retrieve()
             end,
-            desc = "Retrieve current file"
+            desc = "Retrieve current file",
         },
         {
             "<leader>st",
@@ -91,21 +91,21 @@ return {
             function()
                 require("sf").run_current_test_with_coverage()
             end,
-            desc = "Run current test"
+            desc = "Run current test",
         },
         {
             "<leader>sta",
             function()
                 require("sf").run_all_tests_in_this_file_with_coverage()
             end,
-            desc = "Run all tests"
+            desc = "Run all tests",
         },
         {
             "<leader>scc",
             function()
                 require("sf").cancel()
             end,
-            desc = "Cancel SF operation"
+            desc = "Cancel SF operation",
         },
-    }
+    },
 }
