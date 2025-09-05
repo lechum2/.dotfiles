@@ -1,4 +1,4 @@
 return {
-    "tjdevries/present.nvim",
+    "lechum2/present.nvim",
     cmd = { "PresentStart" }
 }
