@@ -21,3 +21,5 @@
 	ui = auto
 [safe]
 	directory = /storage/emulated/0/orgzly-git
+[core]
+	longpaths = true
