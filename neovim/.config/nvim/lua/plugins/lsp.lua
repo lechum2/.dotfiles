@@ -208,14 +208,17 @@ return {
             vim.lsp.enable('lwc_ls')
             vim.lsp.enable('marksman')
 
-            -- require("lspconfig").apex_ls.setup {
-            --     apex_jar_path = vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
-            --     apex_enable_semantic_errors = false,       -- Whether to allow Apex Language Server to surface semantic errors
-            --     apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
-            --     filetypes = { "apex" },
-            -- }
             vim.lsp.config("apex_ls", {
-                cmd = { "java", "-cp", vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar", "-ddebug.internal.errors=true", "-ddebug.semantic.errors=false", "-ddebug.completion.statistics=false", "-dlwc.typegeneration.disabled=true", "apex.jorje.lsp.apexlanguageserverlauncher" },
+                cmd = {
+                    "java",
+                    "-cp",
+                    vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
+                    "-Ddebug.internal.errors=true",
+                    "-Ddebug.semantic.errors=false",
+                    "-Ddebug.completion.statistics=false",
+                    "-Dlwc.typegeneration.disabled=true",
+                    "apex.jorje.lsp.ApexLanguageServerLauncher"
+                },
                 filetypes = { "apex" },
                 root_markers = { "sfdx-project.json", ".git" },
                 workspace_required = true,
