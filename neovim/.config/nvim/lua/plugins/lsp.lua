@@ -137,13 +137,9 @@ return {
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            { "saghen/blink.cmp" },
             { "b0o/schemastore.nvim" },
         },
         config = function()
-            local capabilities = require("blink.cmp").get_lsp_capabilities()
-            local lspconfig = require("lspconfig")
-            lspconfig.util.default_config.capabilities = capabilities;
             vim.lsp.enable("lua_ls")
             vim.lsp.enable("rust_analyzer")
             vim.lsp.enable("bashls")
@@ -181,7 +177,7 @@ return {
                         },
                     },
                 },
-                filetypes = {'vue'},
+                filetypes = { 'vue' },
             }
             vim.lsp.config("vtsls", vtsls_config)
             vim.lsp.enable({ "vtsls", "vue_ls" })
@@ -212,13 +208,19 @@ return {
             vim.lsp.enable('lwc_ls')
             vim.lsp.enable('marksman')
 
-            -- apex language server does not work when configured in the new way
-            lspconfig.apex_ls.setup {
-                apex_jar_path = vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
-                apex_enable_semantic_errors = false,       -- Whether to allow Apex Language Server to surface semantic errors
-                apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
+            -- require("lspconfig").apex_ls.setup {
+            --     apex_jar_path = vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar",
+            --     apex_enable_semantic_errors = false,       -- Whether to allow Apex Language Server to surface semantic errors
+            --     apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
+            --     filetypes = { "apex" },
+            -- }
+            vim.lsp.config("apex_ls", {
+                cmd = { "java", "-cp", vim.fn.stdpath("data") .. "/apex-jorje-lsp.jar", "-ddebug.internal.errors=true", "-ddebug.semantic.errors=false", "-ddebug.completion.statistics=false", "-dlwc.typegeneration.disabled=true", "apex.jorje.lsp.apexlanguageserverlauncher" },
                 filetypes = { "apex" },
-            }
+                root_markers = { "sfdx-project.json", ".git" },
+                workspace_required = true,
+            })
+            vim.lsp.enable("apex_ls")
         end,
     },
 }
