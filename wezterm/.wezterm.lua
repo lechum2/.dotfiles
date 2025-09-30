@@ -15,11 +15,11 @@ end
 -- For example, changing the color scheme:
 --config.color_scheme = 'Ayu Dark (Gogh)'
 config.font = wezterm.font 'JetBrains Mono'
-config.font_size = 11
+config.font_size = 12
 --config.font_locator = 'ConfigDirsOnly'
 --config.font_dirs = { 'scoop\\apps\\VictorMono-NF-Mono\\current' }
 
-config.default_prog = { 'C:\\Program Files\\PowerShell\\7\\pwsh.exe' }
+config.default_prog = { 'C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.3.0_x64__8wekyb3d8bbwe\\pwsh.exe' }
 
 local act = wezterm.action
 config.keys = {
@@ -67,7 +67,7 @@ config.keys = {
         key = 'g',
         mods = 'CTRL|SHIFT',
         action = act.SpawnCommandInNewTab {
-            args = { 'C:\\Program Files\\Git\\bin\\bash.exe' },
+            args = { 'C:\\bec\\tools\\git\\git-bash.exe' },
         },
     },
     {
