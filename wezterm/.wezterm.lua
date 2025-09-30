@@ -21,6 +21,10 @@ config.font_size = 12
 
 config.default_prog = { 'C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.3.0_x64__8wekyb3d8bbwe\\pwsh.exe' }
 
+config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+config.enable_tab_bar = true
+
 local act = wezterm.action
 config.keys = {
     {
