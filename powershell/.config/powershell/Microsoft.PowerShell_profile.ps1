@@ -2,6 +2,7 @@ Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 Set-PSReadLineKeyHandler -Chord Ctrl+n HistorySearchForward
 Set-PSReadLineKeyHandler -Chord Ctrl+p HistorySearchBackward
+Set-PSReadLineOption -EditMode Vi
 
 New-Alias l ls
 New-Alias jq jq-windows-amd64.exe
