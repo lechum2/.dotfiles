@@ -19,7 +19,7 @@ config.font_size = 12
 --config.font_locator = 'ConfigDirsOnly'
 --config.font_dirs = { 'scoop\\apps\\VictorMono-NF-Mono\\current' }
 
-config.default_prog = { 'C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.3.0_x64__8wekyb3d8bbwe\\pwsh.exe' }
+config.default_prog = { 'pwsh.exe' }
 
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
@@ -65,13 +65,6 @@ config.keys = {
         action = act.SpawnCommandInNewTab {
             args = { 'nvim' },
             domain = 'CurrentPaneDomain',
-        },
-    },
-    {
-        key = 'g',
-        mods = 'CTRL|SHIFT',
-        action = act.SpawnCommandInNewTab {
-            args = { 'C:\\bec\\tools\\git\\git-bash.exe' },
         },
     },
     {
