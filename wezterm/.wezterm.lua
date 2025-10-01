@@ -1,5 +1,5 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This table will hold the configuration.
 local config = {}
@@ -14,12 +14,12 @@ end
 
 -- For example, changing the color scheme:
 --config.color_scheme = 'Ayu Dark (Gogh)'
-config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 config.font_size = 12
 --config.font_locator = 'ConfigDirsOnly'
 --config.font_dirs = { 'scoop\\apps\\VictorMono-NF-Mono\\current' }
 
-config.default_prog = { 'pwsh.exe' }
+config.default_prog = { "pwsh.exe" }
 
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
@@ -28,78 +28,82 @@ config.enable_tab_bar = true
 local act = wezterm.action
 config.keys = {
     {
-        key = 'h',
-        mods = 'CTRL|SHIFT',
+        key = "h",
+        mods = "CTRL|SHIFT",
         action = act.ActivateTabRelative(-1),
     },
     {
-        key = 'l',
-        mods = 'CTRL|SHIFT',
+        key = "l",
+        mods = "CTRL|SHIFT",
         action = act.ActivateTabRelative(1),
     },
     {
-        key = 'h',
-        mods = 'ALT|SHIFT',
+        key = "h",
+        mods = "ALT|SHIFT",
         action = act.MoveTabRelative(-1),
     },
     {
-        key = 'l',
-        mods = 'ALT|SHIFT',
+        key = "l",
+        mods = "ALT|SHIFT",
         action = act.MoveTabRelative(1),
     },
     {
-        key = 'n',
-        mods = 'CTRL|SHIFT',
-        action = act.SpawnCommandInNewTab {
-            cwd = '~',
-        },
+        key = "n",
+        mods = "CTRL|SHIFT",
+        action = act.SpawnCommandInNewTab({
+            cwd = "~",
+        }),
     },
     {
-        key = '<',
-        mods = 'CTRL|SHIFT',
-        action = act.SpawnTab('CurrentPaneDomain'),
+        key = "<",
+        mods = "CTRL|SHIFT",
+        action = act.SpawnTab("CurrentPaneDomain"),
     },
     {
-        key = 'm',
-        mods = 'CTRL|SHIFT',
-        action = act.SpawnCommandInNewTab {
-            args = { 'nvim' },
-            domain = 'CurrentPaneDomain',
-        },
+        key = "m",
+        mods = "CTRL|SHIFT",
+        action = act.SpawnCommandInNewTab({
+            args = { "nvim" },
+            domain = "CurrentPaneDomain",
+        }),
     },
     {
-        key = 'p',
-        mods = 'CTRL|SHIFT',
+        key = "p",
+        mods = "CTRL|SHIFT",
         action = act.ActivateCopyMode,
     },
     {
-        key = 'd',
-        mods = 'CTRL|SHIFT',
+        key = "d",
+        mods = "CTRL|SHIFT",
         action = act.ActivateCommandPalette,
     },
     {
-        key = '?',
-        mods = 'CTRL|SHIFT',
-        action = act.Search 'CurrentSelectionOrEmptyString',
+        key = "?",
+        mods = "CTRL|SHIFT",
+        action = act.Search("CurrentSelectionOrEmptyString"),
     },
     {
-        key = 'b',
-        mods = 'CTRL|SHIFT',
-        action = act.SpawnCommandInNewTab {
-            args = {
-                'C:\\WINDOWS\\system32\\wsl.exe',
-                '--cd',
-                '~',
-            },
-        },
+        key = "g",
+        mods = "CTRL|SHIFT",
+        action = act.Search({
+            Regex = "[a-f0-9]{6,}",
+        }),
+    },
+    {
+        key = "u",
+        mods = "SHIFT|CTRL",
+        action = wezterm.action.CharSelect({
+            copy_on_select = true,
+            copy_to = "ClipboardAndPrimarySelection",
+        }),
     },
 }
 
 -- start maximized
 local mux = wezterm.mux
-wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
+wezterm.on("gui-startup", function(cmd)
+    local tab, pane, window = mux.spawn_window(cmd or {})
+    window:gui_window():maximize()
 end)
 
 -- and finally, return the configuration to wezterm
