@@ -83,10 +83,17 @@ config.keys = {
         action = act.Search("CurrentSelectionOrEmptyString"),
     },
     {
-        key = "g",
+        key = "o",
         mods = "CTRL|SHIFT",
         action = act.Search({
             Regex = "[a-f0-9]{6,}",
+        }),
+    },
+    {
+        key = "i",
+        mods = "CTRL|SHIFT",
+        action = act.Search({
+            Regex = "\\bsf\\s+[^\"\\n\\r]*",
         }),
     },
     {
