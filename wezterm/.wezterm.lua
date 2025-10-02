@@ -71,6 +71,7 @@ config.keys = {
         key = "p",
         mods = "CTRL|SHIFT",
         action = act.ActivateCopyMode,
+        -- v to clear selection
     },
     {
         key = "d",
@@ -81,6 +82,7 @@ config.keys = {
         key = "?",
         mods = "CTRL|SHIFT",
         action = act.Search("CurrentSelectionOrEmptyString"),
+        -- CRTL-U to clear search pattern
     },
     {
         key = "o",
