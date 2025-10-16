@@ -103,7 +103,8 @@ return {
                 providers = {
                     orgmode = {
                         name = "orgmode",
-                        module = "blink.compat.source",
+                        module = "orgmode.org.autocompletion.blink",
+                        fallback = { "buffer" },
                     },
                     copilot = {
                         name = "copilot",
