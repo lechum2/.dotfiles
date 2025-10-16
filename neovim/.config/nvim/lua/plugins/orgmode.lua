@@ -27,5 +27,12 @@ return {
             end,
             desc = "Neogit notes"
         },
+        {
+            "<leader>*",
+            function()
+                vim.cmd([[execute 's/^\s\+\(\S\)/\=repeat("*", len(submatch(0)) - 1) . " " . submatch(1)']])
+            end,
+            desc = "Replace spaces with * except one before word"
+        }
     },
 }
