@@ -103,7 +103,7 @@ return {
                     orgmode = {
                         name = "orgmode",
                         module = "orgmode.org.autocompletion.blink",
-                        fallback = { "buffer" },
+                        fallbacks = { "buffer" },
                     },
                     codeium = {
                         name = "codeium",
