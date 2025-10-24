@@ -1,0 +1,10 @@
+left:
+    - ws
+    - title
+
+right:
+    - battery
+    - space
+    - sep
+    - space
+    - clock
