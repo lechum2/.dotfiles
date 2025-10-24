@@ -8,6 +8,7 @@ Set-PSReadLineKeyHandler -Chord Ctrl+p HistorySearchBackward
 New-Alias l ls
 New-Alias jq jq-windows-amd64.exe
 New-Alias make mingw32-make.exe
+New-Alias nsf C:\bec\tools\node.js.22\sf.ps1
 
 function Update-Apex-Lsp {
     $location_command = 'nvim --headless +"lua print(vim.fn.stdpath(\"data\"))" +qa'
