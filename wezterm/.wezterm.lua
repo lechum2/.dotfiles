@@ -25,6 +25,32 @@ config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
 
+wezterm.on('opacity-up', function(window, pane)
+    local overrides = window:get_config_overrides() or {}
+    if overrides.window_background_opacity and overrides.window_background_opacity <= 0.1 then
+        return
+    end
+    if not overrides.window_background_opacity then
+        overrides.window_background_opacity = 0.9
+    else
+        overrides.window_background_opacity = overrides.window_background_opacity - 0.1
+    end
+    window:set_config_overrides(overrides)
+end)
+
+wezterm.on('opacity-down', function(window, pane)
+    local overrides = window:get_config_overrides() or {}
+    if not overrides.window_background_opacity then
+        return
+    end
+    if overrides.window_background_opacity >= 0.9 then
+        overrides.window_background_opacity = nil
+    else
+        overrides.window_background_opacity = overrides.window_background_opacity + 0.1
+    end
+    window:set_config_overrides(overrides)
+end)
+
 local act = wezterm.action
 config.keys = {
     {
@@ -106,6 +132,16 @@ config.keys = {
             copy_to = "ClipboardAndPrimarySelection",
         }),
     },
+    {
+        key = "{",
+        mods = "CTRL|SHIFT",
+        action = wezterm.action.EmitEvent("opacity-down"),
+    },
+    {
+        key = "}",
+        mods = "CTRL|SHIFT",
+        action = wezterm.action.EmitEvent("opacity-up"),
+    }
 }
 
 -- start maximized
