@@ -10,6 +10,7 @@
     "height": 30,
     "modules-left": [
         "niri/workspaces",
+        "custom/niri-windows",
         "niri/window"
     ],
     "modules-center": [
@@ -169,5 +170,14 @@
         "on-click-middle": "waybar_timer togglepause",
         "on-scroll-up": "waybar_timer increase 60 || waybar_timer new 1 'notify-send -u critical \"Timer expired\"'",
         "on-scroll-down": "waybar_timer decrease 60"
+    },
+    "custom/niri-windows": {
+        "exec": "waybar-niri-windows",
+        "return-type": "json",
+        "restart-interval": 1,
+        "hide-empty-text": true,
+        "on-scroll-up": "niri msg action focus-column-left",
+        "on-scroll-down": "niri msg action focus-column-right",
+        "on-click": "niri msg action toggle-overview"
     }
 }

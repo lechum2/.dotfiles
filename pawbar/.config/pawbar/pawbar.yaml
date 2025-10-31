@@ -3,8 +3,21 @@ left:
     - title
 
 right:
+    - tray
+    - space
+    - idleinhibitor
+    - space
+    - wifi
+    - space
+    - bluetooth
+    - space
+    - volume
+    - space
+    - backlight
+    - space
     - battery
     - space
-    - sep
-    - space
-    - clock
+    - clock:
+        format: "%Y-%m-%d %H:%M"
+        tick: 30s
+
