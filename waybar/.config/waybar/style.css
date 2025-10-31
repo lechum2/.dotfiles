@@ -185,3 +185,10 @@
     border-color: #a7d129;
     color: #a7d129;
 }
+
+#custom-niri-windows {
+  /* font-family: 'Uiua386'; */
+  font-size: 18px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
