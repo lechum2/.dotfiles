@@ -12,6 +12,7 @@ npm install --global \
     prettier-plugin-apex \
     prettier-plugin-groovy \
     prettier-plugin-vue \
+    tree-sitter-cli \
     typescript \
     typescript-language-server \
     vscode-langservers-extracted \
