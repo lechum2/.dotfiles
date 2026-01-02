@@ -93,6 +93,11 @@
       "id": "idleInhibitor",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "doNotDisturb",
+      "enabled": true,
+      "width": 50
     }
   ],
   "showWorkspaceIndex": false,
