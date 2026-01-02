@@ -19,6 +19,9 @@
     "trigger": "="
   },
   "commandRunner": {
-    "enabled": true
+    "enabled": true,
+    "history": [
+      "poweroff"
+    ]
   }
 }
