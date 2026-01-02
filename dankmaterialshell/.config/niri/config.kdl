@@ -254,12 +254,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "waybar_timer" "serve"
-spawn-at-startup "waybar" "--config" "/home/lechu/.config/waybar/niri.jsonc"
-spawn-at-startup "mako"
-spawn-at-startup "gammastep-indicator"
-spawn-at-startup "swaybg" "--mode" "center" "--image" "/home/lechu/Pictures/yin-yang-small.png" "--color" "'##000000'"
-spawn-at-startup "hypridle"
+spawn-at-startup "dms" "run"
 spawn-at-startup "/home/lechu/.config/hypr/scripts/quote.sh"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -347,7 +342,7 @@ window-rule {
 }
 
 switch-events {
-    lid-close { spawn "pidof" "hyprlock" "||" "hyprlock"; }
+    lid-close { spawn "dms" "ipc" "call" "lock" "lock"; }
 }
 
 hotkey-overlay {
@@ -371,9 +366,9 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "kitty"; }
-    Mod+D { spawn "fuzzel" "--show-actions" "--background-color=000000ff" "--selection-color=93c47dff"; }
+    Mod+D { spawn "dms" "ipc" "call" "spotlight" "open"; }
     // Mod+Z { spawn "pidof" "hyprlock" "||" "hyprlock"; }
-    Mod+Z { spawn "hyprlock"; }
+    Mod+Z { spawn "dms" "ipc" "call" "lock" "lock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -391,9 +386,8 @@ binds {
     XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
     XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
 
-    // Mako notifications
-    Mod+O { spawn "makoctl" "dismiss"; }
-    Mod+I { spawn "makoctl" "dismiss" "--all"; }
+    Mod+O { spawn "dms" "ipc" "call" "notifications" "close"; }
+    Mod+I { spawn "dms" "ipc" "call" "notifications" "clearAll"; }
 
     Mod+Q { close-window; }
     Mod+Shift+Q { close-window; }
@@ -500,6 +494,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
     Mod+Shift+1 { move-column-to-workspace "terminal"; }
     Mod+Shift+2 { move-column-to-workspace "browser"; }
     Mod+Shift+3 { move-column-to-workspace "music"; }
@@ -509,6 +504,7 @@ binds {
     Mod+Shift+7 { move-column-to-workspace 7; }
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
+    Mod+Shift+0 { move-column-to-workspace 10; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
