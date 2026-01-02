@@ -386,7 +386,7 @@ binds {
     XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
     XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
 
-    Mod+O { spawn "dms" "ipc" "call" "notifications" "close"; }
+    Mod+O { spawn "dms" "ipc" "call" "notifications" "dismissAllPopups"; }
     Mod+I { spawn "dms" "ipc" "call" "notifications" "clearAll"; }
 
     Mod+Q { close-window; }
