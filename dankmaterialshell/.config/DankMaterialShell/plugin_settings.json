@@ -1,0 +1,17 @@
+{
+  "dankBatteryAlerts": {
+    "enabled": true
+  },
+  "dankPomodoroTimer": {
+    "enabled": true,
+    "workDuration": "40",
+    "shortBreakDuration": "10",
+    "longBreakDuration": "20"
+  },
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "niriWindows": {
+    "enabled": true
+  }
+}
