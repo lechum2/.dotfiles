@@ -105,7 +105,7 @@ output "LG Electronics LG Ultra HD 0x00043F4B" {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
-    background-color "#000000"
+    background-color "transparent"
     // Set gaps around windows in logical pixels.
     gaps 0
 
@@ -164,10 +164,10 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        // active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        // inactive-color "#505050"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -192,8 +192,8 @@ layout {
         off
 
         width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        // active-color "#ffc87f"
+        // inactive-color "#505050"
 
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
@@ -233,7 +233,7 @@ layout {
         offset x=0 y=5
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        // color "#0007"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -255,7 +255,8 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "dms" "run"
-spawn-at-startup "/home/lechu/.config/hypr/scripts/quote.sh"
+// Clipboard history
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -334,11 +335,11 @@ window-rule {
     // block-out-from "screencast"
 }
 
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
+window-rule {
+    geometry-corner-radius 0
     clip-to-geometry true
+    tiled-state true
+    draw-border-with-background false
 }
 
 switch-events {
@@ -374,17 +375,16 @@ binds {
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
-    // Example volume keys mappings for PipeWire & WirePlumber.
-    // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
-    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn  "brightnessctl" "set" "5%-"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
-    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
-    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
-    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
+    // Audio Controls
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "5"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "5"; }
+    XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
+    XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    XF86AudioNext allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
+    // Brightness Controls
+    XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
 
     Mod+O { spawn "dms" "ipc" "call" "notifications" "dismissAllPopups"; }
     Mod+I { spawn "dms" "ipc" "call" "notifications" "clearAll"; }
@@ -590,6 +590,14 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 }
 
+environment {
+  XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORM "wayland"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  QT_QPA_PLATFORMTHEME "gtk3"
+  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+}
+
 gestures {
     hot-corners {
         off
@@ -599,3 +607,13 @@ gestures {
         // bottom-right
     }
 }
+
+//Tell niri to place the wallpaper on the overview.
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+include "dms/colors.kdl"
+include "dms/alttab.kdl"
+include "dms/wpblur.kdl"
