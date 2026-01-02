@@ -13,5 +13,12 @@
   },
   "niriWindows": {
     "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "commandRunner": {
+    "enabled": true
   }
 }

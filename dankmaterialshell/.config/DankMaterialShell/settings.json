@@ -88,6 +88,11 @@
       "id": "darkMode",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "idleInhibitor",
+      "enabled": true,
+      "width": 50
     }
   ],
   "showWorkspaceIndex": false,
@@ -172,9 +177,9 @@
   "acSuspendTimeout": 1800,
   "acSuspendBehavior": 0,
   "acProfileName": "",
-  "batteryMonitorTimeout": 0,
-  "batteryLockTimeout": 0,
-  "batterySuspendTimeout": 0,
+  "batteryMonitorTimeout": 600,
+  "batteryLockTimeout": 300,
+  "batterySuspendTimeout": 1200,
   "batterySuspendBehavior": 0,
   "batteryProfileName": "",
   "lockBeforeSuspend": true,
