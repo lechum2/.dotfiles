@@ -29,6 +29,8 @@ return {
                 "terafox",
                 "carbonfox",
                 "darkbox",
+                "gruvbox-material",
+                "gruber-darker",
                 {
                     name = "black-metal-bathory",
                     colorscheme = "bathory",
@@ -186,4 +188,35 @@ return {
             require("black-metal").load()
         end,
     },
+    {
+        "blazkowolf/gruber-darker.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            bold = true,
+            invert = {
+                signs = false,
+                tabline = false,
+                visual = false,
+            },
+            italic = {
+                strings = false,
+                comments = true,
+                operators = false,
+                folds = true,
+            },
+            undercurl = true,
+            underline = true,
+        },
+    },
+    {
+      'sainnhe/gruvbox-material',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        -- Optionally configure and load the colorscheme
+        -- directly inside the plugin declaration.
+        vim.g.gruvbox_material_enable_italic = false
+      end
+    }
 }
