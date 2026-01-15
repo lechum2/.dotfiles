@@ -23,7 +23,7 @@ RUN ln -s /opt/sf/bin/sf /usr/bin/sf
 RUN useradd --create-home --shell /bin/zsh --groups wheel --password '$y$j9T$iVfF8t.mgu3Q4TRULkxnl1$6Uk/fsUyI1MeZCLqKvjRYidfnlxv8dzpasox422ulY2' lechu
 RUN sed -i -- 's/root/lechu/g' /etc/sudoers
 
-ENV SHELL /bin/zsh
+ENV SHELL=/bin/zsh
 USER lechu
 WORKDIR /home/lechu
 RUN echo -e '--insecure' >> .curlrc
@@ -56,11 +56,11 @@ RUN ./.dotfiles/npm/install-my-globals.sh
 RUN /home/lechu/.local/bin/yarn config set "strict-ssl" false
 ENV PATH=/home/lechu/.local/bin:$PATH
 
-ENV SF_CONTAINER_MODE true
-ENV SFDX_CONTAINER_MODE true
-ENV SF_USE_GENERIC_UNIX_KEYCHAIN true
-ENV SF_DISABLE_TELEMETRY true
-ENV NODE_TLS_REJECT_UNAUTHORIZED 0
+ENV SF_CONTAINER_MODE=true
+ENV SFDX_CONTAINER_MODE=true
+ENV SF_USE_GENERIC_UNIX_KEYCHAIN=true
+ENV SF_DISABLE_TELEMETRY=true
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 
 RUN sf autocomplete
 COPY --chown=lechu:lechu sfAuthFiles/* /home/lechu/sfAuthFiles/
