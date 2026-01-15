@@ -1,4 +1,4 @@
-FROM archlinux
+FROM quay.io/archlinux/archlinux
 
 ENV HTTP_PROXY=http://becpx-forti.res.bec.dk:80
 ENV HTTPS_PROXY=http://becpx-forti.res.bec.dk:80
