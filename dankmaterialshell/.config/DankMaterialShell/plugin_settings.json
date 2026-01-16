@@ -4,7 +4,7 @@
   },
   "dankPomodoroTimer": {
     "enabled": true,
-    "workDuration": "40",
+    "workDuration": "30",
     "shortBreakDuration": "10",
     "longBreakDuration": "20"
   },
