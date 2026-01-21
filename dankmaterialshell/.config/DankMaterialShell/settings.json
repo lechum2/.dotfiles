@@ -148,8 +148,6 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "niriOverviewOverlayEnabled": true,
-  "weatherLocation": "Warszawa, województwo mazowieckie",
-  "weatherCoordinates": "52.2333742,21.0711489",
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "auto",
@@ -381,5 +379,6 @@
       "maximizeDetection": true
     }
   ],
-  "configVersion": 2
+  "configVersion": 5,
+  "desktopWidgetInstances": []
 }
