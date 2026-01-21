@@ -6,12 +6,18 @@ return {
             "neovim/nvim-lspconfig",
         },
         lazy = false,
-        config = function()
+        opts = {
+            --set treesitter as folding provider (lsp was not working for some files like 'org')
+            --leave empty opts for default setup that will use lsp(with configured capabilites) as folding provider
+            provider_selector = function(bufnr, filetype, buftype)
+                return {'treesitter', 'indent'}
+            end
+        },
+        init = function()
             vim.o.foldcolumn = "0"
             vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
             vim.o.foldlevelstart = 99
             vim.o.foldenable = true
-            require('ufo').setup()
         end,
         keys = {
             {
