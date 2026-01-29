@@ -141,18 +141,6 @@ return {
             { "b0o/schemastore.nvim" },
         },
         config = function()
-            --folding
-            vim.lsp.config("*", {
-                capabilities = {
-                    textDocument = {
-                        foldingRange = {
-                            dynamicRegistration = false,
-                            lineFoldingOnly = true,
-                        },
-                    },
-                },
-            })
-
             vim.lsp.enable("lua_ls")
             vim.lsp.enable("rust_analyzer")
             vim.lsp.enable("bashls")
