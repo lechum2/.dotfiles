@@ -402,14 +402,21 @@
       "centerWidgets": [
         {
           "id": "music",
-          "enabled": true
+          "enabled": true,
+          "mediaSize": 2
         },
         {
           "id": "controlCenterButton",
           "enabled": true,
           "showNetworkIcon": true,
           "showBluetoothIcon": true,
-          "showAudioIcon": true
+          "showAudioIcon": true,
+          "showAudioPercent": true,
+          "showBrightnessIcon": false,
+          "showBrightnessPercent": false,
+          "showMicIcon": true,
+          "showMicPercent": false,
+          "showBatteryIcon": false
         },
         {
           "id": "dankPomodoroTimer",
