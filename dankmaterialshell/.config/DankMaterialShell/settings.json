@@ -482,6 +482,10 @@
         {
           "id": "dankPomodoroTimer",
           "enabled": true
+        },
+        {
+          "id": "dankKDEConnect",
+          "enabled": true
         }
       ],
       "rightWidgets": [

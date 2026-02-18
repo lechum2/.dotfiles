@@ -25,6 +25,7 @@
     ]
   },
   "dankKDEConnect": {
-    "enabled": true
+    "enabled": true,
+    "selectedDeviceId": "efa13182_5598_4330_85fb_effad7590912"
   }
 }
