@@ -255,6 +255,7 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "dms" "run"
+spawn-at-startup "kdeconnectd"
 // Clipboard history
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
