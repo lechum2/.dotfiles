@@ -5,24 +5,24 @@ return {
         opts = {
             suggestion = { enabled = false },
             panel = { enabled = false },
-        }
+            copilot_model = "claude-sonnet-4.5",
+        },
     },
     {
         "CopilotC-Nvim/CopilotChat.nvim",
         dependencies = {
-            { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-            { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
+            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
         },
         -- build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
-            model = 'claude-sonnet-4.5',
-            temperature = 0.1, -- Lower = focused, higher = creative
+            model = "claude-sonnet-4.5",
+            temperature = 0.1,       -- Lower = focused, higher = creative
             window = {
-                layout = 'vertical', -- 'vertical', 'horizontal', 'float'
-                width = 0.5, -- 50% of screen width
+                layout = "vertical", -- 'vertical', 'horizontal', 'float'
+                width = 0.5,         -- 50% of screen width
             },
             auto_insert_mode = true, -- Enter insert mode when opening
-            debug = false, -- Enable debugging
+            debug = false,           -- Enable debugging
             -- See Configuration section for rest
         },
         -- See Commands section for default commands if you want to lazy load on them
