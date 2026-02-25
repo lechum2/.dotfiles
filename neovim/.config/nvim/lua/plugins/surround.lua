@@ -1,6 +1,7 @@
 return {
     "kylechui/nvim-surround",
     event = "VeryLazy",
+    config = true,
     -- opts = {
     --     keymaps = {
     --         insert = "<C-g>s",
