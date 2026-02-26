@@ -5,17 +5,18 @@ return {
         opts = {
             suggestion = { enabled = false },
             panel = { enabled = false },
-            copilot_model = "claude-sonnet-4.5",
+            copilot_model = "raptor-mini",
         },
     },
     {
         "CopilotC-Nvim/CopilotChat.nvim",
         dependencies = {
+            { "zbirenbaum/copilot.lua" },
             { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
         },
         -- build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
-            model = "claude-sonnet-4.5",
+            model = "gpt-5.2",
             temperature = 0.1,       -- Lower = focused, higher = creative
             window = {
                 layout = "vertical", -- 'vertical', 'horizontal', 'float'
