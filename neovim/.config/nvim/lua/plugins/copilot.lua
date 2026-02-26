@@ -5,7 +5,7 @@ return {
         opts = {
             suggestion = { enabled = false },
             panel = { enabled = false },
-            copilot_model = "raptor-mini",
+            copilot_model = "gpt-5.2-mini",
         },
     },
     {
