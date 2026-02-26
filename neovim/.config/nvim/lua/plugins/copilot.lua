@@ -39,11 +39,33 @@ return {
             extenstions = {
                 copilotchat = {
                     enabled = true,
-                    convert_tools_to_functions = true, -- Convert MCP tools to CopilotChat functions
+                    convert_tools_to_functions = true,     -- Convert MCP tools to CopilotChat functions
                     convert_resources_to_functions = true, -- Convert MCP resources to CopilotChat functions
-                    add_mcp_prefix = false,            -- Add "mcp_" prefix to function names
+                    add_mcp_prefix = false,                -- Add "mcp_" prefix to function names
                 }
             }
         }
-    }
+    },
+    {
+        "olimorris/codecompanion.nvim",
+        dependencies = {
+            "ravitemer/mcphub.nvim",
+            {
+                "MeanderingProgrammer/render-markdown.nvim",
+                ft = { "markdown", "codecompanion" }
+            },
+        },
+        opts = {
+            extensions = {
+                mcphub = {
+                    callback = "mcphub.extensions.codecompanion",
+                    opts = {
+                        make_vars = true,
+                        make_slash_commands = true,
+                        show_result_in_chat = true
+                    }
+                }
+            }
+        }
+    },
 }
