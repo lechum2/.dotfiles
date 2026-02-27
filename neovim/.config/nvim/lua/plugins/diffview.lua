@@ -57,6 +57,7 @@ return {
                 win_config = {         -- See ':h diffview-config-win_config'
                     position = "top",
                     width = 35,
+                    height = 5,
                     win_opts = {}
                 },
             },
@@ -77,7 +78,7 @@ return {
                 },
                 win_config = { -- See ':h diffview-config-win_config'
                     position = "bottom",
-                    height = 16,
+                    height = 6,
                     win_opts = {}
                 },
             },
