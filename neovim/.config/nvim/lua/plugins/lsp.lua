@@ -25,10 +25,10 @@ return {
         "saghen/blink.cmp",
         -- optional: provides snippets for the snippet source
         dependencies = {
-            "Exafunction/windsurf.nvim",
             "rafamadriz/friendly-snippets",
             "ribru17/blink-cmp-spell",
-            "giuxtaposition/blink-cmp-copilot",
+            "fang2hou/blink-copilot",
+            "zbirenbaum/copilot.lua",
         },
         lazy = false,
         -- use a release tag to download pre-built binaries
@@ -108,7 +108,7 @@ return {
                     },
                     copilot = {
                         name = "copilot",
-                        module = "blink-cmp-copilot",
+                        module = "blink-copilot",
                         score_offset = 100,
                         async = true,
                     },
