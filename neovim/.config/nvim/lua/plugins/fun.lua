@@ -46,4 +46,18 @@ return {
         },
         cmd = "VimatrixOpen",
     },
+    {
+        "axsaucedo/neovim-power-mode",
+        opts = {
+            particles = { preset = "explosion" },
+            shake = { mode = "none" },
+            combo = {
+                enabled = true,
+            },
+            fire_wall = {
+                enabled = true,
+            },
+        },
+        cmd = { "PowerModeToggle", "PowerModeEnable" },
+    },
 }
