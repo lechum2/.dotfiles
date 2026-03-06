@@ -14,5 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 return require('lazy').setup({
     spec = {
         { import = "plugins" },
-    }
+    },
+    root = vim.fn.expand("~/.nvim/lazy"),
 })
