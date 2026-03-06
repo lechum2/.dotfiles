@@ -502,27 +502,12 @@
           "enabled": true
         },
         {
-          "id": "spacer",
-          "enabled": true,
-          "size": 10
-        },
-        {
           "id": "battery",
           "enabled": true
         },
         {
-          "id": "spacer",
-          "enabled": true,
-          "size": 10
-        },
-        {
           "id": "weather",
           "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 10
         },
         {
           "id": "clock",
@@ -534,7 +519,7 @@
         }
       ],
       "spacing": 0,
-      "innerPadding": 0,
+      "innerPadding": 4,
       "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,
@@ -551,14 +536,15 @@
       "widgetOutlineColor": "primary",
       "widgetOutlineOpacity": 1,
       "widgetOutlineThickness": 1,
-      "fontScale": 1.4,
+      "fontScale": 1.25,
       "autoHide": false,
       "autoHideDelay": 250,
       "openOnOverview": false,
       "visible": true,
       "popupGapsAuto": true,
       "popupGapsManual": 4,
-      "maximizeDetection": true
+      "maximizeDetection": true,
+      "widgetPadding": 5
     }
   ],
   "desktopClockEnabled": false,
