@@ -164,7 +164,7 @@ return {
                 {
                     name = "⭐ Important",
                     matcher = function(i)
-                        return i.priority == "A" and (i.deadline or i.scheduled)
+                        return i.priority == "A" -- and (i.deadline or i.schedule
                     end,
                     sort = { by = "date_nearest", order = "asc" },
                 },
@@ -235,10 +235,15 @@ return {
 
             -- Custom views: reusable named views with pre-configured filters
             custom_views = {
-                work_week = {
-                    name = "work this week",
+                work = {
+                    name = "work do",
                     keymap = "<leader>ow",
-                    filter = "-is:done",
+                    filter = "file:work todo:DO",
+                },
+                personal = {
+                    name = "personal do",
+                    keymap = "<leader>op",
+                    filter = "file:personal todo:DO",
                 },
             },
         },
