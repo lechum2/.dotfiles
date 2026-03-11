@@ -5,7 +5,7 @@ Set-PSReadLineKeyHandler -Chord Ctrl+p HistorySearchBackward
 #Vi mode breaks the above
 #Set-PSReadLineOption -EditMode Vi
 
-New-Alias l ls
+New-Alias l ls -Force
 New-Alias jq jq-windows-amd64.exe
 New-Alias make mingw32-make.exe
 New-Alias nsf C:\bec\tools\node.js.22\sf.ps1
