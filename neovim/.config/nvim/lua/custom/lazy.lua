@@ -16,4 +16,7 @@ return require('lazy').setup({
         { import = "plugins" },
     },
     root = vim.fn.expand("~/.nvim/lazy"),
+    defaults = {
+        version = "*",
+    },
 })
