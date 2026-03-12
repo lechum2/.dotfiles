@@ -141,51 +141,29 @@ return {
             -- Group definitions (order matters; first match wins unless allow_duplicates=true)
             groups = {
                 {
-                    name = "📅 Today",
-                    matcher = function(i)
-                        return i.scheduled and i.scheduled:is_today()
-                    end,
-                    sort = { by = "scheduled_time", order = "asc" },
-                },
-                {
-                    name = "🗓️ Tomorrow",
-                    matcher = function(i)
-                        return i.scheduled and i.scheduled:days_from_today() == 1
-                    end,
-                    sort = { by = "scheduled_time", order = "asc" },
-                },
-                {
-                    name = "☠️ Deadlines",
-                    matcher = function(i)
-                        return i.deadline and i.todo_state ~= "DONE" and not i:has_tag("personal")
-                    end,
-                    sort = { by = "deadline", order = "asc" },
-                },
-                {
                     name = "⭐ Important",
                     matcher = function(i)
-                        return i.priority == "A" -- and (i.deadline or i.schedule
+                        return i.priority == "A"
                     end,
                     sort = { by = "date_nearest", order = "asc" },
                 },
                 {
-                    name = "⏳ Overdue",
+                    name = "📅 Today",
                     matcher = function(i)
-                        return i.todo_state ~= "DONE"
-                            and ((i.deadline and i.deadline:is_past()) or (i.scheduled and i.scheduled:is_past()))
-                    end,
-                    sort = { by = "date_nearest", order = "asc" },
-                },
-                {
-                    name = "🏠 Personal",
-                    matcher = function(i)
-                        return i:has_tag("personal")
+                        return (i.scheduled and i.scheduled:is_today())
+                            or (i.deadline and i.deadline:days_from_today() <= 1)
                     end,
                 },
                 {
-                    name = "💼 Work",
+                    name = "💭 Decide",
                     matcher = function(i)
-                        return i:has_tag("work")
+                        return i.todo_state == "DECIDE"
+                    end,
+                },
+                {
+                    name = "🔧 Do",
+                    matcher = function(i)
+                        return i.todo_state == "DO"
                     end,
                 },
                 {
@@ -197,6 +175,12 @@ return {
                         return (d1 and d1 >= 0 and d1 <= days) or (d2 and d2 >= 0 and d2 <= days)
                     end,
                     sort = { by = "date_nearest", order = "asc" },
+                },
+                {
+                    name = "👁️ Monitor",
+                    matcher = function(i)
+                        return i.todo_state == "DELEGATED"
+                    end,
                 },
             },
 
@@ -222,7 +206,7 @@ return {
             compact = { filename_min_width = 10, label_min_width = 12 },
 
             -- Global fallback sort for groups that omit `sort`
-            group_sort = { by = "date_nearest", order = "asc" },
+            group_sort = { by = "priority", order = "desc" },
 
             -- Popup mode: auto-detected when launched via the tmux script (ORG_SUPER_AGENDA_POPUP=1).
             -- Override only if you use a different popup mechanism.
@@ -236,14 +220,14 @@ return {
             -- Custom views: reusable named views with pre-configured filters
             custom_views = {
                 work = {
-                    name = "work do",
+                    name = "💼 Work",
                     keymap = "<leader>ow",
-                    filter = "file:work todo:DO",
+                    filter = "file:work",
                 },
                 personal = {
-                    name = "personal do",
+                    name = "🏠 Personal",
                     keymap = "<leader>op",
-                    filter = "file:personal todo:DO",
+                    filter = "file:personal",
                 },
             },
         },
