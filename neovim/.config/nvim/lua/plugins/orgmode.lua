@@ -5,13 +5,14 @@ return {
         opts = {
             org_agenda_files = "~/notes/**/*",
             org_default_notes_file = "~/notes/quick.org",
-            org_todo_keywords = { "DO", "DECIDE", "PLANNED", "|", "DONE", "DELEGATED" },
+            org_todo_keywords = { "DO", "DECIDE", "PLANNED", "BUY", "|", "DONE", "DELEGATED" },
             org_todo_keyword_faces = {
                 DO = ":foreground #FF8F00",
-                PLANNED = ":foreground #DDA0DD",
                 DECIDE = ":foreground #FF6347",
-                DELEGATED = ":foreground #808080",
+                PLANNED = ":foreground #DDA0DD",
+                BUY = ":foreground #E9967A",
                 DONE = ":foreground #008000",
+                DELEGATED = ":foreground #808080",
             },
             org_hide_leading_stars = true,
             mappings = {
@@ -73,6 +74,13 @@ return {
                     name = "PLANNED",
                     keymap = "op",
                     color = "#DDA0DD",
+                    strike_through = false,
+                    fields = { "filename", "todo", "headline", "priority", "date", "tags" },
+                },
+                {
+                    name = "BUY",
+                    keymap = "op",
+                    color = "#E9967A",
                     strike_through = false,
                     fields = { "filename", "todo", "headline", "priority", "date", "tags" },
                 },
@@ -175,6 +183,12 @@ return {
                         return (d1 and d1 >= 0 and d1 <= days) or (d2 and d2 >= 0 and d2 <= days)
                     end,
                     sort = { by = "date_nearest", order = "asc" },
+                },
+                {
+                    name = "💰 Buy",
+                    matcher = function(i)
+                        return i.todo_state == "BUY"
+                    end,
                 },
                 {
                     name = "👁️ Monitor",
