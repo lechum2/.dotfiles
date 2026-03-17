@@ -79,7 +79,7 @@ return {
                 },
                 {
                     name = "BUY",
-                    keymap = "op",
+                    keymap = "ob",
                     color = "#E9967A",
                     strike_through = false,
                     fields = { "filename", "todo", "headline", "priority", "date", "tags" },
@@ -97,7 +97,7 @@ return {
                     keymap = "ot",
                     shortcut = "t",
                     color = "#808080",
-                    strike_through = true,
+                    strike_through = false,
                     fields = { "filename", "todo", "headline", "priority", "date", "tags" },
                 },
             },
