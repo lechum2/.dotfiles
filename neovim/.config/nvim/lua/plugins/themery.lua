@@ -14,6 +14,10 @@ return {
                     ]],
                 },
                 {
+                    name = "jellybeans-light",
+                    colorscheme = "jellybeans-light",
+                },
+                {
                     name = "gruvbox-dark",
                     colorscheme = "gruvbox",
                     before = [[
@@ -31,68 +35,24 @@ return {
                 "darkbox",
                 "gruber-darker",
                 {
-                    name = "black-metal-bathory",
-                    colorscheme = "bathory",
+                    name = "jellybeans",
+                    colorscheme = "jellybeans",
                 },
                 {
-                    name = "black-metal-burzum",
-                    colorscheme = "burzum",
+                    name = "jellybeans-muted",
+                    colorscheme = "jellybeans-muted",
                 },
                 {
-                    name = "black-metal-dark-funeral",
-                    colorscheme = "dark-funeral",
+                    name = "jellybeans-mono",
+                    colorscheme = "jellybeans-mono",
                 },
                 {
-                    name = "black-metal-darkthrone",
-                    colorscheme = "darkthrone",
+                    name = "jellybeans-warm",
+                    colorscheme = "jellybeans-warm",
                 },
                 {
-                    name = "black-metal-emperor",
-                    colorscheme = "emperor",
-                },
-                {
-                    name = "black-metal-gorgoroth",
-                    colorscheme = "gorgoroth",
-                },
-                {
-                    name = "black-metal-immortal",
-                    colorscheme = "immortal",
-                },
-                {
-                    name = "black-metal-impaled-nazarene",
-                    colorscheme = "impaled-nazarene",
-                },
-                {
-                    name = "black-metal-khold",
-                    colorscheme = "khold",
-                },
-                {
-                    name = "black-metal-marduk",
-                    colorscheme = "marduk",
-                },
-                {
-                    name = "black-metal-mayhem",
-                    colorscheme = "mayhem",
-                },
-                {
-                    name = "black-metal-nile",
-                    colorscheme = "nile",
-                },
-                {
-                    name = "black-metal-taake",
-                    colorscheme = "taake",
-                },
-                {
-                    name = "black-metal-thyrfing",
-                    colorscheme = "thyrfing",
-                },
-                {
-                    name = "black-metal-venom",
-                    colorscheme = "venom",
-                },
-                {
-                    name = "black-metal-windir",
-                    colorscheme = "windir",
+                    name = "jellybeans-hc",
+                    colorscheme = "jellybeans-hc",
                 },
             },
         },
@@ -177,17 +137,6 @@ return {
         },
     },
     {
-        "metalelf0/black-metal-theme-neovim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("black-metal").setup({
-                -- optional configuration here
-            })
-            require("black-metal").load()
-        end,
-    },
-    {
         "blazkowolf/gruber-darker.nvim",
         lazy = false,
         priority = 1000,
@@ -206,6 +155,25 @@ return {
             },
             undercurl = true,
             underline = true,
+        },
+    },
+    {
+        "wtfox/jellybeans.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent = false,
+            italics = true,
+            bold = true,
+            flat_ui = true, -- toggles "flat UI" for pickers
+            background = {
+                dark = "jellybeans", -- default dark palette
+                light = "jellybeans_light", -- default light palette
+            },
+            plugins = {
+                all = false,
+                auto = true, -- auto-detect installed plugins via lazy.nvim
+            },
         },
     },
 }
