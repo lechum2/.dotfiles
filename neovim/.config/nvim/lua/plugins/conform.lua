@@ -35,12 +35,23 @@ return {
             sh = { "shfmt" },
             typescript = { "prettier" },
             yaml = { "prettier" },
-            apex = { "prettierapex" },
+            apex = { "afmt" },
             xml = { "prettierxml" },
             groovy = { "prettiergroovy" },
             vue = { "prettiervue" },
         },
         formatters = {
+            afmt = {
+                inherit = false,
+                command = "afmt",
+                args = {
+                    "--config",
+                    vim.fn.expand("~/.afmt.toml"),
+                    "--write",
+                    "$FILENAME",
+                },
+                stdin = false,
+            },
             prettierapex = {
                 inherit = false,
                 command = "prettier",
