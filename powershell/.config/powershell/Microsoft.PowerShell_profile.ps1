@@ -19,9 +19,6 @@ function Update-Apex-Lsp {
 
 . C:\Users\X9T\AppData\Local\sf\autocomplete\functions\powershell\sf.ps1
 
-# Use mingw
-$env:CC = "gcc"
-
 # WezTerm integration when using starship
 $prompt = ""
 function Invoke-Starship-PreCommand {
@@ -36,3 +33,6 @@ function Invoke-Starship-PreCommand {
 Invoke-Expression (&starship init powershell)
 
 Import-Module posh-git
+
+# Use mingw
+$env:CC = "gcc"

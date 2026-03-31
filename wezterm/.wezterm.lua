@@ -25,7 +25,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
 
-wezterm.on('opacity-up', function(window, pane)
+wezterm.on("opacity-up", function(window, pane)
     local overrides = window:get_config_overrides() or {}
     if overrides.window_background_opacity and overrides.window_background_opacity <= 0.1 then
         return
@@ -38,7 +38,7 @@ wezterm.on('opacity-up', function(window, pane)
     window:set_config_overrides(overrides)
 end)
 
-wezterm.on('opacity-down', function(window, pane)
+wezterm.on("opacity-down", function(window, pane)
     local overrides = window:get_config_overrides() or {}
     if not overrides.window_background_opacity then
         return
@@ -89,7 +89,7 @@ config.keys = {
         key = "m",
         mods = "CTRL|SHIFT",
         action = act.SpawnCommandInNewTab({
-            args = { "nvim" },
+            args = { "pwsh.exe", "-Command", "$env:CC='gcc'; nvim" },
             domain = "CurrentPaneDomain",
         }),
     },
@@ -121,7 +121,7 @@ config.keys = {
         key = "i",
         mods = "CTRL|SHIFT",
         action = act.Search({
-            Regex = "\\bsf\\s+[^\"\\n\\r]*",
+            Regex = '\\bsf\\s+[^"\\n\\r]*',
         }),
     },
     {
@@ -141,7 +141,7 @@ config.keys = {
         key = "}",
         mods = "CTRL|SHIFT",
         action = wezterm.action.EmitEvent("opacity-up"),
-    }
+    },
 }
 
 -- start maximized
