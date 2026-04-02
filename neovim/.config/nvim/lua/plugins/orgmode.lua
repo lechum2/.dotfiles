@@ -151,7 +151,7 @@ return {
                 {
                     name = "⭐ Important",
                     matcher = function(i)
-                        return i.priority == "A"
+                        return i.priority == "A" and i.todo_state ~= "DONE"
                     end,
                     sort = { by = "date_nearest", order = "asc" },
                 },
