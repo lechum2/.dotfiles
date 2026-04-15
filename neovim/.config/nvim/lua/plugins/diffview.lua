@@ -1,5 +1,5 @@
 return {
-    "sindrets/diffview.nvim",
+    "dlyongemallo/diffview.nvim",
     cmd = { "DiffviewOpen", "DiffviewFileHistory" },
     config = function()
         local actions = require("diffview.actions")
