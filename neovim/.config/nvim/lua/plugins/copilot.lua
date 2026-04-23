@@ -70,10 +70,16 @@ return {
                         show_result_in_chat = true, -- Show tool results directly in chat buffer
                         format_tool = nil, -- function(tool_name:string, tool: CodeCompanion.Agent.Tool) : string Function to format tool names to show in the chat buffer
                         -- MCP Resources
-                        make_vars = true, -- Convert MCP resources to #variables for prompts
+                        make_vars = false, -- Convert MCP resources to #variables for prompts
                         -- MCP Prompts
                         make_slash_commands = true, -- Add MCP prompts as /slash commands
                     },
+                },
+            },
+            interactions = {
+                chat = {
+                    adapter = "copilot",
+                    model = "claude-opus-4.6",
                 },
             },
         },
