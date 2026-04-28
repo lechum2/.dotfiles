@@ -161,12 +161,12 @@ return {
             if vim.loop.os_uname().sysname == "Linux" then
                 vue_language_server_path = vue_language_server_path .. "/lib"
             end
-            vue_language_server_path = vue_language_server_path .. "/node_modules/@vue/laguage-server"
+            vue_language_server_path = vue_language_server_path .. "/node_modules/@vue/language-server"
             local vue_plugin = {
-                name = '@vue/typescript-plugin',
+                name = "@vue/typescript-plugin",
                 location = vue_language_server_path,
-                languages = { 'vue' },
-                configNamespace = 'typescript',
+                languages = { "vue" },
+                configNamespace = "typescript",
             }
             local vtsls_config = {
                 settings = {
@@ -178,11 +178,10 @@ return {
                         },
                     },
                 },
-                filetypes = { 'vue' },
+                filetypes = { "vue", "typescript", "javascript" },
             }
             vim.lsp.config("vtsls", vtsls_config)
             vim.lsp.enable({ "vtsls", "vue_ls" })
-            vim.lsp.enable("ts_ls")
             vim.lsp.enable("eslint")
             vim.lsp.config("yamlls", {
                 settings = {
@@ -206,8 +205,8 @@ return {
             })
             vim.lsp.enable("yamlls")
             vim.lsp.enable("lemminx")
-            vim.lsp.enable('lwc_ls')
-            vim.lsp.enable('marksman')
+            vim.lsp.enable("lwc_ls")
+            vim.lsp.enable("marksman")
 
             vim.lsp.config("apex_ls", {
                 cmd = {
@@ -218,7 +217,7 @@ return {
                     "-Ddebug.semantic.errors=false",
                     "-Ddebug.completion.statistics=false",
                     "-Dlwc.typegeneration.disabled=true",
-                    "apex.jorje.lsp.ApexLanguageServerLauncher"
+                    "apex.jorje.lsp.ApexLanguageServerLauncher",
                 },
                 filetypes = { "apex" },
                 root_markers = { "sfdx-project.json", ".git" },
