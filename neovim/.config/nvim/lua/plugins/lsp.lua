@@ -178,7 +178,7 @@ return {
                         },
                     },
                 },
-                filetypes = { "vue", "typescript", "javascript" },
+                filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
             }
             vim.lsp.config("vtsls", vtsls_config)
             vim.lsp.enable({ "vtsls", "vue_ls" })
