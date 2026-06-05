@@ -53,10 +53,7 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
             "ravitemer/mcphub.nvim",
-            {
-                "MeanderingProgrammer/render-markdown.nvim",
-                ft = { "markdown", "codecompanion" },
-            },
+            "MeanderingProgrammer/render-markdown.nvim",
         },
         opts = {
             extensions = {

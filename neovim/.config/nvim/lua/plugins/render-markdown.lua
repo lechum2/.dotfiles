@@ -5,7 +5,7 @@ return {
     ---@type render.md.UserConfig
     opts = {
         completions = { lsp = { enabled = true } },
-        file_types = { "markdown", "copilot-chat" },
+        file_types = { "markdown", "copilot-chat", "codecompanion" },
     },
     cmd = "RenderMarkdown",
 }
