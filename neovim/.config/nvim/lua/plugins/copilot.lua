@@ -5,7 +5,6 @@ return {
         opts = {
             suggestion = { enabled = false },
             panel = { enabled = false },
-            copilot_model = "gpt-41-copilot",
         },
     },
     {
@@ -16,7 +15,6 @@ return {
         },
         -- build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
-            model = "gpt-5.2",
             temperature = 0.1, -- Lower = focused, higher = creative
             window = {
                 layout = "vertical", -- 'vertical', 'horizontal', 'float'
@@ -73,12 +71,12 @@ return {
                     },
                 },
             },
-            interactions = {
-                chat = {
-                    adapter = "copilot",
-                    model = "claude-opus-4.6",
-                },
-            },
+            -- interactions = {
+            --     chat = {
+            --         adapter = "copilot",
+            --         model = "claude-opus-4.5",
+            --     },
+            -- },
         },
         cmd = { "CodeCompanionChat" },
     },
