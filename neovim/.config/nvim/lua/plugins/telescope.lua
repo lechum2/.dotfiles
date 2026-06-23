@@ -12,6 +12,11 @@ return {
         defaults = {
             preview = false,
         },
+        pickers = {
+            buffers = {
+                sort_mru = true,
+            }
+        },
         extensions = {
             fzf = {
                 fuzzy = true, -- false will only do exact matching

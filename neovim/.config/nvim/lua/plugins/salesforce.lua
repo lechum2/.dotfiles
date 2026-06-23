@@ -81,13 +81,13 @@ return {
             desc = "Retrieve current file"
         },
         {
-            "<leader>st",
+            "<leader>stt",
             function()
                 require("sf").toggle_term()
             end,
         },
         {
-            "<leader>stt",
+            "<leader>stc",
             function()
                 require("sf").run_current_test_with_coverage()
             end,
