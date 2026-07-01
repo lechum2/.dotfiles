@@ -28,20 +28,35 @@ return {
         cmd = { "CopilotChatOpen" },
     },
     {
-        "olimorris/codecompanion.nvim",
+        "yetone/avante.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-            "MeanderingProgrammer/render-markdown.nvim",
+            "MunifTanjim/nui.nvim",
+            --- The below dependencies are optional,
+            "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+            "ibhagwan/fzf-lua", -- for file_selector provider fzf
+            "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+            "zbirenbaum/copilot.lua", -- for providers='copilot'
         },
+        -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+        -- ⚠️ must add this setting! ! !
+        build = vim.fn.has("win32") ~= 0
+                and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+            or "make",
+        event = "VeryLazy",
+        cmd = { "AvanteChat", "AvanteEdit" },
+        version = false, -- Never set this value to "*"! Never!
+        ---@module 'avante'
+        ---@type avante.Config
         opts = {
-            -- interactions = {
-            --     chat = {
-            --         adapter = "copilot",
-            --         model = "claude-opus-4.5",
-            --     },
-            -- },
+            -- add any opts here
+            -- this file can contain specific instructions for your project
+            instructions_file = "avante.md",
+            -- for example
+            provider = "copilot",
+            windows = {
+                width = 40,
+            }
         },
-        cmd = { "CodeCompanionChat" },
     },
 }
