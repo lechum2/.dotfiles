@@ -54,6 +54,7 @@ return {
             instructions_file = "avante.md",
             -- for example
             provider = "copilot",
+            mode = "legacy",
             windows = {
                 width = 40,
             }
