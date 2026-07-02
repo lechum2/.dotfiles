@@ -18,7 +18,7 @@ local salesforce_extension = {
     sections = {
         lualine_a = { "mode" },
         lualine_b = { { "branch", fmt = left20, }, "diff", "diagnostics" },
-        lualine_c = { "filename", { salesforce, icon = "󰢎" } },
+        lualine_c = { "%n", "filename", { salesforce, icon = "󰢎" } },
         lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" },
@@ -51,7 +51,7 @@ return {
         sections = {
             lualine_a = { "mode" },
             lualine_b = { { "branch", fmt = left20, }, "diff", "diagnostics" },
-            lualine_c = { "filename" },
+            lualine_c = { "%n", "filename" },
             lualine_x = { "encoding", "fileformat", "filetype" },
             lualine_y = { "progress" },
             lualine_z = { "location" },
@@ -59,7 +59,7 @@ return {
         inactive_sections = {
             lualine_a = {},
             lualine_b = {},
-            lualine_c = { "filename" },
+            lualine_c = { "%n", "filename" },
             lualine_x = { "location" },
             lualine_y = {},
             lualine_z = {},
