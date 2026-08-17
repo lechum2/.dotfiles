@@ -34,6 +34,7 @@ return {
                 "carbonfox",
                 "darkbox",
                 "gruber-darker",
+                "scotopia",
                 {
                     name = "jellybeans",
                     colorscheme = "jellybeans",
@@ -175,5 +176,10 @@ return {
                 auto = true, -- auto-detect installed plugins via lazy.nvim
             },
         },
+    },
+    {
+        "SayanShankhari/scotopia.nvim",
+        lazy = false,
+        priority = 1000,
     },
 }
