@@ -3,6 +3,7 @@ return {
         "zaldih/themery.nvim",
         lazy = false,
         opts = {
+            themeConfigFile = "c:\\v:null",
             themes = {
                 "ayu-light",
                 "dayfox",
