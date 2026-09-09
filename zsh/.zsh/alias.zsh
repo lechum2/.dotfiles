@@ -6,3 +6,4 @@ alias update_apex_ls='wget -O ~/.local/share/nvim/apex-jorje-lsp.jar "https://ra
 alias H=Hyprland
 alias C=start-cosmic
 alias N=niri-session -l
+alias E=start-cosmic-ext-niri
