@@ -75,8 +75,12 @@ enabled = true
 [plugins]
 enabled = [ "icefish/phone-connect" ]
 
+[shell]
+font_family = "JetBrainsMono NF"
+
 [theme]
-builtin = "Ayu"
+builtin = "Gruvbox"
+shell_mode = "dark"
 
 [wallpaper.default]
 path = "/home/lechu/Pictures/Wallpapers/RDT_20211028_2334416123631075792561617.jpg"
