@@ -1,5 +1,10 @@
 config_version = 14
 
+[backdrop]
+blur_intensity = 0.19999999552965164
+enabled = true
+tint_intensity = 0.0
+
 [bar.default]
 center = [ "audio_visualizer", "media" ]
 enabled = false
