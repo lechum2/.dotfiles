@@ -33,6 +33,25 @@ concave_edge_corners = false
 radius = 0
 shadow = false
 
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 5
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
 [location]
 address = "Warsaw,Poland"
 
@@ -108,6 +127,11 @@ enabled = [ "icefish/phone-connect" ]
 
 [shell]
 font_family = "JetBrainsMono NF"
+
+    [shell.panel]
+    open_near_click_control_center = true
+    open_near_click_session = true
+    shadow = false
 
 [theme]
 builtin = "Gruvbox"
