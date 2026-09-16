@@ -370,25 +370,25 @@ binds {
     Mod+Return { spawn "kitty"; }
     Mod+D { spawn-sh "noctalia msg panel-toggle launcher"; }
     // Mod+Z { spawn "pidof" "hyprlock" "||" "hyprlock"; }
-    Mod+Z { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+Z { spawn "noctalia" "msg" "session" "lock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
     // Audio Controls
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "5"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "5"; }
-    XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
-    XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
-    XF86AudioNext allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
-    XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-up" "5"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-down" "5"; }
+    XF86AudioMute allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+    XF86AudioPlay allow-when-locked=true { spawn "noctalia" "msg" "media" "pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
     // Brightness Controls
-    XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia" "msg" "brightness-up" "eDP-1" "10"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down" "eDP-1" "10"; }
 
-    Mod+O { spawn "dms" "ipc" "call" "notifications" "dismissAllPopups"; }
-    Mod+I { spawn "dms" "ipc" "call" "notifications" "clearAll"; }
+    Mod+O { spawn "noctalia" "msg" "notification-clear-active"; }
+    Mod+I { spawn "noctalia" "msg" "notification-clear-history"; }
 
     Mod+Q { close-window; }
     Mod+Shift+Q { close-window; }
@@ -611,10 +611,6 @@ gestures {
 
 //Tell niri to place the wallpaper on the overview.
 layer-rule {
-    match namespace="^quickshell$"
+    match namespace="^noctalia-backdrop"
     place-within-backdrop true
 }
-
-include "dms/colors.kdl"
-include "dms/alttab.kdl"
-include "dms/wpblur.kdl"

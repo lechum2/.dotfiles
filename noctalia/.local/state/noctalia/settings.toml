@@ -13,16 +13,16 @@ end = [
     "volume",
     "brightness",
     "battery",
-    "control-center",
-    "session",
+    "clock",
     "notifications",
-    "clock"
+    "session"
 ]
 font_family = "JetBrainsMono Nerd Font Mono"
 font_scale = 1.0999999828636646
 margin_ends = 0
 radius = 0
 shadow = false
+start = [ "control-center", "launcher", "wallpaper", "workspaces" ]
 
     [bar.default.monitor.eDP-1]
     enabled = true
@@ -159,3 +159,6 @@ width = 200
 
 [widget.bar]
 type = "icefish/phone-connect:bar"
+
+[widget.clock]
+format = "{:%d-%m %H:%M}"
