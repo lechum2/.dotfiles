@@ -10,6 +10,7 @@ Set-Alias l myl
 New-Alias jq jq-windows-amd64.exe
 New-Alias make mingw32-make.exe
 New-Alias nsf C:\bec\tools\node.js.24\sf.ps1
+New-Alias py C:\bec\tools\Python\3.14\python.exe
 
 function Update-Apex-Lsp {
     $location_command = 'nvim --headless +"lua print(vim.fn.stdpath(\"data\"))" +qa'
