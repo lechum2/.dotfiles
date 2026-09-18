@@ -140,7 +140,9 @@ font_family = "JetBrainsMono NF"
 
 [theme]
 builtin = "Gruvbox"
+community_palette = "Gruvbox Material Hard"
 shell_mode = "dark"
+source = "community"
 
 [wallpaper.default]
 path = "/home/lechu/Pictures/Wallpapers/RDT_20211028_2334416123631075792561617.jpg"
