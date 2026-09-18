@@ -390,6 +390,8 @@ binds {
     Mod+O { spawn "noctalia" "msg" "notification-clear-active"; }
     Mod+I { spawn "noctalia" "msg" "notification-clear-history"; }
 
+    Mod+Shift+W { spawn "noctalia" "msg" "wallpaper-random"; }
+
     Mod+Q { close-window; }
     Mod+Shift+Q { close-window; }
 

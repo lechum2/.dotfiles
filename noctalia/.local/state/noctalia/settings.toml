@@ -146,20 +146,20 @@ source = "community"
 
 [wallpaper]
 directory = "/home/lechu/Pictures/Wallpapers"
-fill_mode = "fit"
+transition = []
 
     [wallpaper.automation]
     enabled = true
     interval_seconds = 3600
 
     [wallpaper.default]
-    path = "/home/lechu/Pictures/Wallpapers/fauna/d474845.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/Batman/266705-1920x1080.jpg"
 
     [wallpaper.last]
-    path = "/home/lechu/Pictures/Wallpapers/fauna/d474845.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/Batman/266705-1920x1080.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/lechu/Pictures/Wallpapers/fauna/d474845.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/Batman/266705-1920x1080.jpg"
 
     [[wallpaper.favorite]]
     path = "/home/lechu/Pictures/Wallpapers/2d2554b.png"
