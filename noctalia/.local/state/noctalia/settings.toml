@@ -155,13 +155,16 @@ transition = []
     interval_seconds = 3600
 
     [wallpaper.default]
-    path = "/home/lechu/Pictures/Wallpapers/RDT_20210627_0847078989871360034249185.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlan.jpg"
 
     [wallpaper.last]
-    path = "/home/lechu/Pictures/Wallpapers/RDT_20210627_0847078989871360034249185.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlan.jpg"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlan.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/lechu/Pictures/Wallpapers/RDT_20210627_0847078989871360034249185.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlan.jpg"
 
     [[wallpaper.favorite]]
     path = "/home/lechu/Pictures/Wallpapers/2d2554b.png"
