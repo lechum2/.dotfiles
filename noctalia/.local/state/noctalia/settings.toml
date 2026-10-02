@@ -18,6 +18,7 @@ end = [
     "volume",
     "brightness",
     "battery",
+    "weather",
     "clock",
     "notifications",
     "session"
@@ -155,16 +156,16 @@ transition = []
     interval_seconds = 3600
 
     [wallpaper.default]
-    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlan.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlanOrange.jpg"
 
     [wallpaper.last]
-    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlan.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlanOrange.jpg"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlan.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlanOrange.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlan.jpg"
+    path = "/home/lechu/Pictures/Wallpapers/sshWeHaveAPlanOrange.jpg"
 
     [[wallpaper.favorite]]
     path = "/home/lechu/Pictures/Wallpapers/2d2554b.png"
