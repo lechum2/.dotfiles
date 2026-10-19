@@ -1,4 +1,4 @@
-config_version = 14
+config_version = 15
 
 [backdrop]
 blur_intensity = 0.19999999552965164
