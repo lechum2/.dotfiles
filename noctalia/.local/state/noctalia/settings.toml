@@ -137,6 +137,10 @@ enabled = [ "icefish/phone-connect" ]
 [shell]
 font_family = "JetBrainsMono NF"
 
+    [shell.launcher]
+    default_view = "all"
+    show_app_actions = true
+
     [shell.panel]
     open_near_click_control_center = true
     open_near_click_session = true
