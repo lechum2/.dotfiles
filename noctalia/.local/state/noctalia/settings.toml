@@ -187,3 +187,6 @@ type = "icefish/phone-connect:bar"
 
 [widget.clock]
 format = "{:%d-%m %H:%M}"
+
+[widget.control-center]
+glyph = "bat"
